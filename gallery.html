@@ -9,7 +9,6 @@
   <link rel="stylesheet" href="style.css">
 
   <style>
-    /* --- Gallery-specific layout --- */
     main {
       max-width: 1100px;
       margin: 40px auto;
@@ -18,20 +17,17 @@
       padding: 30px;
       box-shadow: 0 6px 18px rgba(0,0,0,0.1);
     }
-
     h2 {
       text-align: center;
       font-size: 2.2rem;
       color: #0a1a2a;
       margin-bottom: 25px;
     }
-
     .gallery {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
       gap: 20px;
     }
-
     .gallery img {
       width: 100%;
       height: 200px;
@@ -41,179 +37,51 @@
       transition: 0.3s ease;
       box-shadow: 0 3px 10px rgba(0,0,0,0.15);
     }
-
     .gallery img:hover {
       transform: scale(1.07);
       box-shadow: 0 10px 25px rgba(0,0,0,0.25);
     }
-
-    /* Lightbox */
-    .lightbox {
-      display: none;
-      position: fixed;
-      inset: 0;
-      background: rgba(0,0,0,0.85);
-      justify-content: center;
-      align-items: center;
-      flex-direction: column;
-      z-index: 2000;
-    }
-
-    .lightbox img {
-      max-width: 88%;
-      max-height: 80%;
-      border-radius: 12px;
-      box-shadow: 0 0 20px rgba(255,255,255,0.4);
-      opacity: 0;
-      animation: fadeIn 0.5s forwards ease;
-    }
-
-    @keyframes fadeIn { to { opacity: 1; } }
-
-    .lightbox .close,
-    .lightbox .prev,
-    .lightbox .next {
-      position: absolute;
-      color: white;
-      font-size: 45px;
-      cursor: pointer;
-      user-select: none;
-      transition: 0.3s;
-    }
-
-    .lightbox .close { top: 20px; right: 40px; }
-    .lightbox .prev { left: 30px; top: 50%; transform: translateY(-50%); }
-    .lightbox .next { right: 30px; top: 50%; transform: translateY(-50%); }
-
-    .lightbox .close:hover,
-    .lightbox .prev:hover,
-    .lightbox .next:hover { color: #d4a556; }
-
-    .lightbox-caption {
-      color: white;
-      background: rgba(0,0,0,0.6);
-      margin-top: 15px;
-      font-size: 18px;
-      padding: 10px 20px;
-      border-radius: 8px;
-      max-width: 80%;
-      text-align: center;
-    }
   </style>
-
 </head>
+
 <body>
 
-  <header class="main-header">
-    <h1>Hotel Saket Plaza</h1>
-    <p class="subtitle">Gallery – A Splash of Color and Comfort</p>
-  </header>
+<header class="main-header">
+  <h1>Hotel Saket Plaza</h1>
+  <p class="subtitle">Gallery – A Splash of Color and Comfort</p>
+</header>
 
-  <nav class="navbar">
-    <a href="index.html">Home</a>
-    <a href="rooms.html">Rooms</a>
-    <a href="gallery.html" class="active">Gallery</a>
-    <a href="facilities.html">Facilities</a>
-    <a href="tariff.html">Tariff</a>
-    <a href="contact.html">Contact</a>
-  </nav>
+<nav class="navbar">
+  <a href="index.html">Home</a>
+  <a href="rooms.html">Rooms</a>
+  <a href="gallery.html" class="active">Gallery</a>
+  <a href="facilities.html">Facilities</a>
+  <a href="tariff.html">Tariff</a>
+  <a href="contact.html">Contact</a>
+</nav>
 
-  <main>
-    <section>
-      <h2>Photo Gallery</h2>
+<main>
+  <h2>Photo Gallery</h2>
 
-      <div class="gallery">
-
-        <!-- Existing Gallery Images -->
-        <img src="Images/Garden.jpg" alt="Beautiful Garden with colorful flowers and lush greenery">
-        <img src="Images/parking.jpg" alt="Spacious Parking Area for Guests">
-        <img src="Images/swimming-pool.jpg" alt="Refreshing Swimming Pool with relaxing atmosphere">
-        <img src="Images/waterfall.jpg" alt="Scenic Artificial Waterfall inside the resort">
-        <img src="Images/Landscape.jpg" alt="Scenic Landscape View with lush greenery and panoramic surroundings">
-        <img src="Images/dining-hall.jpg" alt="Elegant Dining Hall serving delicious meals">
-        <img src="Images/movie-theater.jpg" alt="Private Movie Theater for entertainment">
-        <img src="Images/conference-hall.jpg" alt="Well-equipped Conference Hall for meetings and events">
-        <img src="Images/indoor-games.jpg" alt="Indoor Games Room with fun activities">
-
-        <!-- New Added Images -->
-        <img src="Images/machan-night.jpg" alt="Machan Night View with warm lighting and peaceful ambience">
-        <img src="Images/swimming-pool-night.jpg" alt="Swimming Pool Night View with illuminated blue water">
-        <img src="Images/wedding.jpg" alt="Wedding Decoration Setup with elegant floral arrangements">
-
-      </div>
-    </section>
-  </main>
-
-  <!-- Lightbox -->
-  <div class="lightbox" id="lightbox">
-    <span class="close" id="closeBtn">×</span>
-    <span class="prev" id="prevBtn">❮</span>
-    <img id="lightboxImg" src="" alt="">
-    <span class="next" id="nextBtn">❯</span>
-    <div class="lightbox-caption" id="caption"></div>
+  <div class="gallery">
+    <img src="Images/garden.jpg" alt="Beautiful Garden with colorful flowers and lush greenery">
+    <img src="Images/parking.jpg" alt="Spacious Parking Area for Guests">
+    <img src="Images/swimming-pool.jpg" alt="Refreshing Swimming Pool with relaxing atmosphere">
+    <img src="Images/waterfall.jpg" alt="Scenic Artificial Waterfall inside the resort">
+    <img src="Images/landscape.jpg" alt="Scenic Landscape View with lush greenery and panoramic surroundings">
+    <img src="Images/dining-hall.jpg" alt="Elegant Dining Hall serving delicious meals">
+    <img src="Images/movie-theatre.jpg" alt="Private Movie Theater for entertainment">
+    <img src="Images/conference-hall.jpg" alt="Well-equipped Conference Hall for meetings and events">
+    <img src="Images/indoor-games.jpg" alt="Indoor Games Room with fun activities">
+    <img src="Images/machan-night.jpg" alt="Machan Night View with warm lighting and peaceful ambience">
+    <img src="Images/swimming-pool-night.jpg" alt="Swimming Pool Night View with illuminated blue water">
+    <img src="Images/wedding.jpg" alt="Wedding Decoration Setup with elegant floral arrangements">
   </div>
+</main>
 
-  <footer>
-    <p>© 2025 Hotel Saket Plaza | Designed by <a href="#">Sunil Danawale</a></p>
-  </footer>
-
-  <!-- Floating Buttons -->
-  <div class="floating-buttons">
-    <a href="https://wa.me/919420972666?text=Hello%20Hotel%20Saket%20Plaza!" target="_blank" class="whatsapp">💬</a>
-    <a href="tel:+912168260272" class="call-now">📞</a>
-  </div>
-
-  <!-- Back To Top -->
-  <div id="backToTop">⬆️</div>
-
-  <script>
-    /* Back to Top */
-    const backToTop = document.getElementById("backToTop");
-    window.addEventListener("scroll", () => {
-      backToTop.style.display = window.scrollY > 200 ? "flex" : "none";
-    });
-    backToTop.onclick = () => window.scrollTo({ top: 0, behavior: "smooth" });
-
-    /* Lightbox Logic */
-    const images = document.querySelectorAll(".gallery img");
-    const lightbox = document.getElementById("lightbox");
-    const lightboxImg = document.getElementById("lightboxImg");
-    const caption = document.getElementById("caption");
-    const nextBtn = document.getElementById("nextBtn");
-    const prevBtn = document.getElementById("prevBtn");
-    const closeBtn = document.getElementById("closeBtn");
-
-    let index = 0;
-
-    function showImage(i) {
-      lightboxImg.src = images[i].src;
-      caption.textContent = images[i].alt;
-    }
-
-    images.forEach((img, i) => {
-      img.addEventListener("click", () => {
-        lightbox.style.display = "flex";
-        index = i;
-        showImage(index);
-      });
-    });
-
-    closeBtn.onclick = () => (lightbox.style.display = "none");
-    nextBtn.onclick = () => { index = (index + 1) % images.length; showImage(index); };
-    prevBtn.onclick = () => { index = (index - 1 + images.length) % images.length; showImage(index); };
-
-    lightbox.addEventListener("click", e => {
-      if (e.target === lightbox) lightbox.style.display = "none";
-    });
-
-    document.addEventListener("keydown", e => {
-      if (lightbox.style.display === "flex") {
-        if (e.key === "ArrowRight") nextBtn.onclick();
-        if (e.key === "ArrowLeft") prevBtn.onclick();
-        if (e.key === "Escape") closeBtn.onclick();
-      }
-    });
-  </script>
+<footer>
+  <p>© 2025 Hotel Saket Plaza | Designed by <a href="#">Sunil Danawale</a></p>
+</footer>
 
 </body>
 </html>
