@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Contact – Hotel Saket Plaza</title>
+
+  <!-- SEO Metadata -->
+  <meta name="description" content="Contact Hotel Saket Plaza, Mahabaleshwar. Book luxury rooms, cottages and premium suites with ease.">
+  <meta name="keywords" content="Hotel Saket Plaza, Mahabaleshwar hotel, book rooms, luxury hotel, contact hotel">
+  <meta name="robots" content="index, follow">
+
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet" />
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="style.css" />
+
+  <style>
+    /* ------------------ CONTACT PAGE UI UPGRADE ------------------ */
+
+    .contact-wrapper {
+      max-width: 900px;
+      margin: 50px auto;
+      background: white;
+      padding: 30px;
+      border-radius: 12px;
+      box-shadow: 0px 6px 20px rgba(0,0,0,0.10);
+    }
+
+    form {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 20px;
+      margin-top: 20px;
+    }
+
+    form .form-group {
+      display: flex;
+      flex-direction: column;
+    }
+
+    form .form-group.full {
+      grid-column: span 2;
+    }
+
+    form input,
+    form select,
+    form textarea {
+      padding: 12px;
+      font-size: 1rem;
+      border-radius: 6px;
+      border: 1px solid #ccc;
+      outline: none;
+      transition: 0.3s;
+    }
+
+    form input:focus,
+    form select:focus,
+    form textarea:focus {
+      border-color: #2b6cb0;
+      box-shadow: 0 0 5px rgba(43,108,176,0.3);
+    }
+
+    form textarea {
+      height: 120px;
+      resize: vertical;
+    }
+
+    form button {
+      grid-column: span 2;
+      justify-self: center;
+      width: 200px;
+      font-size: 1.1rem;
+    }
+
+    /* ---------- MAP ----------- */
+    .map-container {
+      margin: 25px 0;
+      border-radius: 12px;
+      overflow: hidden;
+      box-shadow: 0px 6px 18px rgba(0,0,0,0.15);
+    }
+
+    .map-container iframe {
+      width: 100%;
+      height: 350px;
+      border: 0;
+    }
+
+    /* Centered contact text */
+    .contact-info {
+      text-align: center;
+      margin-top: 10px;
+      font-size: 1.1rem;
+      line-height: 1.6;
+    }
+
+    @media (max-width: 768px) {
+      form {
+        grid-template-columns: 1fr;
+      }
+      form button {
+        grid-column: span 1;
+        width: 100%;
+      }
+    }
+  </style>
+
+</head>
+
+<body>
+
+  <!-- HEADER -->
+  <header class="main-header">
+    <h1>Hotel Saket Plaza</h1>
+    <p class="subtitle">Contact & Booking</p>
+  </header>
+
+  <!-- NAVIGATION -->
+  <nav class="navbar">
+    <a href="index.html">Home</a>
+    <a href="rooms.html">Rooms</a>
+    <a href="gallery.html">Gallery</a>
+    <a href="facilities.html">Facilities</a>
+    <a href="tariff.html">Tariff</a>
+    <a href="contact.html" class="active">Contact</a>
+  </nav>
+
+  <!-- MAIN CONTENT -->
+  <main>
+
+    <!-- CONTACT FORM -->
+    <div class="contact-wrapper">
+      <h2 class="section-title">Book Your Stay</h2>
+
+      <form action="sendmail.php" method="POST" novalidate autocomplete="on">
+
+        <div class="form-group">
+          <label for="name">Full Name *</label>
+          <input type="text" id="name" name="name" required placeholder="Enter your full name" />
+        </div>
+
+        <div class="form-group">
+          <label for="email">Email Address *</label>
+          <input type="email" id="email" name="email" required placeholder="example@mail.com" />
+        </div>
+
+        <div class="form-group">
+          <label for="phone">Phone Number *</label>
+          <input type="tel" id="phone" name="phone" required placeholder="Enter your phone number" />
+        </div>
+
+        <div class="form-group">
+          <label for="room_type">Room Type *</label>
+          <select id="room_type" name="room_type" required>
+            <option value="" disabled selected>Select Room Type</option>
+            <option>Luxury</option>
+            <option>Club</option>
+            <option>Cottage</option>
+            <option>Premium Queen</option>
+            <option>Premium King</option>
+          </select>
+        </div>
+
+        <div class="form-group">
+          <label for="checkin">Check-in Date *</label>
+          <input type="date" id="checkin" name="checkin" required />
+        </div>
+
+        <div class="form-group">
+          <label for="checkout">Check-out Date *</label>
+          <input type="date" id="checkout" name="checkout" required />
+        </div>
+
+        <div class="form-group full">
+          <label for="message">Additional Requests</label>
+          <textarea id="message" name="message" placeholder="Any special requests?"></textarea>
+        </div>
+
+        <button type="submit" class="btn">Submit Booking</button>
+      </form>
+    </div>
+
+    <!-- LOCATION & GST DETAILS -->
+    <div class="contact-wrapper">
+      <h2 class="section-title">Find Us</h2>
+
+      <p class="contact-info">
+        Hotel Saket Plaza, Old Band Road, Mahabaleshwar, Maharashtra 412806
+      </p>
+
+      <div class="map-container">
+        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3772.5289023161725!2d73.65849811502657!3d17.9231686881434!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bc234567890abcd%3A0x123456789abcdef!2sHotel%20Saket%20Plaza!5e0!3m2!1sen!2sin!4v1704000000000" loading="lazy"></iframe>
+      </div>
+
+      <p class="contact-info"><strong>GSTIN:</strong> 27AAAPF0471F1ZY</p>
+      <p class="contact-info"><strong>CIN:</strong> U55101MH1997PTC109918</p>
+    </div>
+
+  </main>
+
+  <!-- FOOTER -->
+  <footer>
+    <p>© 2025 Hotel Saket Plaza | Designed by <a href="#">Sunil Danawale</a></p>
+  </footer>
+
+  <!-- FLOATING BUTTONS -->
+  <div class="floating-buttons">
+    <a href="https://wa.me/919420972666?text=Hello%20Hotel%20Saket%20Plaza!" target="_blank" class="whatsapp" aria-label="Chat on WhatsApp">💬</a>
+    <a href="tel:+912168260272" class="call-now" aria-label="Call Hotel">📞</a>
+  </div>
+
+  <!-- BACK TO TOP -->
+  <button id="backToTop" aria-label="Back to top">⬆️</button>
+
+  <!-- SCRIPT -->
+  <script>
+    // Back to top
+    const backToTop = document.getElementById('backToTop');
+    window.addEventListener('scroll', () => {
+      backToTop.style.display = window.scrollY > 200 ? 'flex' : 'none';
+    });
+    backToTop.addEventListener('click', () =>
+      window.scrollTo({ top: 0, behavior: 'smooth' })
+    );
+
+    // Highlight current nav item
+    window.addEventListener('DOMContentLoaded', () => {
+      const current = window.location.pathname.split('/').pop();
+      document.querySelectorAll('.navbar a').forEach(a => {
+        if (a.href.includes(current)) a.classList.add('active');
+      });
+    });
+  </script>
+
+</body>
+</html>
