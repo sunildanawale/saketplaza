@@ -4,6 +4,8 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="Explore our luxurious rooms at Hotel Saket Plaza, Mahabaleshwar. Choose from Luxury, Club, Cottage, Premium Queen, and Premium King rooms with modern amenities." />
+  <meta name="keywords" content="Hotel Saket Plaza rooms, luxury rooms Mahabaleshwar, hotel accommodations, jacuzzi rooms, premium suites" />
   <title>Rooms – Hotel Saket Plaza</title>
 
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet">
@@ -11,267 +13,157 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
 
   <link rel="stylesheet" href="style.css">
-
-  <style>
-    main {
-      max-width: 1100px;
-      margin: 40px auto;
-      padding: 20px;
-    }
-
-    .rooms-wrapper {
-      background: #ffffff;
-      padding: 35px;
-      border-radius: 14px;
-      box-shadow: 0px 6px 20px rgba(0, 0, 0, 0.12);
-      border: 1px solid #e6e6e6;
-      margin-bottom: 40px;
-    }
-
-    .rooms-wrapper h2 {
-      text-align: center;
-      color: #d4a556;
-      font-size: 2.3rem;
-      margin-bottom: 30px;
-    }
-
-    .rooms-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-      gap: 28px;
-    }
-
-    .room-card {
-      background: #fff;
-      border-radius: 14px;
-      overflow: hidden;
-      box-shadow: 0px 6px 14px rgba(0, 0, 0, 0.12);
-      border-left: 6px solid #0a1a2a;
-      transition: 0.3s ease;
-      padding-bottom: 20px;
-      opacity: 0;
-      transform: translateY(40px);
-    }
-
-    .room-card.visible {
-      opacity: 1;
-      transform: translateY(0);
-      transition: 0.6s ease;
-    }
-
-    .room-card:hover {
-      transform: translateY(-10px);
-      box-shadow: 0px 10px 25px rgba(0, 0, 0, 0.2);
-    }
-
-    .room-img-wrap {
-      height: 210px;
-      overflow: hidden;
-      position: relative;
-    }
-
-    .main-image {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      cursor: pointer;
-      opacity: 1;
-      transition: opacity 0.4s ease-in-out;
-    }
-
-    .slide-arrow {
-      position: absolute;
-      top: 50%;
-      transform: translateY(-50%);
-      font-size: 28px;
-      background: rgba(0, 0, 0, 0.5);
-      color: #fff;
-      padding: 8px 12px;
-      border-radius: 6px;
-      cursor: pointer;
-      z-index: 10;
-    }
-
-    .arrow-left { left: 10px; }
-    .arrow-right { right: 10px; }
-
-    .thumb-strip {
-      display: flex;
-      gap: 8px;
-      padding: 12px;
-      justify-content: center;
-    }
-
-    .thumb-strip img {
-      width: 60px;
-      height: 45px;
-      object-fit: cover;
-      border-radius: 6px;
-      cursor: pointer;
-      border: 2px solid transparent;
-    }
-
-    .thumb-strip img.active {
-      border-color: #d4a556;
-    }
-
-    .lightbox {
-      position: fixed;
-      inset: 0;
-      background: rgba(0, 0, 0, 0.85);
-      display: none;
-      justify-content: center;
-      align-items: center;
-      flex-direction: column;
-      z-index: 3000;
-    }
-
-    .lightbox.active { display: flex; }
-
-    .lightbox img {
-      max-width: 90%;
-      max-height: 85%;
-      border-radius: 10px;
-      transition: opacity 0.4s ease;
-    }
-
-    .lightbox-arrow {
-      position: absolute;
-      top: 50%;
-      font-size: 48px;
-      color: #fff;
-      padding: 10px 18px;
-      cursor: pointer;
-      user-select: none;
-    }
-
-    .lightbox-left { left: 30px; }
-    .lightbox-right { right: 30px; }
-  </style>
-
 </head>
 
 <body>
+  <!-- Dark Mode Toggle Button (for site-wide theme support) -->
+  <button id="dark-mode-toggle" class="btn" style="position: fixed; top: 10px; right: 10px; z-index: 1001; padding: 8px 12px; font-size: 0.9rem;" aria-label="Toggle dark mode">
+    <i class="fa-solid fa-moon"></i> Dark Mode
+  </button>
 
   <header class="main-header">
-    <h1>Hotel Saket Plaza</h1>
-    <p class="subtitle">Elegant Comfort in Every Room</p>
+    <div class="logo-box">
+      <h1>Hotel Saket Plaza</h1>
+      <p class="subtitle">Elegant Comfort in Every Room</p>
+    </div>
   </header>
 
   <nav class="navbar">
-    <a href="index.html">Home</a>
-    <a href="rooms.html" class="active">Rooms</a>
-    <a href="gallery.html">Gallery</a>
-    <a href="facilities.html">Facilities</a>
-    <a href="tariff.html">Tariff</a>
-    <a href="contact.html">Contact</a>
+    <a href="index.html" aria-label="Go to Home page">Home</a>
+    <a href="rooms.html" aria-label="Go to Rooms page" class="active">Rooms</a>
+    <a href="gallery.html" aria-label="Go to Gallery page">Gallery</a>
+    <a href="facilities.html" aria-label="Go to Facilities page">Facilities</a>
+    <a href="tariff.html" aria-label="Go to Tariff page">Tariff</a>
+    <a href="contact.html" aria-label="Go to Contact page">Contact</a>
   </nav>
 
-  <main>
+  <section class="rooms-section" role="main" aria-labelledby="rooms-title">
     <div class="rooms-wrapper">
-      <h2>Choice of Rooms</h2>
+      <h2 id="rooms-title" class="section-title">Choice of Rooms</h2>
 
       <div class="rooms-grid">
-
-        <div class="room-card" data-images="luxury-room.jpg,luxury-room1.jpg,luxury-room2.jpg">
+        <div class="room-card" data-images="luxury-room.jpg,luxury-room1.jpg,luxury-room2.jpg" role="article" aria-labelledby="luxury-title">
           <div class="room-img-wrap">
-            <span class="slide-arrow arrow-left">&#10094;</span>
-            <img src="Images/luxury-room.jpg" class="main-image">
-            <span class="slide-arrow arrow-right">&#10095;</span>
+            <span class="slide-arrow arrow-left" aria-label="Previous image">&#10094;</span>
+            <img src="Images/luxury-room.jpg" class="main-image" alt="Luxury Room interior">
+            <span class="slide-arrow arrow-right" aria-label="Next image">&#10095;</span>
           </div>
           <div class="thumb-strip">
-            <img src="Images/luxury-room.jpg" class="active">
-            <img src="Images/luxury-room1.jpg">
-            <img src="Images/luxury-room2.jpg">
+            <img src="Images/luxury-room.jpg" class="active" alt="Luxury Room thumbnail 1">
+            <img src="Images/luxury-room1.jpg" alt="Luxury Room thumbnail 2">
+            <img src="Images/luxury-room2.jpg" alt="Luxury Room thumbnail 3">
           </div>
-          <h3>Luxury Room</h3>
+          <h3 id="luxury-title">Luxury Room</h3>
           <p>Modern elegance with premium interiors designed for ultimate relaxation.</p>
         </div>
 
-        <div class="room-card" data-images="club-room.jpg,club-room1.jpg,club-room2.jpg">
+        <div class="room-card" data-images="club-room.jpg,club-room1.jpg,club-room2.jpg" role="article" aria-labelledby="club-title">
           <div class="room-img-wrap">
-            <span class="slide-arrow arrow-left">&#10094;</span>
-            <img class="main-image" src="Images/club-room.jpg">
-            <span class="slide-arrow arrow-right">&#10095;</span>
+            <span class="slide-arrow arrow-left" aria-label="Previous image">&#10094;</span>
+            <img class="main-image" src="Images/club-room.jpg" alt="Club Room interior">
+            <span class="slide-arrow arrow-right" aria-label="Next image">&#10095;</span>
           </div>
           <div class="thumb-strip">
-            <img src="Images/club-room.jpg" class="active">
-            <img src="Images/club-room1.jpg">
-            <img src="Images/club-room2.jpg">
+            <img src="Images/club-room.jpg" class="active" alt="Club Room thumbnail 1">
+            <img src="Images/club-room1.jpg" alt="Club Room thumbnail 2">
+            <img src="Images/club-room2.jpg" alt="Club Room thumbnail 3">
           </div>
-          <h3>Club Room</h3>
+          <h3 id="club-title">Club Room</h3>
           <p>Spacious and cozy — perfect for families who enjoy comfort and style.</p>
         </div>
 
-        <div class="room-card" data-images="cottage.jpg,cottage1.jpg,cottage2.jpg">
+        <div class="room-card" data-images="cottage.jpg,cottage1.jpg,cottage2.jpg" role="article" aria-labelledby="cottage-title">
           <div class="room-img-wrap">
-            <span class="slide-arrow arrow-left">&#10094;</span>
-            <img class="main-image" src="Images/cottage.jpg">
-            <span class="slide-arrow arrow-right">&#10095;</span>
+            <span class="slide-arrow arrow-left" aria-label="Previous image">&#10094;</span>
+            <img class="main-image" src="Images/cottage.jpg" alt="Cottage interior">
+            <span class="slide-arrow arrow-right" aria-label="Next image">&#10095;</span>
           </div>
           <div class="thumb-strip">
-            <img src="Images/cottage.jpg" class="active">
-            <img src="Images/cottage1.jpg">
-            <img src="Images/cottage2.jpg">
+            <img src="Images/cottage.jpg" class="active" alt="Cottage thumbnail 1">
+            <img src="Images/cottage1.jpg" alt="Cottage thumbnail 2">
+            <img src="Images/cottage2.jpg" alt="Cottage thumbnail 3">
           </div>
-          <h3>Cottage</h3>
+          <h3 id="cottage-title">Cottage</h3>
           <p>Enjoy a private Jacuzzi, rain shower and serene outdoor sit-out area.</p>
         </div>
 
-        <div class="room-card" data-images="premium-queen.jpg,premium-queen1.jpg,premium-queen2.jpg">
+        <div class="room-card" data-images="premium-queen.jpg,premium-queen1.jpg,premium-queen2.jpg" role="article" aria-labelledby="queen-title">
           <div class="room-img-wrap">
-            <span class="slide-arrow arrow-left">&#10094;</span>
-            <img class="main-image" src="Images/premium-queen.jpg">
-            <span class="slide-arrow arrow-right">&#10095;</span>
+            <span class="slide-arrow arrow-left" aria-label="Previous image">&#10094;</span>
+            <img class="main-image" src="Images/premium-queen.jpg" alt="Premium Queen Room interior">
+            <span class="slide-arrow arrow-right" aria-label="Next image">&#10095;</span>
           </div>
           <div class="thumb-strip">
-            <img src="Images/premium-queen.jpg" class="active">
-            <img src="Images/premium-queen1.jpg">
-            <img src="Images/premium-queen2.jpg">
+            <img src="Images/premium-queen.jpg" class="active" alt="Premium Queen thumbnail 1">
+            <img src="Images/premium-queen1.jpg" alt="Premium Queen thumbnail 2">
+            <img src="Images/premium-queen2.jpg" alt="Premium Queen thumbnail 3">
           </div>
-          <h3>Premium Queen</h3>
+          <h3 id="queen-title">Premium Queen</h3>
           <p>Elegant interiors with attached Jacuzzi and balcony overlooking greenery.</p>
         </div>
 
-        <div class="room-card" data-images="premium-king.jpg,premium-king1.jpg,premium-king2.jpg">
+        <div class="room-card" data-images="premium-king.jpg,premium-king1.jpg,premium-king2.jpg" role="article" aria-labelledby="king-title">
           <div class="room-img-wrap">
-            <span class="slide-arrow arrow-left">&#10094;</span>
-            <img class="main-image" src="Images/premium-king.jpg">
-            <span class="slide-arrow arrow-right">&#10095;</span>
+            <span class="slide-arrow arrow-left" aria-label="Previous image">&#10094;</span>
+            <img class="main-image" src="Images/premium-king.jpg" alt="Premium King Room interior">
+            <span class="slide-arrow arrow-right" aria-label="Next image">&#10095;</span>
           </div>
           <div class="thumb-strip">
-            <img src="Images/premium-king.jpg" class="active">
-            <img src="Images/premium-king1.jpg">
-            <img src="Images/premium-king2.jpg">
+            <img src="Images/premium-king.jpg" class="active" alt="Premium King thumbnail 1">
+            <img src="Images/premium-king1.jpg" alt="Premium King thumbnail 2">
+            <img src="Images/premium-king2.jpg" alt="Premium King thumbnail 3">
           </div>
-          <h3>Premium King</h3>
+          <h3 id="king-title">Premium King</h3>
           <p>A luxurious suite with Jacuzzi and private patio — perfect for couples.</p>
         </div>
-
       </div>
     </div>
-  </main>
+  </section>
 
-  <footer>
-    <p>© 2025 Hotel Saket Plaza | Designed by <a href="#">Sunil Danawale</a></p>
+  <footer role="contentinfo">
+    <p>© 2025 Hotel Saket Plaza | Designed by <a href="#" aria-label="Visit designer Sunil Danawale's site">Sunil Danawale</a></p>
   </footer>
 
   <div class="floating-buttons">
-    <a href="https://wa.me/919420972666?text=Hello%20Hotel%20Saket%20Plaza!" class="whatsapp" target="_blank">
-      <i class="fa-brands fa-whatsapp"></i>
+    <a href="https://wa.me/919420972666?text=Hello%20Hotel%20Saket%20Plaza!" class="whatsapp" target="_blank" aria-label="Contact us on WhatsApp">
+      <i class="fa-brands fa-whatsapp" aria-hidden="true"></i>
     </a>
-    <a href="tel:+912168260583" class="call-now"><i class="fa-solid fa-phone"></i></a>
+    <a href="tel:+912168260583" class="call-now" aria-label="Call us now">
+      <i class="fa-solid fa-phone" aria-hidden="true"></i>
+    </a>
   </div>
 
-  <div id="backToTop"><i class="fa-solid fa-arrow-up"></i></div>
+  <div id="backToTop" aria-label="Back to top">
+    <i class="fa-solid fa-arrow-up" aria-hidden="true"></i>
+  </div>
 
   <div class="lightbox" id="lightbox">
-    <span class="lightbox-arrow lightbox-left">&#10094;</span>
-    <img src="">
-    <span class="lightbox-arrow lightbox-right">&#10095;</span>
+    <span class="lightbox-arrow lightbox-left" aria-label="Previous image in lightbox">&#10094;</span>
+    <img src="" alt="Room image in lightbox">
+    <span class="lightbox-arrow lightbox-right" aria-label="Next image in lightbox">&#10095;</span>
   </div>
 
   <script>
+    // Dark mode toggle functionality
+    const toggleButton = document.getElementById('dark-mode-toggle');
+    const body = document.body;
+    const icon = toggleButton.querySelector('i');
+
+    toggleButton.addEventListener('click', () => {
+      body.classList.toggle('dark-mode');
+      const isDark = body.classList.contains('dark-mode');
+      icon.className = isDark ? 'fa-solid fa-sun' : 'fa-solid fa-moon';
+      toggleButton.innerHTML = `<i class="${icon.className}"></i> ${isDark ? 'Light Mode' : 'Dark Mode'}`;
+      localStorage.setItem('darkMode', isDark); // Persist preference
+    });
+
+    // Load saved dark mode preference
+    if (localStorage.getItem('darkMode') === 'true') {
+      body.classList.add('dark-mode');
+      icon.className = 'fa-solid fa-sun';
+      toggleButton.innerHTML = '<i class="fa-solid fa-sun"></i> Light Mode';
+    }
+
     /* ACTIVE NAV */
     const currentPage = window.location.pathname.split('/').pop();
     document.querySelectorAll("nav a").forEach(a => {
