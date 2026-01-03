@@ -347,62 +347,147 @@ footer a {
 }
 
 /* ===========================
-   ROOMS PAGE
+   ROOMS PAGE (ENHANCED IMAGE HANDLING)
 =========================== */
 .rooms-section {
   padding: 60px var(--spacing-unit);
   position: relative;
+  max-width: 1200px; /* Slightly wider for better grid fit */
+  margin: 0 auto;
+}
+
+.rooms-wrapper {
+  background: var(--card-bg);
+  padding: 40px var(--spacing-unit);
+  border-radius: var(--border-radius-large);
+  box-shadow: var(--shadow-strong);
+  border: 1px solid rgba(43, 108, 176, 0.1);
+  margin-bottom: 40px;
+}
+
+.rooms-wrapper h2 {
+  text-align: center;
+  color: var(--primary-color);
+  font-size: clamp(2rem, 4vw, 2.3rem); /* Fluid sizing */
+  margin-bottom: 30px;
 }
 
 .rooms-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-  gap: 25px;
-  max-width: 1100px;
-  margin: auto;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /* Increased min-width for better fit */
+  gap: 30px; /* Slightly larger gap for spacing */
+  max-width: 1200px;
+  margin: 0 auto;
 }
 
 .room-card {
   background: var(--card-bg);
   border-radius: var(--border-radius);
-  box-shadow: var(--shadow);
   overflow: hidden;
-  text-align: center;
-  padding-bottom: 15px;
+  box-shadow: var(--shadow);
+  border-left: 6px solid var(--primary-color); /* Replaced black with theme color */
+  transition: var(--transition);
+  padding-bottom: 20px;
   opacity: 0;
   transform: translateY(40px);
-  transition: var(--transition);
-  /* Enhanced hover */
+  /* Enhanced hover for better interaction */
   &:hover {
-    transform: translateY(-5px);
+    transform: translateY(-10px);
     box-shadow: var(--shadow-strong);
+    border-left-color: var(--secondary-color); /* Subtle color shift on hover */
   }
 }
 
 .room-card.visible {
   opacity: 1;
   transform: translateY(0);
+  transition: 0.6s ease;
 }
 
 .room-img-wrap {
-  height: 200px;
+  height: 220px; /* Slightly taller for better aspect ratio */
   overflow: hidden;
+  position: relative;
+  background: #f0f0f0; /* Fallback background for loading */
+  display: flex;
+  align-items: center; /* Center image vertically */
+  justify-content: center; /* Center image horizontally */
 }
 
-.room-img-wrap img {
+.main-image {
   width: 100%;
   height: 100%;
-  object-fit: cover;
+  object-fit: cover; /* Ensures consistent fitting without distortion */
+  object-position: center; /* Centers the image focus */
   cursor: pointer;
-  transition: var(--transition);
+  opacity: 1;
+  transition: opacity 0.4s ease-in-out, transform 0.3s ease;
+  /* Add loading state */
+  &:hover {
+    transform: scale(1.02); /* Subtle zoom on hover */
+  }
+  /* Fallback for broken images */
+  &:not([src]) {
+    content: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="100" height="100"><text x="50%" y="50%" text-anchor="middle" dy=".3em" font-size="12">Image Loading...</text></svg>');
+  }
 }
 
-.room-img-wrap img:hover {
-  transform: scale(1.05);
+.slide-arrow {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 28px;
+  background: rgba(255, 255, 255, 0.8); /* Lighter for visibility */
+  color: var(--primary-color); /* Theme color */
+  padding: 8px 12px;
+  border-radius: var(--border-radius);
+  cursor: pointer;
+  z-index: 10;
+  transition: var(--transition);
+  /* Focus state for accessibility */
+  &:focus {
+    outline: 2px solid var(--primary-color);
+    outline-offset: 2px;
+  }
+  &:hover {
+    background: var(--primary-color);
+    color: white;
+  }
+}
+
+.arrow-left { left: 10px; }
+.arrow-right { right: 10px; }
+
+.thumb-strip {
+  display: flex;
+  gap: 10px; /* Slightly larger gap */
+  padding: 15px;
+  justify-content: center;
+  flex-wrap: wrap; /* Wrap on small screens */
+}
+
+.thumb-strip img {
+  width: 65px; /* Slightly larger for better visibility */
+  height: 50px;
+  object-fit: cover;
+  object-position: center;
+  border-radius: var(--border-radius);
+  cursor: pointer;
+  border: 2px solid transparent;
+  transition: var(--transition);
+  /* Active state with theme color */
+  &.active {
+    border-color: var(--primary-color);
+    transform: scale(1.05); /* Slight scale for emphasis */
+  }
+  &:hover {
+    border-color: var(--secondary-color);
+    transform: scale(1.05);
+  }
 }
 
 /* ===========================
-   LIGHTBOX
+   LIGHTBOX (ENHANCED ALIGNMENT)
 =========================== */
 .lightbox {
   position: fixed;
@@ -410,22 +495,56 @@ footer a {
   left: 0;
   width: 100%;
   height: 100%;
-  background: rgba(0, 0, 0, 0.8);
+  background: rgba(0, 0, 0, 0.9); /* Darker for better contrast */
   display: none;
   justify-content: center;
   align-items: center;
-  z-index: 2000;
-}
-
-.lightbox.active {
-  display: flex;
+  flex-direction: column;
+  z-index: 3000;
+  /* Smooth fade-in */
+  transition: opacity 0.3s ease;
+  &.active {
+    display: flex;
+    opacity: 1;
+  }
 }
 
 .lightbox img {
-  max-width: 85%;
-  max-height: 85%;
+  max-width: 90vw; /* Responsive width */
+  max-height: 85vh; /* Responsive height */
   border-radius: var(--border-radius);
+  object-fit: contain; /* Prevents cropping, shows full image */
+  object-position: center;
+  transition: opacity 0.4s ease;
+  /* Ensure centering */
+  display: block;
+  margin: 0 auto;
 }
+
+.lightbox-arrow {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 48px;
+  color: white;
+  padding: 10px 18px;
+  cursor: pointer;
+  user-select: none;
+  background: rgba(0, 0, 0, 0.5);
+  border-radius: var(--border-radius);
+  transition: var(--transition);
+  /* Focus and hover states */
+  &:focus {
+    outline: 2px solid var(--primary-color);
+    outline-offset: 2px;
+  }
+  &:hover {
+    background: var(--primary-color);
+  }
+}
+
+.lightbox-left { left: 30px; }
+.lightbox-right { right: 30px; }
 
 /* ===========================
    RESPONSIVE (ENHANCED)
@@ -454,6 +573,30 @@ footer a {
   .about.improved-about {
     padding: 30px var(--spacing-unit);
   }
+
+  .room-img-wrap {
+    height: 180px; /* Shorter on mobile for better fit */
+  }
+
+  .thumb-strip img {
+    width: 50px;
+    height: 40px;
+  }
+
+  .slide-arrow {
+    font-size: 24px;
+    padding: 6px 10px;
+  }
+
+  .lightbox img {
+    max-width: 95vw;
+    max-height: 70vh;
+  }
+
+  .lightbox-arrow {
+    font-size: 36px;
+    padding: 8px 14px;
+  }
 }
 
 @media (max-width: 480px) {
@@ -477,5 +620,15 @@ footer a {
   .features-grid, .rooms-grid {
     gap: 18px;
     grid-template-columns: 1fr;
+  }
+
+  .thumb-strip {
+    padding: 10px;
+    gap: 8px;
+  }
+
+  .thumb-strip img {
+    width: 45px;
+    height: 35px;
   }
 }
