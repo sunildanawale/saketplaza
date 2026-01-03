@@ -3,119 +3,106 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Explore the vibrant gallery of Hotel Saket Plaza, showcasing our gardens, pool, dining, and more in Mahabaleshwar." />
+  <meta name="keywords" content="Hotel Saket Plaza gallery, Mahabaleshwar hotel photos, swimming pool, garden, dining hall, conference room" />
   <title>Gallery – Hotel Saket Plaza</title>
 
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
-
-  <style>
-    main {
-      max-width: 1100px;
-      margin: 40px auto;
-      background: white;
-      border-radius: 12px;
-      padding: 30px;
-      box-shadow: 0 6px 18px rgba(0,0,0,0.1);
-    }
-    h2 {
-      text-align: center;
-      font-size: 2.2rem;
-      color: #0a1a2a;
-      margin-bottom: 25px;
-    }
-    .gallery {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-      gap: 20px;
-    }
-    .gallery img {
-      width: 100%;
-      height: 200px;
-      object-fit: cover;
-      border-radius: 10px;
-      cursor: pointer;
-      transition: 0.3s ease;
-      box-shadow: 0 3px 10px rgba(0,0,0,0.15);
-    }
-    .gallery img:hover {
-      transform: scale(1.05);
-      box-shadow: 0 10px 25px rgba(0,0,0,0.25);
-    }
-
-    #gallery-lightbox {
-      position: fixed;
-      inset: 0;
-      background: rgba(0,0,0,0.9);
-      display: none;
-      justify-content: center;
-      align-items: center;
-      z-index: 9999;
-      cursor: pointer;
-    }
-    #gallery-lightbox img {
-      max-width: 90%;
-      max-height: 80%;
-      border-radius: 8px;
-      border: 3px solid white;
-    }
-  </style>
 </head>
 
 <body>
+  <!-- Dark Mode Toggle Button (for site-wide theme support) -->
+  <button id="dark-mode-toggle" class="btn" style="position: fixed; top: 10px; right: 10px; z-index: 1001; padding: 8px 12px; font-size: 0.9rem;" aria-label="Toggle dark mode">
+    <i class="fa-solid fa-moon"></i> Dark Mode
+  </button>
 
-<header class="main-header">
-  <h1>Hotel Saket Plaza</h1>
-  <p class="subtitle">Gallery – A Splash of Color and Comfort</p>
-</header>
+  <header class="main-header">
+    <div class="logo-box">
+      <h1>Hotel Saket Plaza</h1>
+      <p class="subtitle">Gallery – A Splash of Color and Comfort</p>
+    </div>
+  </header>
 
-<nav class="navbar">
-  <a href="index.html">Home</a>
-  <a href="rooms.html">Rooms</a>
-  <a href="gallery.html" class="active">Gallery</a>
-  <a href="facilities.html">Facilities</a>
-  <a href="tariff.html">Tariff</a>
-  <a href="contact.html">Contact</a>
-</nav>
+  <nav class="navbar">
+    <a href="index.html" aria-label="Go to Home page">Home</a>
+    <a href="rooms.html" aria-label="Go to Rooms page">Rooms</a>
+    <a href="gallery.html" aria-label="Go to Gallery page" class="active">Gallery</a>
+    <a href="facilities.html" aria-label="Go to Facilities page">Facilities</a>
+    <a href="tariff.html" aria-label="Go to Tariff page">Tariff</a>
+    <a href="contact.html" aria-label="Go to Contact page">Contact</a>
+  </nav>
 
-<main>
-  <h2>Photo Gallery</h2>
+  <section class="gallery-section" role="main" aria-labelledby="gallery-title">
+    <div class="gallery-wrapper">
+      <h2 id="gallery-title" class="section-title">Photo Gallery</h2>
 
-  <div class="gallery">
-    <img src="Images/Garden.jpg" alt="Beautiful Garden">
-    <img src="Images/Landscape.jpg" alt="Landscape View">
-    <img src="Images/Wedding.jpg" alt="Wedding Setup">
-    <img src="Images/movie-theater.jpg" alt="Movie Theater">
-    
-    <img src="Images/parking.jpg" alt="Parking Area">
-    <img src="Images/swimming-pool.jpg" alt="Swimming Pool">
-    <img src="Images/waterfall.jpg" alt="Waterfall">
-    <img src="Images/dining-hall.jpg" alt="Dining Hall">
-    <img src="Images/conference-hall.jpg" alt="Conference Hall">
-    <img src="Images/indoor-games.jpg" alt="Indoor Games">
-    <img src="Images/machan-night.jpg" alt="Machan Night View">
-    <img src="Images/swimming-pool-night.jpg" alt="Swimming Pool Night">
+      <div class="gallery-grid">
+        <img src="Images/Garden.jpg" alt="Beautiful Garden at Hotel Saket Plaza">
+        <img src="Images/Landscape.jpg" alt="Stunning Landscape View from the hotel">
+        <img src="Images/Wedding.jpg" alt="Elegant Wedding Setup in the gardens">
+        <img src="Images/movie-theater.jpg" alt="Cozy Movie Theater for entertainment">
+        
+        <img src="Images/parking.jpg" alt="Spacious Parking Area">
+        <img src="Images/swimming-pool.jpg" alt="Vibrant Swimming Pool with colors">
+        <img src="Images/waterfall.jpg" alt="Refreshing Waterfall feature">
+        <img src="Images/dining-hall.jpg" alt="Delicious Pure Veg Dining Hall">
+        <img src="Images/conference-hall.jpg" alt="Modern Conference Hall for events">
+        <img src="Images/indoor-games.jpg" alt="Fun Indoor Games Area">
+        <img src="Images/machan-night.jpg" alt="Romantic Machan Night View">
+        <img src="Images/swimming-pool-night.jpg" alt="Illuminated Swimming Pool at Night">
+      </div>
+    </div>
+  </section>
+
+  <div id="gallery-lightbox" onclick="this.style.display='none'" role="dialog" aria-modal="true" aria-labelledby="lightbox-title">
+    <img id="lightbox-img" src="" alt="Gallery image in lightbox">
   </div>
-</main>
 
-<div id="gallery-lightbox" onclick="this.style.display='none'">
-  <img id="lightbox-img" src="">
-</div>
+  <footer role="contentinfo">
+    <p>© 2025 Hotel Saket Plaza | Designed by <a href="#" aria-label="Visit designer Sunil Danawale's site">Sunil Danawale</a></p>
+  </footer>
 
-<footer>
-  <p>© 2025 Hotel Saket Plaza | Designed by <a href="#">Sunil Danawale</a></p>
-</footer>
+  <script>
+    // Dark mode toggle functionality
+    const toggleButton = document.getElementById('dark-mode-toggle');
+    const body = document.body;
+    const icon = toggleButton.querySelector('i');
 
-<script>
-  const lightbox = document.getElementById('gallery-lightbox');
-  const lightboxImg = document.getElementById('lightbox-img');
-  
-  document.querySelectorAll('.gallery img').forEach(image => {
-    image.onclick = () => {
-      lightbox.style.display = 'flex';
-      lightboxImg.src = image.src;
-    };
-  });
-</script>
+    toggleButton.addEventListener('click', () => {
+      body.classList.toggle('dark-mode');
+      const isDark = body.classList.contains('dark-mode');
+      icon.className = isDark ? 'fa-solid fa-sun' : 'fa-solid fa-moon';
+      toggleButton.innerHTML = `<i class="${icon.className}"></i> ${isDark ? 'Light Mode' : 'Dark Mode'}`;
+      localStorage.setItem('darkMode', isDark); // Persist preference
+    });
+
+    // Load saved dark mode preference
+    if (localStorage.getItem('darkMode') === 'true') {
+      body.classList.add('dark-mode');
+      icon.className = 'fa-solid fa-sun';
+      toggleButton.innerHTML = '<i class="fa-solid fa-sun"></i> Light Mode';
+    }
+
+    // Gallery lightbox functionality
+    const lightbox = document.getElementById('gallery-lightbox');
+    const lightboxImg = document.getElementById('lightbox-img');
+    
+    document.querySelectorAll('.gallery-grid img').forEach(image => {
+      image.addEventListener('click', () => {
+        lightbox.style.display = 'flex';
+        lightboxImg.src = image.src;
+        lightboxImg.alt = image.alt; // Update alt for accessibility
+      });
+    });
+
+    // Close lightbox on escape key
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape' && lightbox.style.display === 'flex') {
+        lightbox.style.display = 'none';
+      }
+    });
+  </script>
 
 </body>
 </html>
