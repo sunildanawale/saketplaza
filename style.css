@@ -1,17 +1,6 @@
 /* =========================== 
-   1. GLOBAL SETTINGS & SEO FONTS
+   GLOBAL STYLES
 =========================== */
-:root {
-  --primary: #0a1a2a;      /* Luxury Navy */
-  --accent: #d4a556;       /* Champagne Gold */
-  --secondary: #2b6cb0;    /* Complementary Blue */
-  --text: #333333;
-  --light-gray: #f8f9fa;
-  --white: #ffffff;
-  --shadow: 0 10px 30px rgba(0,0,0,0.08);
-  --transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
-}
-
 * {
   margin: 0;
   padding: 0;
@@ -19,269 +8,370 @@
 }
 
 body {
-  font-family: 'Poppins', sans-serif;
-  color: var(--text);
-  background-color: var(--light-gray);
-  line-height: 1.6;
+  font-family: "Poppins", sans-serif;
+  color: #333;
+  background: #f7f7f7;
   overflow-x: hidden;
 }
 
 h1, h2, h3 {
-  font-family: 'Playfair Display', serif;
-  color: var(--primary);
+  font-family: "Playfair Display", serif;
+}
+
+.section-title {
+  text-align: center;
+  font-size: 2.2rem;
+  margin-bottom: 20px;
+  color: #222;
 }
 
 /* ===========================
-   2. NAVIGATION (UPGRADED GLASS)
+   HEADER WITH WAVES
+=========================== */
+.main-header {
+  position: relative;
+  background: linear-gradient(135deg, #2b6cb0, #805ad5);
+  color: white;
+  padding: 80px 20px 40px;
+  text-align: center; /* Changed to center for consistent header title alignment across all pages */
+  overflow: hidden;
+}
+
+.logo-box {
+  /* Removed max-width, margin, and padding-left to allow full centering */
+}
+
+.logo-box h1 {
+  font-size: 2.5rem; /* Changed from 3rem to 2.5rem to match index.html and keep consistent size across all pages */
+  letter-spacing: 1px;
+}
+
+.subtitle {
+  font-size: 1.2rem;
+  opacity: 0.9;
+}
+
+.waves svg {
+  display: block;
+  width: 100%;
+  margin-top: -5px;
+}
+
+/* ===========================
+   NAVIGATION (GLASS NAV)
 =========================== */
 .navbar {
   width: 100%;
-  background: rgba(255, 255, 255, 0.95);
-  backdrop-filter: blur(10px);
-  padding: 15px 0;
+  background: rgba(255, 255, 255, 0.55);
+  backdrop-filter: blur(12px);
+  padding: 12px 0;
+  text-align: center;
   position: sticky;
   top: 0;
   z-index: 1000;
-  box-shadow: 0 2px 10px rgba(0,0,0,0.05);
-  text-align: center;
 }
 
 .navbar a {
   text-decoration: none;
-  margin: 0 15px;
-  font-size: 0.85rem;
-  text-transform: uppercase;
-  letter-spacing: 1.5px;
-  color: var(--primary);
-  font-weight: 600;
-  transition: var(--transition);
-  position: relative;
+  margin: 0 18px;
+  font-size: 1.05rem;
+  color: #444;
+  font-weight: 500;
+  transition: 0.3s;
 }
 
-.navbar a::after {
-  content: '';
-  position: absolute;
-  width: 0;
-  height: 2px;
-  bottom: -5px;
-  left: 0;
-  background-color: var(--accent);
-  transition: var(--transition);
-}
-
-.navbar a:hover::after, 
-.navbar a.active::after {
-  width: 100%;
-}
-
-.navbar a:hover {
-  color: var(--accent);
+.navbar a:hover,
+.navbar a.active {
+  color: #2b6cb0;
+  text-shadow: 0 0 10px rgba(43, 108, 176, 0.3);
 }
 
 /* ===========================
-   3. HEADER & HERO
+   HERO SECTION
 =========================== */
-.main-header {
-  background: linear-gradient(135deg, var(--primary), #1a2e44);
-  color: white;
-  padding: 60px 20px;
-  text-align: center;
-}
-
 .hero {
   position: relative;
-  height: 80vh;
-  background: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), 
-              url('Images/Cover Image.jpg') center/cover no-repeat;
+  height: 65vh;
+  background: url("Images/hero.jpg") center/cover no-repeat;
   display: flex;
   align-items: center;
   justify-content: center;
-  color: white;
+}
+
+.hero-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.35);
 }
 
 .hero-content {
-  z-index: 2;
+  position: relative;
+  color: white;
   text-align: center;
-  animation: fadeUp 1s ease-out;
+  animation: fadeUp 1.2s ease-out;
 }
 
 .hero-content h2 {
-  font-size: clamp(2rem, 6vw, 4rem);
-  color: white;
-  margin-bottom: 20px;
-}
-
-.btn-luxury {
-  display: inline-block;
-  padding: 15px 40px;
-  background: var(--accent);
-  color: white;
-  text-decoration: none;
-  font-weight: bold;
-  letter-spacing: 2px;
-  text-transform: uppercase;
-  transition: var(--transition);
-  border: 2px solid var(--accent);
-}
-
-.btn-luxury:hover {
-  background: transparent;
-  color: var(--accent);
-}
-
-/* ===========================
-   4. NEW ABOUT CARD SYSTEM
-=========================== */
-.about-cards-container {
-  padding: 80px 20px;
-  max-width: 1200px;
-  margin: 0 auto;
-}
-
-.about-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-  gap: 30px;
-}
-
-.info-card {
-  background: var(--white);
-  border-radius: 12px;
-  overflow: hidden;
-  box-shadow: var(--shadow);
-  transition: var(--transition);
-}
-
-.info-card:hover {
-  transform: translateY(-12px);
-  box-shadow: 0 20px 40px rgba(0,0,0,0.12);
-}
-
-.card-image {
-  height: 230px;
-}
-
-.card-image img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-}
-
-.card-text {
-  padding: 30px;
-}
-
-.card-tag {
-  display: inline-block;
-  background: var(--accent);
-  color: white;
-  padding: 3px 12px;
-  font-size: 0.7rem;
-  font-weight: bold;
-  text-transform: uppercase;
-  border-radius: 4px;
+  font-size: 2.8rem;
   margin-bottom: 10px;
 }
 
+.hero-content p {
+  font-size: 1.2rem;
+  margin-bottom: 20px;
+}
+
+.btn {
+  display: inline-block;
+  padding: 12px 22px;
+  background: #2b6cb0;
+  color: #fff;
+  text-decoration: none;
+  border-radius: 6px;
+  transition: 0.3s;
+}
+
+.btn:hover {
+  background: #1e4f8a;
+}
+
 /* ===========================
-   5. FEATURES SECTION
+   ABOUT SECTION
 =========================== */
+.about.improved-about {
+  max-width: 900px;
+  margin: 30px auto 50px; /* Reduced top margin for closer to hero */
+  padding: 0 20px;
+  text-align: center;
+  line-height: 1.7;
+  font-size: 1.1rem;
+  animation: fadeUp 1.2s ease-out;
+}
+
+.about-title {
+  font-size: 2rem;
+  margin-bottom: 25px;
+  color: #2b6cb0;
+}
+
+.about-content p {
+  margin-bottom: 18px;
+}
+
+/* Highlight text centered, colorful, one line */
+.highlight-text {
+  margin-top: 20px;
+  font-size: 1.3rem;
+  font-weight: 600;
+  text-align: center;
+  white-space: nowrap; /* Keep in one line */
+  overflow-x: auto;
+  background: linear-gradient(to right, #ff7eb3, #ff758c, #ffb347, #ff7e5f);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* Add subtle fade animation for About */
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(25px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* ===========================
+   FEATURES SECTION
+=========================== */
+.features {
+  padding: 50px 20px;
+}
+
 .features-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
   gap: 25px;
   max-width: 1100px;
-  margin: 40px auto;
-  padding: 0 20px;
+  margin: auto;
 }
 
 .feature-card {
   background: white;
-  padding: 40px 20px;
-  border-radius: 15px;
+  padding: 25px;
+  border-radius: 12px;
   text-align: center;
-  box-shadow: var(--shadow);
-  border-bottom: 4px solid transparent;
-  transition: var(--transition);
+  box-shadow: rgba(0, 0, 0, 0.12) 0px 4px 12px;
+  opacity: 0;
+  transform: translateY(40px);
+  transition: 0.5s ease-out;
 }
 
-.feature-card:hover {
-  border-color: var(--accent);
+.feature-card.show {
+  opacity: 1;
+  transform: translateY(0);
 }
 
 .feature-card i {
-  font-size: 2.5rem;
-  color: var(--accent);
-  margin-bottom: 15px;
+  font-size: 2.2rem;
+  margin-bottom: 12px;
+  color: #2b6cb0;
 }
 
 /* ===========================
-   6. ROOM CARDS & GALLERY
+   CONTACT SECTION
 =========================== */
-.room-card {
-  background: white;
-  border-radius: 15px;
-  overflow: hidden;
-  box-shadow: var(--shadow);
-  transition: var(--transition);
-}
-
-.thumb-strip img.active {
-  border: 2px solid var(--accent);
-}
-
-.gallery img {
-  border-radius: 10px;
-  transition: var(--transition);
-}
-
-.gallery img:hover {
-  transform: scale(1.05);
-}
-
-/* ===========================
-   7. ANIMATIONS & FOOTER
-=========================== */
-@keyframes fadeUp {
-  from { opacity: 0; transform: translateY(30px); }
-  to { opacity: 1; transform: translateY(0); }
-}
-
-footer {
-  background: var(--primary);
-  color: white;
-  padding: 40px 20px;
+.contact-details {
   text-align: center;
+  padding: 50px 30px;
+}
+
+.contact-items-center p a {
+  color: #2b6cb0;
+  text-decoration: none;
+}
+
+.contact-items-center p a:hover {
+  text-decoration: underline;
+}
+
+/* ===========================
+   FOOTER
+=========================== */
+footer {
+  text-align: center;
+  padding: 20px;
+  margin-top: 30px;
+  background: #222;
+  color: white;
+  font-size: 0.9rem;
 }
 
 footer a {
-  color: var(--accent);
+  color: #4da3ff;
   text-decoration: none;
 }
 
 /* ===========================
-   8. MOBILE RESPONSIVE FIXES
+   ROOMS PAGE
+=========================== */
+.rooms-section {
+  padding: 60px 20px;
+  position: relative;
+}
+
+.rooms-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 25px;
+  max-width: 1100px;
+  margin: auto;
+}
+
+.room-card {
+  background: white;
+  border-radius: 12px;
+  box-shadow: rgba(0, 0, 0, 0.15) 0px 4px 12px;
+  overflow: hidden;
+  text-align: center;
+  padding-bottom: 15px;
+  opacity: 0;
+  transform: translateY(40px);
+  transition: 0.5s ease-out;
+}
+
+.room-card.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.room-img-wrap {
+  height: 200px;
+  overflow: hidden;
+}
+
+.room-img-wrap img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  cursor: pointer;
+  transition: 0.4s;
+}
+
+.room-img-wrap img:hover {
+  transform: scale(1.05);
+}
+
+/* ===========================
+   LIGHTBOX
+=========================== */
+.lightbox {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.8);
+  display: none;
+  justify-content: center;
+  align-items: center;
+  z-index: 2000;
+}
+
+.lightbox.active {
+  display: flex;
+}
+
+.lightbox img {
+  max-width: 85%;
+  max-height: 85%;
+  border-radius: 10px;
+}
+
+/* ===========================
+   RESPONSIVE
 =========================== */
 @media (max-width: 768px) {
-  .navbar {
-    padding: 10px;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
+  .hero-content h2 {
+    font-size: 2.1rem;
   }
-  
+
   .navbar a {
-    margin: 5px 8px;
-    font-size: 0.75rem;
+    margin: 0 10px;
+    font-size: 0.95rem;
   }
-  
-  .hero { height: 60vh; }
-  
-  .hero-content h2 { font-size: 2.2rem; }
+
+  /* Make highlight text wrap nicely on mobile */
+  .highlight-text {
+    white-space: normal;
+    font-size: 1.1rem;
+  }
 }
 
 @media (max-width: 480px) {
-  .info-card { margin: 0 10px; }
-  
-  .card-image { height: 180px; }
+  .hero-content h2 {
+    font-size: 1.8rem;
+  }
+
+  .hero-content p {
+    font-size: 1rem;
+  }
+
+  .btn {
+    padding: 10px 18px;
+    font-size: 0.95rem;
+  }
+
+  .about-title {
+    font-size: 1.6rem;
+  }
+
+  .features-grid {
+    gap: 18px;
+  }
 }
