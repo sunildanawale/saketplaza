@@ -1,36 +1,121 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8"><title>Gallery | Hotel Saket Plaza</title>
-    <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Gallery – Hotel Saket Plaza</title>
+
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+
+  <style>
+    main {
+      max-width: 1100px;
+      margin: 40px auto;
+      background: white;
+      border-radius: 12px;
+      padding: 30px;
+      box-shadow: 0 6px 18px rgba(0,0,0,0.1);
+    }
+    h2 {
+      text-align: center;
+      font-size: 2.2rem;
+      color: #0a1a2a;
+      margin-bottom: 25px;
+    }
+    .gallery {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 20px;
+    }
+    .gallery img {
+      width: 100%;
+      height: 200px;
+      object-fit: cover;
+      border-radius: 10px;
+      cursor: pointer;
+      transition: 0.3s ease;
+      box-shadow: 0 3px 10px rgba(0,0,0,0.15);
+    }
+    .gallery img:hover {
+      transform: scale(1.05);
+      box-shadow: 0 10px 25px rgba(0,0,0,0.25);
+    }
+
+    #gallery-lightbox {
+      position: fixed;
+      inset: 0;
+      background: rgba(0,0,0,0.9);
+      display: none;
+      justify-content: center;
+      align-items: center;
+      z-index: 9999;
+      cursor: pointer;
+    }
+    #gallery-lightbox img {
+      max-width: 90%;
+      max-height: 80%;
+      border-radius: 8px;
+      border: 3px solid white;
+    }
+  </style>
 </head>
+
 <body>
-    <header class="main-header"><h1>Visual Gallery</h1></header>
-    <nav class="navbar">
-        <a href="index.html">Home</a><a href="rooms.html">Rooms</a><a href="gallery.html" class="active">Gallery</a><a href="facilities.html">Facilities</a><a href="tariff.html">Tariff</a><a href="contact.html">Contact</a>
-    </nav>
 
-    <div class="grid-container">
-        <div class="room-img-wrap" onclick="openLB(this)"><img src="Images/gal1.jpg"></div>
-        <div class="room-img-wrap" onclick="openLB(this)"><img src="Images/gal2.jpg"></div>
-        <div class="room-img-wrap" onclick="openLB(this)"><img src="Images/gal3.jpg"></div>
-        <div class="room-img-wrap" onclick="openLB(this)"><img src="Images/gal4.jpg"></div>
-        <div class="room-img-wrap" onclick="openLB(this)"><img src="Images/gal5.jpg"></div>
-        <div class="room-img-wrap" onclick="openLB(this)"><img src="Images/gal6.jpg"></div>
-        <div class="room-img-wrap" onclick="openLB(this)"><img src="Images/gal7.jpg"></div>
-        <div class="room-img-wrap" onclick="openLB(this)"><img src="Images/gal8.jpg"></div>
-        <div class="room-img-wrap" onclick="openLB(this)"><img src="Images/gal9.jpg"></div>
-    </div>
+<header class="main-header">
+  <h1>Hotel Saket Plaza</h1>
+  <p class="subtitle">Gallery – A Splash of Color and Comfort</p>
+</header>
 
-    <div id="lb" class="lightbox" onclick="this.classList.remove('active')">
-        <img id="lb-img">
-    </div>
+<nav class="navbar">
+  <a href="index.html">Home</a>
+  <a href="rooms.html">Rooms</a>
+  <a href="gallery.html" class="active">Gallery</a>
+  <a href="facilities.html">Facilities</a>
+  <a href="tariff.html">Tariff</a>
+  <a href="contact.html">Contact</a>
+</nav>
 
-    <script>
-        function openLB(el) {
-            document.getElementById('lb-img').src = el.querySelector('img').src;
-            document.getElementById('lb').classList.add('active');
-        }
-    </script>
+<main>
+  <h2>Photo Gallery</h2>
+
+  <div class="gallery">
+    <img src="Images/Garden.jpg" alt="Beautiful Garden">
+    <img src="Images/Landscape.jpg" alt="Landscape View">
+    <img src="Images/Wedding.jpg" alt="Wedding Setup">
+    <img src="Images/movie-theater.jpg" alt="Movie Theater">
+    
+    <img src="Images/parking.jpg" alt="Parking Area">
+    <img src="Images/swimming-pool.jpg" alt="Swimming Pool">
+    <img src="Images/waterfall.jpg" alt="Waterfall">
+    <img src="Images/dining-hall.jpg" alt="Dining Hall">
+    <img src="Images/conference-hall.jpg" alt="Conference Hall">
+    <img src="Images/indoor-games.jpg" alt="Indoor Games">
+    <img src="Images/machan-night.jpg" alt="Machan Night View">
+    <img src="Images/swimming-pool-night.jpg" alt="Swimming Pool Night">
+  </div>
+</main>
+
+<div id="gallery-lightbox" onclick="this.style.display='none'">
+  <img id="lightbox-img" src="">
+</div>
+
+<footer>
+  <p>© 2025 Hotel Saket Plaza | Designed by <a href="#">Sunil Danawale</a></p>
+</footer>
+
+<script>
+  const lightbox = document.getElementById('gallery-lightbox');
+  const lightboxImg = document.getElementById('lightbox-img');
+  
+  document.querySelectorAll('.gallery img').forEach(image => {
+    image.onclick = () => {
+      lightbox.style.display = 'flex';
+      lightboxImg.src = image.src;
+    };
+  });
+</script>
+
 </body>
 </html>
