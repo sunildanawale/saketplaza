@@ -21,12 +21,12 @@
       color: #2b6cb0; /* Theme Blue */
       font-family: "Playfair Display", serif;
       font-size: 2.5rem;
-      margin-bottom: 30px;
+      margin-bottom: 35px;
     }
 
     .rooms-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
       gap: 30px;
     }
 
@@ -36,7 +36,7 @@
       overflow: hidden;
       box-shadow: rgba(0, 0, 0, 0.12) 0px 4px 12px;
       transition: 0.3s ease;
-      padding-bottom: 20px;
+      padding-bottom: 25px;
       opacity: 0;
       transform: translateY(40px);
       text-align: center;
@@ -54,18 +54,20 @@
     }
 
     .room-card h3 {
-      margin: 15px 0 5px;
+      margin: 20px 0 10px;
       color: #2b6cb0;
-      font-size: 1.5rem;
+      font-family: "Playfair Display", serif;
+      font-size: 1.6rem;
     }
 
     .room-card p {
-      padding: 0 15px;
+      padding: 0 20px;
       font-size: 0.95rem;
-      color: #666;
+      color: #555;
+      line-height: 1.5;
     }
 
-    /* Slideshow Container */
+    /* Slideshow Section */
     .room-img-wrap {
       height: 230px;
       overflow: hidden;
@@ -84,7 +86,7 @@
       position: absolute;
       top: 50%;
       transform: translateY(-50%);
-      background: rgba(255, 255, 255, 0.8);
+      background: rgba(255, 255, 255, 0.9);
       color: #2b6cb0;
       width: 35px;
       height: 35px;
@@ -96,7 +98,7 @@
       z-index: 10;
       transition: 0.3s;
       font-size: 14px;
-      box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
     }
     .slide-arrow:hover { background: #2b6cb0; color: #fff; }
     .arrow-left { left: 10px; }
@@ -148,11 +150,11 @@
       top: 20px;
       right: 30px;
       color: white;
-      font-size: 40px;
+      font-size: 45px;
       cursor: pointer;
       transition: 0.3s;
     }
-    .lightbox-close:hover { color: #ff7e5f; }
+    .lightbox-close:hover { color: #2b6cb0; }
 
     .lightbox-arrow {
       position: absolute;
@@ -163,8 +165,9 @@
       padding: 20px;
       cursor: pointer;
       user-select: none;
+      transition: 0.3s;
     }
-
+    .lightbox-arrow:hover { color: #2b6cb0; }
     .lightbox-left { left: 10px; }
     .lightbox-right { right: 10px; }
   </style>
@@ -204,7 +207,7 @@
             <img src="Images/luxury-room2.jpg">
           </div>
           <h3>Luxury Room</h3>
-          <p>Modern elegance with premium interiors designed for ultimate relaxation.</p>
+          <p>Modern elegance with premium interiors designed for ultimate relaxation and style.</p>
         </div>
 
         <div class="room-card" data-images="club-room.jpg,club-room1.jpg,club-room2.jpg">
@@ -219,7 +222,7 @@
             <img src="Images/club-room2.jpg">
           </div>
           <h3>Club Room</h3>
-          <p>Spacious and cozy — perfect for families who enjoy comfort and style.</p>
+          <p>Spacious and cozy — perfect for families who enjoy premium comfort and additional space.</p>
         </div>
 
         <div class="room-card" data-images="cottage.jpg,cottage1.jpg,cottage2.jpg">
@@ -234,7 +237,7 @@
             <img src="Images/cottage2.jpg">
           </div>
           <h3>Cottage</h3>
-          <p>Enjoy a private Jacuzzi, rain shower and serene outdoor sit-out area.</p>
+          <p>Enjoy a private Jacuzzi, rain shower, and a serene outdoor sit-out area for total privacy.</p>
         </div>
 
         <div class="room-card" data-images="premium-queen.jpg,premium-queen1.jpg,premium-queen2.jpg">
@@ -249,7 +252,22 @@
             <img src="Images/premium-queen2.jpg">
           </div>
           <h3>Premium Queen</h3>
-          <p>Elegant interiors with attached Jacuzzi and balcony overlooking greenery.</p>
+          <p>Elegant interiors with an attached Jacuzzi and balcony overlooking our lush greenery.</p>
+        </div>
+
+        <div class="room-card" data-images="premium-king.jpg,premium-king1.jpg,premium-king2.jpg">
+          <div class="room-img-wrap">
+            <span class="slide-arrow arrow-left"><i class="fa-solid fa-chevron-left"></i></span>
+            <img class="main-image" src="Images/premium-king.jpg">
+            <span class="slide-arrow arrow-right"><i class="fa-solid fa-chevron-right"></i></span>
+          </div>
+          <div class="thumb-strip">
+            <img src="Images/premium-king.jpg" class="active">
+            <img src="Images/premium-king1.jpg">
+            <img src="Images/premium-king2.jpg">
+          </div>
+          <h3>Premium King</h3>
+          <p>A luxurious suite with a Jacuzzi and private patio — the pinnacle of luxury at Saket Plaza.</p>
         </div>
 
       </div>
@@ -337,7 +355,7 @@
       if (e.target === lightbox) lightbox.classList.remove("active");
     });
 
-    /* Intersection Observer for Fade In */
+    /* Intersection Observer for Fade In Animation */
     const observer = new IntersectionObserver(entries => {
       entries.forEach(entry => {
         if (entry.isIntersecting) {
