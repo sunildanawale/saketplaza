@@ -1,144 +1,20 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Facilities – Hotel Saket Plaza</title>
-
-  <!-- Fonts -->
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" />
-
-  <!-- GLOBAL CSS -->
   <link rel="stylesheet" href="style.css" />
-
-  <style>
-    /* ---------------------------------------------------------
-        PAGE ONLY CSS (Does NOT affect header/navbar/global style)
-    --------------------------------------------------------- */
-
-    main {
-      max-width: 1100px;
-      margin: 40px auto;
-      padding: 20px;
-    }
-
-    /* ABOUT SECTION */
-    .about-wrapper {
-      background: #ffffff;
-      padding: 35px;
-      border-radius: 14px;
-      box-shadow: 0px 6px 20px rgba(0, 0, 0, 0.12);
-      border: 1px solid #e6e6e6;
-      margin-bottom: 50px;
-    }
-
-    .about-wrapper h2 {
-      text-align: center;
-      font-size: 2rem;
-      margin-bottom: 20px;
-      color: #0a1a2a;
-    }
-
-    .about-wrapper p {
-      color: #444;
-      line-height: 1.7;
-      margin-bottom: 15px;
-      text-align: justify;
-    }
-
-    .quote-box {
-      margin-top: 20px;
-      padding: 15px;
-      border-radius: 12px;
-      background: #fff8e1;
-      border: 2px dashed #e6b24d;
-      color: #d48824;
-      text-align: center;
-      font-size: 1.15rem;
-      font-weight: 600;
-    }
-
-    /* FACILITIES SECTION */
-    .facilities-wrapper {
-      background: #ffffff;
-      padding: 35px;
-      border-radius: 14px;
-      box-shadow: 0px 6px 20px rgba(0, 0, 0, 0.12);
-      border: 1px solid #e6e6e6;
-      margin-bottom: 40px;
-    }
-
-    .facilities-wrapper h2 {
-      text-align: center;
-      color: #d4a556;
-      font-size: 2.2rem;
-      margin-bottom: 30px;
-    }
-
-    .facility-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-      gap: 25px;
-    }
-
-    .facility-card {
-      padding: 25px;
-      background: #fff;
-      border-radius: 12px;
-      border-left: 6px solid #0a1a2a;
-      transition: 0.3s ease;
-      box-shadow: 0px 6px 14px rgba(0, 0, 0, 0.10);
-    }
-
-    .facility-card:hover {
-      transform: translateY(-8px);
-      box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.18);
-    }
-
-    .facility-card h3 {
-      display: flex;
-      align-items: center;
-      gap: 12px;
-      color: #0a1a2a;
-      margin-bottom: 12px;
-      padding-bottom: 10px;
-      border-bottom: 1px solid #e8e8e8;
-      font-size: 1.25rem;
-    }
-
-    .facility-card h3 i {
-      background: #d4a556;
-      color: #fff;
-      padding: 12px;
-      border-radius: 50%;
-      font-size: 1.2rem;
-    }
-
-    .facility-card p {
-      color: #555;
-      line-height: 1.6;
-    }
-
-    @media (max-width: 768px) {
-      .facility-card {
-        padding: 20px;
-      }
-    }
-  </style>
-
 </head>
-
 <body>
 
-  <!-- HEADER -->
   <header class="main-header">
     <h1>Hotel Saket Plaza</h1>
-    <p class="subtitle">Facilities & Amenities</p>
+    <p>Facilities & Guest Amenities</p>
   </header>
 
-  <!-- NAVIGATION -->
   <nav class="navbar">
     <a href="index.html">Home</a>
     <a href="rooms.html">Rooms</a>
@@ -148,90 +24,31 @@
     <a href="contact.html">Contact</a>
   </nav>
 
-  <main>
-
-    <!-- ABOUT SECTION -->
-    <div class="about-wrapper">
-      <h2>About Mahabaleshwar & Hotel Saket Plaza</h2>
-
-      <p>Situated 1,372 metres above sea level and just 275 km from Mumbai, Mahabaleshwar is a paradise for nature lovers. Cool climate, stunning viewpoints, evergreen forests, and peaceful surroundings make it one of India’s most loved hill stations.</p>
-
-      <p>At Hotel Saket Plaza, we combine **Nature + Luxury** to give you a memorable holiday experience. Perfect for families, couples, corporate groups and travellers seeking comfort with world-class hospitality.</p>
-
-      <div class="quote-box">Nature existed. We added luxury.</div>
+  <main style="max-width: 1100px; margin: 40px auto; padding: 0 20px;">
+    
+    <div style="background:white; padding:40px; border-radius:15px; box-shadow:var(--shadow); margin-bottom:50px; text-align:center;">
+      <h2 style="margin-bottom:20px;">About Mahabaleshwar & Our Resort</h2>
+      <p style="margin-bottom:15px; color:#555;">Situated 1,372 metres above sea level and just 275 km from Mumbai, Mahabaleshwar is a paradise for nature lovers. Cool climate, stunning viewpoints, and evergreen forests make it India’s most loved hill station.</p>
+      <p style="margin-bottom:20px; color:#555;">At Hotel Saket Plaza, we combine <strong>Nature + Luxury</strong> to give you a memorable holiday experience. Perfect for families, couples, and corporate groups seeking comfort with world-class hospitality.</p>
+      <div style="background:#fff8e1; padding:15px; border:2px dashed #e6b24d; color:#d48824; font-weight:600; border-radius:10px;">Nature existed. We added luxury.</div>
     </div>
 
-    <!-- FACILITIES SECTION -->
-    <div class="facilities-wrapper">
-      <h2>Exclusive Facilities & Amenities</h2>
-
-      <div class="facility-grid">
-
-        <div class="facility-card">
-          <h3><i class="fas fa-utensils"></i> Pure Vegetarian Dining</h3>
-          <p>Hygienic, freshly prepared vegetarian dishes served with warmth.</p>
-        </div>
-
-        <div class="facility-card">
-          <h3><i class="fas fa-swimmer"></i> Multi-Colour Swimming Pool</h3>
-          <p>Enjoy vibrant lighting effects, relaxing ambience and waterfall views.</p>
-        </div>
-
-        <div class="facility-card">
-          <h3><i class="fas fa-tree"></i> Scenic Machan with Fountains</h3>
-          <p>A peaceful elevated viewpoint for relaxation and photography.</p>
-        </div>
-
-        <div class="facility-card">
-          <h3><i class="fas fa-leaf"></i> Landscaped Garden</h3>
-          <p>Perfect for nature walks, meditation and family time.</p>
-        </div>
-
-        <div class="facility-card">
-          <h3><i class="fas fa-desktop"></i> Mini Theatre & Conference Room</h3>
-          <p>Ideal for events, meetings or a premium movie experience.</p>
-        </div>
-
-        <div class="facility-card">
-          <h3><i class="fas fa-gamepad"></i> Indoor Games Room</h3>
-          <p>Includes carrom, chess, table tennis and other entertainment options.</p>
-        </div>
-
-        <div class="facility-card">
-          <h3><i class="fas fa-wifi"></i> Free High-Speed Wi-Fi</h3>
-          <p>Stay connected with strong and fast network coverage.</p>
-        </div>
-
-        <div class="facility-card">
-          <h3><i class="fas fa-car"></i> Private Parking</h3>
-          <p>Ample parking space for cars and travellers.</p>
-        </div>
-
-        <div class="facility-card">
-          <h3><i class="fas fa-shield-alt"></i> 24×7 Security</h3>
-          <p>Full CCTV surveillance and complete power backup.</p>
-        </div>
-
-      </div>
+    <h2 style="text-align:center; margin-bottom:40px;">Exclusive Amenities</h2>
+    <div class="features-grid" style="margin-top:0;">
+      <div class="feature-card"><i class="fas fa-utensils"></i><h3>Pure Veg Dining</h3><p>Hygienic, freshly prepared vegetarian dishes served with warmth.</p></div>
+      <div class="feature-card"><i class="fas fa-swimmer"></i><h3>Vibrant Pool</h3><p>Multi-colour pool with relaxing ambience and waterfall views.</p></div>
+      <div class="feature-card"><i class="fas fa-tree"></i><h3>Scenic Machan</h3><p>A peaceful elevated viewpoint for relaxation and photography.</p></div>
+      <div class="feature-card"><i class="fas fa-desktop"></i><h3>Conference Hall</h3><p>Ideal for events, corporate meetings or movie experiences.</p></div>
+      <div class="feature-card"><i class="fas fa-gamepad"></i><h3>Indoor Games</h3><p>Table tennis, carrom, and chess in a dedicated fun zone.</p></div>
+      <div class="feature-card"><i class="fas fa-wifi"></i><h3>High-Speed Wi-Fi</h3><p>Stay connected with strong network coverage throughout the resort.</p></div>
+      <div class="feature-card"><i class="fas fa-car"></i><h3>Private Parking</h3><p>Safe and ample parking space for all guest vehicles.</p></div>
+      <div class="feature-card"><i class="fas fa-shield-alt"></i><h3>24/7 Security</h3><p>Full CCTV surveillance and complete power backup support.</p></div>
     </div>
-
   </main>
 
-  <!-- FOOTER -->
   <footer>
-    <p>© 2025 Hotel Saket Plaza | Designed by <a href="#">Sunil Danawale</a></p>
+    <p>© 2026 Hotel Saket Plaza | Designed by Sunil Danawale</p>
   </footer>
 
-  <!-- FLOATING BUTTONS -->
-  <div class="floating-buttons">
-    <a href="https://wa.me/919420972666" target="_blank" class="whatsapp">💬</a>
-    <a href="tel:+912168260583" class="call-now">📞</a>
-  </div>
-
-  <!-- BACK TO TOP -->
-  <div id="backToTop">⬆️</div>
-
-  <script src="script.js"></script>
 </body>
-
 </html>
