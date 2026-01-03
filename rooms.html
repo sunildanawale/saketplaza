@@ -1,75 +1,36 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8"><title>Rooms | Hotel Saket Plaza</title>
-  <link rel="stylesheet" href="style.css">
+    <meta charset="UTF-8"><title>Rooms | Hotel Saket Plaza</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <nav class="navbar">
-    <a href="index.html">Home</a><a href="rooms.html" class="active">Rooms</a><a href="gallery.html">Gallery</a><a href="facilities.html">Facilities</a><a href="tariff.html">Tariff</a><a href="contact.html">Contact</a>
-  </nav>
+    <header class="main-header"><h1>Our Accommodations</h1></header>
+    <nav class="navbar">
+        <a href="index.html">Home</a><a href="rooms.html" class="active">Rooms</a><a href="gallery.html">Gallery</a><a href="facilities.html">Facilities</a><a href="tariff.html">Tariff</a><a href="contact.html">Contact</a>
+    </nav>
 
-  <h2 style="text-align:center; margin-top:40px;">Our Premium Accommodations</h2>
-  
-  <div class="rooms-grid">
-    <div class="room-card" style="background:white; border-radius:12px; overflow:hidden; box-shadow:var(--shadow);">
-      <div class="room-img-wrap" onclick="openLightbox(0, roomData)"><img src="Images/luxury-room.jpg"></div>
-      <div style="padding:20px; text-align:center;"><h3>Luxury Room</h3><p>Elegance with modern AC comfort.</p></div>
-    </div>
-    <div class="room-card" style="background:white; border-radius:12px; overflow:hidden; box-shadow:var(--shadow);">
-      <div class="room-img-wrap" onclick="openLightbox(1, roomData)"><img src="Images/club-room.jpg"></div>
-      <div style="padding:20px; text-align:center;"><h3>Club Room</h3><p>Spacious comfort for the whole family.</p></div>
-    </div>
-    <div class="room-card" style="background:white; border-radius:12px; overflow:hidden; box-shadow:var(--shadow);">
-      <div class="room-img-wrap" onclick="openLightbox(2, roomData)"><img src="Images/cottage.jpg"></div>
-      <div style="padding:20px; text-align:center;"><h3>Cottage (Jacuzzi)</h3><p>Private Jacuzzi and rain showers.</p></div>
-    </div>
-    <div class="room-card" style="background:white; border-radius:12px; overflow:hidden; box-shadow:var(--shadow);">
-      <div class="room-img-wrap" onclick="openLightbox(3, roomData)"><img src="Images/premium-queen.jpg"></div>
-      <div style="padding:20px; text-align:center;"><h3>Premium Queen</h3><p>Attached Jacuzzi with garden views.</p></div>
-    </div>
-    <div class="room-card" style="background:white; border-radius:12px; overflow:hidden; box-shadow:var(--shadow);">
-      <div class="room-img-wrap" onclick="openLightbox(4, roomData)"><img src="Images/premium-king.jpg"></div>
-      <div style="padding:20px; text-align:center;"><h3>Premium King</h3><p>Royal suite with premium decor.</p></div>
-    </div>
-  </div>
+    <div class="grid-container">
+        <div class="room-card" data-photos='["Images/luxury1.jpg", "Images/luxury2.jpg", "Images/luxury3.jpg"]'>
+            <div class="room-img-wrap">
+                <button class="slide-btn prev" onclick="moveSlide(this, -1)">&#10094;</button>
+                <img src="Images/luxury1.jpg" class="slide-img">
+                <button class="slide-btn next" onclick="moveSlide(this, 1)">&#10095;</button>
+            </div>
+            <h3>Luxury Room</h3>
+            <p>Spacious with premium AC and LCD TV.</p>
+        </div>
+        </div>
 
-  <div id="lb" class="lightbox">
-    <span class="lb-close" onclick="closeLightbox()">&times;</span>
-    <div class="lb-nav">
-      <button class="lb-btn" onclick="changeSlide(-1)">&#10094;</button>
-      <button class="lb-btn" onclick="changeSlide(1)">&#10095;</button>
-    </div>
-    <img id="lb-img" src="">
-    <p id="lb-cap" class="lb-caption"></p>
-  </div>
-
-  <script>
-    const roomData = [
-      {src: 'Images/luxury-room.jpg', cap: 'Luxury Room'},
-      {src: 'Images/club-room.jpg', cap: 'Club Room'},
-      {src: 'Images/cottage.jpg', cap: 'Cottage with Jacuzzi'},
-      {src: 'Images/premium-queen.jpg', cap: 'Premium Queen'},
-      {src: 'Images/premium-king.jpg', cap: 'Premium King'}
-    ];
-    let currentIndex = 0;
-    let currentSet = [];
-
-    function openLightbox(index, set) {
-      currentIndex = index;
-      currentSet = set;
-      updateLightbox();
-      document.getElementById('lb').classList.add('active');
-    }
-    function closeLightbox() { document.getElementById('lb').classList.remove('active'); }
-    function updateLightbox() {
-      document.getElementById('lb-img').src = currentSet[currentIndex].src;
-      document.getElementById('lb-cap').innerText = currentSet[currentIndex].cap;
-    }
-    function changeSlide(n) {
-      currentIndex = (currentIndex + n + currentSet.length) % currentSet.length;
-      updateLightbox();
-    }
-  </script>
+    <script>
+        function moveSlide(btn, dir) {
+            const card = btn.closest('.room-card');
+            const photos = JSON.parse(card.dataset.photos);
+            const img = card.querySelector('.slide-img');
+            let idx = photos.indexOf(img.getAttribute('src'));
+            idx = (idx + dir + photos.length) % photos.length;
+            img.src = photos[idx];
+        }
+    </script>
 </body>
 </html>
