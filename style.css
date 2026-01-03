@@ -82,15 +82,14 @@ h1, h2, h3 {
 .navbar a:hover,
 .navbar a.active {
   color: #2b6cb0;
-  text-shadow: 0 0 10px rgba(43, 108, 176, 0.2);
 }
 
 /* ===========================
-    HERO SECTION
+    HERO SECTION (LARGER)
 =========================== */
 .hero {
   position: relative;
-  height: 65vh;
+  height: 80vh; /* Increased from 65vh to 80vh for a bigger impact */
   background: url("Images/hero.jpg") center/cover no-repeat;
   display: flex;
   align-items: center;
@@ -111,49 +110,54 @@ h1, h2, h3 {
   color: white;
   text-align: center;
   animation: fadeUp 1.2s ease-out;
+  padding: 0 20px;
 }
 
 .hero-content h2 {
-  font-size: 3rem;
+  font-size: 3.5rem; /* Slightly larger text */
   margin-bottom: 15px;
-  text-shadow: 0 2px 10px rgba(0,0,0,0.3);
+  text-shadow: 0 2px 10px rgba(0,0,0,0.4);
+}
+
+.hero-content p {
+  font-size: 1.4rem;
+  margin-bottom: 25px;
 }
 
 /* ===========================
-    ABOUT SECTION (ENHANCED CARD)
+    ABOUT SECTION (SMALLER CARD)
 =========================== */
 .about.improved-about {
-  max-width: 950px;
-  margin: 60px auto;
-  padding: 50px 60px;
+  max-width: 800px; /* Reduced width for a more compact look */
+  margin: 50px auto;
+  padding: 40px 50px; /* Reduced padding */
   text-align: center;
   background: #ffffff;
   border-radius: 20px;
   box-shadow: 0 15px 40px rgba(0, 0, 0, 0.06);
-  border-top: 5px solid #2b6cb0; /* Top accent color */
+  border-top: 5px solid #2b6cb0;
   animation: fadeUp 1.2s ease-out;
 }
 
 .about-title {
-  font-size: 2rem;
-  margin-bottom: 25px;
+  font-size: 1.7rem; /* Smaller title */
+  margin-bottom: 20px;
   color: #2b6cb0;
   font-weight: 700;
 }
 
 .about-content p {
-  margin-bottom: 20px;
-  font-size: 1.1rem;
-  line-height: 1.9;
+  margin-bottom: 15px;
+  font-size: 1rem; /* Smaller font size */
+  line-height: 1.7;
   color: #555;
-  text-align: justify;
-  text-justify: inter-word;
+  text-align: center; /* Changed from justify to center for a compact feel */
 }
 
 .highlight-text {
   display: block;
-  margin-top: 35px;
-  font-size: 1.4rem;
+  margin-top: 25px;
+  font-size: 1.2rem;
   font-weight: 700;
   text-align: center;
   background: linear-gradient(90deg, #2b6cb0, #ff758c, #ffb347, #2b6cb0);
@@ -164,11 +168,10 @@ h1, h2, h3 {
 }
 
 /* ===========================
-    FEATURES SECTION (ANIMATED CARDS)
+    FEATURES SECTION
 =========================== */
 .features {
   padding: 60px 20px;
-  background: #fdfdfd;
 }
 
 .features-grid {
@@ -185,24 +188,9 @@ h1, h2, h3 {
   border-radius: 15px;
   text-align: center;
   box-shadow: 0 8px 20px rgba(0, 0, 0, 0.05);
-  border: 1px solid rgba(0,0,0,0.03);
-  position: relative;
-  overflow: hidden;
-  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  transition: all 0.4s ease;
   opacity: 0;
   transform: translateY(40px);
-}
-
-/* Gradient accent bar on card top */
-.feature-card::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 4px;
-  background: linear-gradient(to right, #2b6cb0, #805ad5);
-  opacity: 0.7;
 }
 
 .feature-card.show {
@@ -211,68 +199,62 @@ h1, h2, h3 {
 }
 
 .feature-card:hover {
-  transform: translateY(-12px);
-  box-shadow: 0 20px 40px rgba(43, 108, 176, 0.15);
-  border-color: #2b6cb0;
+  transform: translateY(-10px);
+  box-shadow: 0 15px 30px rgba(43, 108, 176, 0.1);
 }
 
 .feature-card i {
-  font-size: 2.8rem;
-  margin-bottom: 20px;
-  color: #2b6cb0;
-  transition: transform 0.4s ease;
-}
-
-.feature-card:hover i {
-  transform: scale(1.2) rotate(5deg);
-  color: #805ad5;
-}
-
-.feature-card h3 {
+  font-size: 2.5rem;
   margin-bottom: 15px;
-  font-size: 1.4rem;
-  color: #222;
-}
-
-.feature-card p {
-  font-size: 0.95rem;
-  line-height: 1.6;
-  color: #666;
+  color: #2b6cb0;
 }
 
 /* ===========================
-    CONTACT & FOOTER
+    CONTACT SECTION (CENTERED)
 =========================== */
 .contact-details {
   background: #fff;
-  padding: 60px 30px;
+  padding: 60px 20px;
+  text-align: center; /* Entire section centered */
+}
+
+.contact-details p {
+  font-size: 1.1rem;
+  margin-bottom: 20px;
+  color: #444;
+}
+
+.contact-items-center {
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* Centers the content inside */
+  gap: 10px;
 }
 
 .contact-items-center p {
-  font-size: 1.1rem;
-  margin: 10px 0;
+  margin: 5px 0;
+  font-weight: 500;
 }
 
+.contact-items-center a {
+  color: #2b6cb0;
+  text-decoration: none;
+  font-weight: 600;
+  transition: 0.3s;
+}
+
+.contact-items-center a:hover {
+  color: #805ad5;
+}
+
+/* ===========================
+    FOOTER
+=========================== */
 footer {
   text-align: center;
   padding: 30px;
   background: #1a202c;
   color: white;
-}
-
-/* ===========================
-    ROOMS PAGE
-=========================== */
-.room-card {
-  background: white;
-  border-radius: 15px;
-  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
-  overflow: hidden;
-  transition: transform 0.3s ease;
-}
-
-.room-card:hover {
-  transform: scale(1.02);
 }
 
 /* ===========================
@@ -288,16 +270,7 @@ footer {
 }
 
 @media (max-width: 768px) {
-  .about.improved-about {
-    margin: 40px 15px;
-    padding: 35px 20px;
-  }
-  
-  .about-content p {
-    text-align: center;
-  }
-
-  .hero-content h2 {
-    font-size: 2.2rem;
-  }
+  .hero { height: 60vh; }
+  .hero-content h2 { font-size: 2.2rem; }
+  .about.improved-about { padding: 30px 20px; }
 }
