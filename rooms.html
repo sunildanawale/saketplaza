@@ -6,13 +6,10 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Rooms – Hotel Saket Plaza</title>
 
-  <!-- Fonts -->
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet">
 
-  <!-- Icons -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
 
-  <!-- Global CSS -->
   <link rel="stylesheet" href="style.css">
 
   <style>
@@ -82,7 +79,6 @@
       transition: opacity 0.4s ease-in-out;
     }
 
-    /* ARROWS */
     .slide-arrow {
       position: absolute;
       top: 50%;
@@ -96,15 +92,9 @@
       z-index: 10;
     }
 
-    .arrow-left {
-      left: 10px;
-    }
+    .arrow-left { left: 10px; }
+    .arrow-right { right: 10px; }
 
-    .arrow-right {
-      right: 10px;
-    }
-
-    /* THUMB STRIP */
     .thumb-strip {
       display: flex;
       gap: 8px;
@@ -125,7 +115,6 @@
       border-color: #d4a556;
     }
 
-    /* FULLSCREEN LIGHTBOX */
     .lightbox {
       position: fixed;
       inset: 0;
@@ -137,9 +126,7 @@
       z-index: 3000;
     }
 
-    .lightbox.active {
-      display: flex;
-    }
+    .lightbox.active { display: flex; }
 
     .lightbox img {
       max-width: 90%;
@@ -148,7 +135,6 @@
       transition: opacity 0.4s ease;
     }
 
-    /* Fullscreen next/prev arrows */
     .lightbox-arrow {
       position: absolute;
       top: 50%;
@@ -159,26 +145,19 @@
       user-select: none;
     }
 
-    .lightbox-left {
-      left: 30px;
-    }
-
-    .lightbox-right {
-      right: 30px;
-    }
+    .lightbox-left { left: 30px; }
+    .lightbox-right { right: 30px; }
   </style>
 
 </head>
 
 <body>
 
-  <!-- HEADER -->
   <header class="main-header">
     <h1>Hotel Saket Plaza</h1>
     <p class="subtitle">Elegant Comfort in Every Room</p>
   </header>
 
-  <!-- NAVIGATION -->
   <nav class="navbar">
     <a href="index.html">Home</a>
     <a href="rooms.html" class="active">Rooms</a>
@@ -194,92 +173,77 @@
 
       <div class="rooms-grid">
 
-        <!-- ROOM 1 -->
         <div class="room-card" data-images="luxury-room.jpg,luxury-room1.jpg,luxury-room2.jpg">
           <div class="room-img-wrap">
             <span class="slide-arrow arrow-left">&#10094;</span>
-            <img src="images/luxury-room.jpg" class="main-image">
+            <img src="Images/luxury-room.jpg" class="main-image">
             <span class="slide-arrow arrow-right">&#10095;</span>
           </div>
-
           <div class="thumb-strip">
-            <img src="images/luxury-room.jpg" class="active">
-            <img src="images/luxury-room1.jpg">
-            <img src="images/luxury-room2.jpg">
+            <img src="Images/luxury-room.jpg" class="active">
+            <img src="Images/luxury-room1.jpg">
+            <img src="Images/luxury-room2.jpg">
           </div>
-
           <h3>Luxury Room</h3>
           <p>Modern elegance with premium interiors designed for ultimate relaxation.</p>
         </div>
 
-        <!-- ROOM 2 -->
         <div class="room-card" data-images="club-room.jpg,club-room1.jpg,club-room2.jpg">
           <div class="room-img-wrap">
             <span class="slide-arrow arrow-left">&#10094;</span>
-            <img class="main-image" src="images/club-room.jpg">
+            <img class="main-image" src="Images/club-room.jpg">
             <span class="slide-arrow arrow-right">&#10095;</span>
           </div>
-
           <div class="thumb-strip">
-            <img src="images/club-room.jpg" class="active">
-            <img src="images/club-room1.jpg">
-            <img src="images/club-room2.jpg">
+            <img src="Images/club-room.jpg" class="active">
+            <img src="Images/club-room1.jpg">
+            <img src="Images/club-room2.jpg">
           </div>
-
           <h3>Club Room</h3>
           <p>Spacious and cozy — perfect for families who enjoy comfort and style.</p>
         </div>
 
-        <!-- ROOM 3 -->
         <div class="room-card" data-images="cottage.jpg,cottage1.jpg,cottage2.jpg">
           <div class="room-img-wrap">
             <span class="slide-arrow arrow-left">&#10094;</span>
-            <img class="main-image" src="images/cottage.jpg">
+            <img class="main-image" src="Images/cottage.jpg">
             <span class="slide-arrow arrow-right">&#10095;</span>
           </div>
-
           <div class="thumb-strip">
-            <img src="images/cottage.jpg" class="active">
-            <img src="images/cottage1.jpg">
-            <img src="images/cottage2.jpg">
+            <img src="Images/cottage.jpg" class="active">
+            <img src="Images/cottage1.jpg">
+            <img src="Images/cottage2.jpg">
           </div>
-
           <h3>Cottage</h3>
           <p>Enjoy a private Jacuzzi, rain shower and serene outdoor sit-out area.</p>
         </div>
 
-        <!-- ROOM 4 -->
         <div class="room-card" data-images="premium-queen.jpg,premium-queen1.jpg,premium-queen2.jpg">
           <div class="room-img-wrap">
             <span class="slide-arrow arrow-left">&#10094;</span>
-            <img class="main-image" src="images/premium-queen.jpg">
+            <img class="main-image" src="Images/premium-queen.jpg">
             <span class="slide-arrow arrow-right">&#10095;</span>
           </div>
-
           <div class="thumb-strip">
-            <img src="images/premium-queen.jpg" class="active">
-            <img src="images/premium-queen1.jpg">
-            <img src="images/premium-queen2.jpg">
+            <img src="Images/premium-queen.jpg" class="active">
+            <img src="Images/premium-queen1.jpg">
+            <img src="Images/premium-queen2.jpg">
           </div>
-
           <h3>Premium Queen</h3>
           <p>Elegant interiors with attached Jacuzzi and balcony overlooking greenery.</p>
         </div>
 
-        <!-- ROOM 5 -->
         <div class="room-card" data-images="premium-king.jpg,premium-king1.jpg,premium-king2.jpg">
           <div class="room-img-wrap">
             <span class="slide-arrow arrow-left">&#10094;</span>
-            <img class="main-image" src="images/premium-king.jpg">
+            <img class="main-image" src="Images/premium-king.jpg">
             <span class="slide-arrow arrow-right">&#10095;</span>
           </div>
-
           <div class="thumb-strip">
-            <img src="images/premium-king.jpg" class="active">
-            <img src="images/premium-king1.jpg">
-            <img src="images/premium-king2.jpg">
+            <img src="Images/premium-king.jpg" class="active">
+            <img src="Images/premium-king1.jpg">
+            <img src="Images/premium-king2.jpg">
           </div>
-
           <h3>Premium King</h3>
           <p>A luxurious suite with Jacuzzi and private patio — perfect for couples.</p>
         </div>
@@ -292,7 +256,6 @@
     <p>© 2025 Hotel Saket Plaza | Designed by <a href="#">Sunil Danawale</a></p>
   </footer>
 
-  <!-- Floating Buttons -->
   <div class="floating-buttons">
     <a href="https://wa.me/919420972666?text=Hello%20Hotel%20Saket%20Plaza!" class="whatsapp" target="_blank">
       <i class="fa-brands fa-whatsapp"></i>
@@ -302,7 +265,6 @@
 
   <div id="backToTop"><i class="fa-solid fa-arrow-up"></i></div>
 
-  <!-- FULLSCREEN LIGHTBOX -->
   <div class="lightbox" id="lightbox">
     <span class="lightbox-arrow lightbox-left">&#10094;</span>
     <img src="">
@@ -310,7 +272,6 @@
   </div>
 
   <script>
-
     /* ACTIVE NAV */
     const currentPage = window.location.pathname.split('/').pop();
     document.querySelectorAll("nav a").forEach(a => {
@@ -325,12 +286,13 @@
     backToTop.addEventListener("click", () => window.scrollTo({ top: 0, behavior: "smooth" }));
 
     /***********************
-     SLIDESHOW PER ROOM
+      SLIDESHOW PER ROOM
     ************************/
     document.querySelectorAll(".room-card").forEach(card => {
       const mainImg = card.querySelector(".main-image");
       const thumbs = card.querySelectorAll(".thumb-strip img");
-      const images = card.dataset.images.split(",").map(a => "images/" + a);
+      // Updated path to use Images/
+      const images = card.dataset.images.split(",").map(a => "Images/" + a);
 
       let index = 0;
 
@@ -343,7 +305,7 @@
         }, 200);
 
         thumbs.forEach(t => t.classList.remove("active"));
-        thumbs[index].classList.add("active");
+        if(thumbs[index]) thumbs[index].classList.add("active");
       }
 
       thumbs.forEach((t, i) => {
@@ -360,64 +322,43 @@
     });
 
     /*************************
-       FULLSCREEN LIGHTBOX
+        FULLSCREEN LIGHTBOX
     *************************/
     const lightbox = document.getElementById("lightbox");
     const lightboxImg = lightbox.querySelector("img");
     let activeImages = [];
     let activeIndex = 0;
 
-    /* Open Lightbox (FIXED VERSION) */
     document.querySelectorAll(".main-image").forEach(img => {
       img.addEventListener("click", () => {
-
         const card = img.closest(".room-card");
-        activeImages = card.dataset.images.split(",").map(a => "images/" + a);
+        // Updated path to use Images/
+        activeImages = card.dataset.images.split(",").map(a => "Images/" + a);
 
-        // FIX: Always match clicked image correctly
         const clickedSrc = img.src.split("/").pop(); 
         activeIndex = activeImages.findIndex(x => x.endsWith(clickedSrc));
 
-        if (activeIndex === -1) activeIndex = 0; // Safety fallback
+        if (activeIndex === -1) activeIndex = 0; 
 
         lightboxImg.src = activeImages[activeIndex];
         lightbox.classList.add("active");
       });
     });
 
-    /* Next / Previous */
-    document.querySelector(".lightbox-left").onclick = () => {
+    document.querySelector(".lightbox-left").onclick = (e) => {
+      e.stopPropagation();
       activeIndex = (activeIndex - 1 + activeImages.length) % activeImages.length;
       lightboxImg.src = activeImages[activeIndex];
     };
 
-    document.querySelector(".lightbox-right").onclick = () => {
+    document.querySelector(".lightbox-right").onclick = (e) => {
+      e.stopPropagation();
       activeIndex = (activeIndex + 1) % activeImages.length;
       lightboxImg.src = activeImages[activeIndex];
     };
 
-    /* Close on background click */
     lightbox.addEventListener("click", e => {
       if (e.target === lightbox) lightbox.classList.remove("active");
-    });
-
-    /***************
-    SWIPE SUPPORT
-    ***************/
-    let touchStartX = 0;
-
-    lightboxImg.addEventListener("touchstart", e => {
-      touchStartX = e.touches[0].clientX;
-    });
-
-    lightboxImg.addEventListener("touchend", e => {
-      let diff = e.changedTouches[0].clientX - touchStartX;
-
-      if (diff > 50) {
-        document.querySelector(".lightbox-left").click();
-      } else if (diff < -50) {
-        document.querySelector(".lightbox-right").click();
-      }
     });
 
     /* Fade in cards */
@@ -431,9 +372,7 @@
     }, { threshold: 0.2 });
 
     document.querySelectorAll(".room-card").forEach(card => observer.observe(card));
-
   </script>
 
 </body>
-
 </html>
