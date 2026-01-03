@@ -1,56 +1,74 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>Rooms | Hotel Saket Plaza</title>
+  <meta charset="UTF-8"><title>Rooms | Hotel Saket Plaza</title>
   <link rel="stylesheet" href="style.css">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 </head>
 <body>
-  <header class="main-header"><h1>Our Accommodations</h1></header>
   <nav class="navbar">
     <a href="index.html">Home</a><a href="rooms.html" class="active">Rooms</a><a href="gallery.html">Gallery</a><a href="facilities.html">Facilities</a><a href="tariff.html">Tariff</a><a href="contact.html">Contact</a>
   </nav>
 
+  <h2 style="text-align:center; margin-top:40px;">Our Premium Accommodations</h2>
+  
   <div class="rooms-grid">
-    <div class="room-card" data-images="luxury-room.jpg,luxury-room1.jpg,luxury-room2.jpg">
-      <div class="room-img-wrap"><span class="slide-arrow arrow-left" onclick="shift(this,-1)">&#10094;</span><img src="Images/luxury-room.jpg" class="main-image"><span class="slide-arrow arrow-right" onclick="shift(this,1)">&#10095;</span></div>
-      <div class="thumb-strip"><img src="Images/luxury-room.jpg" class="active"><img src="Images/luxury-room1.jpg"><img src="Images/luxury-room2.jpg"></div>
-      <div class="room-details"><h3>Luxury Room</h3><p>Elegant design with split AC and LCD TV.</p><a href="https://live.ipms247.com/booking/book-rooms-hotelsaketplaza" class="btn-book">Book Now</a></div>
+    <div class="room-card" style="background:white; border-radius:12px; overflow:hidden; box-shadow:var(--shadow);">
+      <div class="room-img-wrap" onclick="openLightbox(0, roomData)"><img src="Images/luxury-room.jpg"></div>
+      <div style="padding:20px; text-align:center;"><h3>Luxury Room</h3><p>Elegance with modern AC comfort.</p></div>
     </div>
-    <div class="room-card" data-images="club-room.jpg,club-room1.jpg,club-room2.jpg">
-      <div class="room-img-wrap"><span class="slide-arrow arrow-left" onclick="shift(this,-1)">&#10094;</span><img src="Images/club-room.jpg" class="main-image"><span class="slide-arrow arrow-right" onclick="shift(this,1)">&#10095;</span></div>
-      <div class="thumb-strip"><img src="Images/club-room.jpg" class="active"><img src="Images/club-room1.jpg"><img src="Images/club-room2.jpg"></div>
-      <div class="room-details"><h3>Club Room</h3><p>Perfect for families with cozy sitting areas.</p><a href="https://live.ipms247.com/booking/book-rooms-hotelsaketplaza" class="btn-book">Book Now</a></div>
+    <div class="room-card" style="background:white; border-radius:12px; overflow:hidden; box-shadow:var(--shadow);">
+      <div class="room-img-wrap" onclick="openLightbox(1, roomData)"><img src="Images/club-room.jpg"></div>
+      <div style="padding:20px; text-align:center;"><h3>Club Room</h3><p>Spacious comfort for the whole family.</p></div>
     </div>
-    <div class="room-card" data-images="cottage.jpg,cottage1.jpg,cottage2.jpg">
-      <div class="room-img-wrap"><span class="slide-arrow arrow-left" onclick="shift(this,-1)">&#10094;</span><img src="Images/cottage.jpg" class="main-image"><span class="slide-arrow arrow-right" onclick="shift(this,1)">&#10095;</span></div>
-      <div class="thumb-strip"><img src="Images/cottage.jpg" class="active"><img src="Images/cottage1.jpg"><img src="Images/cottage2.jpg"></div>
-      <div class="room-details"><h3>Cottage (Jacuzzi)</h3><p>Features private Jacuzzi and rain shower.</p><a href="https://live.ipms247.com/booking/book-rooms-hotelsaketplaza" class="btn-book">Book Now</a></div>
+    <div class="room-card" style="background:white; border-radius:12px; overflow:hidden; box-shadow:var(--shadow);">
+      <div class="room-img-wrap" onclick="openLightbox(2, roomData)"><img src="Images/cottage.jpg"></div>
+      <div style="padding:20px; text-align:center;"><h3>Cottage (Jacuzzi)</h3><p>Private Jacuzzi and rain showers.</p></div>
     </div>
-    <div class="room-card" data-images="premium-queen.jpg,premium-queen1.jpg,premium-queen2.jpg">
-      <div class="room-img-wrap"><span class="slide-arrow arrow-left" onclick="shift(this,-1)">&#10094;</span><img src="Images/premium-queen.jpg" class="main-image"><span class="slide-arrow arrow-right" onclick="shift(this,1)">&#10095;</span></div>
-      <div class="thumb-strip"><img src="Images/premium-queen.jpg" class="active"><img src="Images/premium-queen1.jpg"><img src="Images/premium-queen2.jpg"></div>
-      <div class="room-details"><h3>Premium Queen</h3><p>Attached Jacuzzi and garden views.</p><a href="https://live.ipms247.com/booking/book-rooms-hotelsaketplaza" class="btn-book">Book Now</a></div>
+    <div class="room-card" style="background:white; border-radius:12px; overflow:hidden; box-shadow:var(--shadow);">
+      <div class="room-img-wrap" onclick="openLightbox(3, roomData)"><img src="Images/premium-queen.jpg"></div>
+      <div style="padding:20px; text-align:center;"><h3>Premium Queen</h3><p>Attached Jacuzzi with garden views.</p></div>
     </div>
-    <div class="room-card" data-images="premium-king.jpg,premium-king1.jpg,premium-king2.jpg">
-      <div class="room-img-wrap"><span class="slide-arrow arrow-left" onclick="shift(this,-1)">&#10094;</span><img src="Images/premium-king.jpg" class="main-image"><span class="slide-arrow arrow-right" onclick="shift(this,1)">&#10095;</span></div>
-      <div class="thumb-strip"><img src="Images/premium-king.jpg" class="active"><img src="Images/premium-king1.jpg"><img src="Images/premium-king2.jpg"></div>
-      <div class="room-details"><h3>Premium King</h3><p>Luxurious suite with private patio.</p><a href="https://live.ipms247.com/booking/book-rooms-hotelsaketplaza" class="btn-book">Book Now</a></div>
+    <div class="room-card" style="background:white; border-radius:12px; overflow:hidden; box-shadow:var(--shadow);">
+      <div class="room-img-wrap" onclick="openLightbox(4, roomData)"><img src="Images/premium-king.jpg"></div>
+      <div style="padding:20px; text-align:center;"><h3>Premium King</h3><p>Royal suite with premium decor.</p></div>
     </div>
   </div>
 
+  <div id="lb" class="lightbox">
+    <span class="lb-close" onclick="closeLightbox()">&times;</span>
+    <div class="lb-nav">
+      <button class="lb-btn" onclick="changeSlide(-1)">&#10094;</button>
+      <button class="lb-btn" onclick="changeSlide(1)">&#10095;</button>
+    </div>
+    <img id="lb-img" src="">
+    <p id="lb-cap" class="lb-caption"></p>
+  </div>
+
   <script>
-    function shift(btn, dir) {
-      const card = btn.closest('.room-card');
-      const img = card.querySelector('.main-image');
-      const images = card.dataset.images.split(',').map(s => "Images/" + s.trim());
-      let idx = images.indexOf(img.getAttribute('src'));
-      let next = (idx + dir + images.length) % images.length;
-      img.src = images[next];
-      const thumbs = card.querySelectorAll('.thumb-strip img');
-      thumbs.forEach(t => t.classList.remove('active'));
-      thumbs[next].classList.add('active');
+    const roomData = [
+      {src: 'Images/luxury-room.jpg', cap: 'Luxury Room'},
+      {src: 'Images/club-room.jpg', cap: 'Club Room'},
+      {src: 'Images/cottage.jpg', cap: 'Cottage with Jacuzzi'},
+      {src: 'Images/premium-queen.jpg', cap: 'Premium Queen'},
+      {src: 'Images/premium-king.jpg', cap: 'Premium King'}
+    ];
+    let currentIndex = 0;
+    let currentSet = [];
+
+    function openLightbox(index, set) {
+      currentIndex = index;
+      currentSet = set;
+      updateLightbox();
+      document.getElementById('lb').classList.add('active');
+    }
+    function closeLightbox() { document.getElementById('lb').classList.remove('active'); }
+    function updateLightbox() {
+      document.getElementById('lb-img').src = currentSet[currentIndex].src;
+      document.getElementById('lb-cap').innerText = currentSet[currentIndex].cap;
+    }
+    function changeSlide(n) {
+      currentIndex = (currentIndex + n + currentSet.length) % currentSet.length;
+      updateLightbox();
     }
   </script>
 </body>
