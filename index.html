@@ -4,6 +4,8 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Experience luxury and nature at Hotel Saket Plaza, Mahabaleshwar’s finest retreat with colorful amenities, rooms, and dining." />
+  <meta name="keywords" content="Hotel Saket Plaza, Mahabaleshwar, luxury hotel, rooms, swimming pool, nature retreat" />
   <title>Hotel Saket Plaza</title>
 
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet" />
@@ -14,6 +16,10 @@
 </head>
 
 <body>
+  <!-- Dark Mode Toggle Button (for site-wide theme support) -->
+  <button id="dark-mode-toggle" class="btn" style="position: fixed; top: 10px; right: 10px; z-index: 1001; padding: 8px 12px; font-size: 0.9rem;" aria-label="Toggle dark mode">
+    <i class="fa-solid fa-moon"></i> Dark Mode
+  </button>
 
   <header class="main-header">
     <div class="logo-box">
@@ -23,40 +29,39 @@
   </header>
 
   <nav class="navbar">
-    <a href="index.html">Home</a>
-    <a href="rooms.html">Rooms</a>
-    <a href="gallery.html">Gallery</a>
-    <a href="facilities.html">Facilities</a>
-    <a href="tariff.html">Tariff</a>
-    <a href="contact.html">Contact</a>
+    <a href="index.html" aria-label="Go to Home page">Home</a>
+    <a href="rooms.html" aria-label="Go to Rooms page">Rooms</a>
+    <a href="gallery.html" aria-label="Go to Gallery page">Gallery</a>
+    <a href="facilities.html" aria-label="Go to Facilities page">Facilities</a>
+    <a href="tariff.html" aria-label="Go to Tariff page">Tariff</a>
+    <a href="contact.html" aria-label="Go to Contact page">Contact</a>
   </nav>
 
-  <section class="hero" style="background-image: url('Images/Cover Image.jpg');">
+  <section class="hero" style="background-image: url('Images/Cover Image.jpg');" role="banner">
     <div class="hero-overlay"></div>
     <div class="hero-content">
       <h2>Welcome to Hotel Saket Plaza</h2>
       <p>Experience luxury, comfort, and nature—beautifully blended.</p>
-      <a href="rooms.html" class="btn">Explore Rooms</a>
+      <a href="rooms.html" class="btn" aria-label="Explore our rooms">Explore Rooms</a>
     </div>
   </section>
 
-  <section class="about improved-about">
+  <section class="about improved-about" id="about" role="region" aria-labelledby="about-title">
     <div class="about-container">
-
-      <h2 class="section-title about-title">
+      <h2 id="about-title" class="section-title about-title">
         ✨ Where Nature Meets Luxury — Hotel Saket Plaza, Mahabaleshwar
       </h2>
 
       <div class="about-content">
-        <p>
+        <p class="mb-2">
           Nestled in the lush green hills of the Sahyadri range in Maharashtra lies the beautiful hill station of Mahabaleshwar.
         </p>
 
-        <p>
+        <p class="mb-2">
           Hotel Saket Plaza is one of the finest attractions—one more reason to visit this enchanting destination. Surrounded by greenery and within walking distance from the market, the hotel offers a serene yet convenient stay. Whether you are honeymooners, families, groups, or conference delegates, Hotel Saket Plaza ensures a delightful experience for every guest.
         </p>
 
-        <p>
+        <p class="mb-2">
           A multi-coloured swimming pool, waterfall features, a machan (tree house), colourful fountains, and beautifully landscaped gardens—our list of attractions is truly captivating. We offer a variety of tastefully designed rooms with facilities that exceed typical 3-star expectations.
         </p>
 
@@ -67,13 +72,12 @@
     </div>
   </section>
 
-  <section class="features">
-    <h2 class="section-title">Why Choose Us</h2>
+  <section class="features" id="features" role="region" aria-labelledby="features-title">
+    <h2 id="features-title" class="section-title">Why Choose Us</h2>
 
     <div class="features-grid">
-
       <div class="feature-card">
-        <i class="fa-solid fa-bed"></i>
+        <i class="fa-solid fa-bed" aria-hidden="true"></i>
         <h3>Choice of Rooms</h3>
         <p>
           Luxury, Club, Cottage (with Jacuzzi & sit-out), Premium Queen (Jacuzzi & balcony),
@@ -82,7 +86,7 @@
       </div>
 
       <div class="feature-card">
-        <i class="fa-solid fa-utensils"></i>
+        <i class="fa-solid fa-utensils" aria-hidden="true"></i>
         <h3>Pure Veg Dining</h3>
         <p>
           Enjoy a delightful pure vegetarian multi-cuisine dining hall serving a variety of carefully crafted dishes for all tastes.
@@ -90,7 +94,7 @@
       </div>
 
       <div class="feature-card">
-        <i class="fa-solid fa-person-swimming"></i>
+        <i class="fa-solid fa-person-swimming" aria-hidden="true"></i>
         <h3>Swimming Pool & Waterfall</h3>
         <p>
           Mahabaleshwar’s only hotel with a unique multi-colour swimming pool and refreshing water-fall feature for a rejuvenating experience.
@@ -98,7 +102,7 @@
       </div>
 
       <div class="feature-card">
-        <i class="fa-solid fa-tree"></i>
+        <i class="fa-solid fa-tree" aria-hidden="true"></i>
         <h3>Machan & Gardens</h3>
         <p>
           Beautiful landscaped gardens, sun decks, and a Machan (Tree House) featuring colourful fountains — perfect for relaxation.
@@ -106,7 +110,7 @@
       </div>
 
       <div class="feature-card">
-        <i class="fa-solid fa-gamepad"></i>
+        <i class="fa-solid fa-gamepad" aria-hidden="true"></i>
         <h3>Indoor Games & Entertainment</h3>
         <p>
           Enjoy indoor games, AC home theatre, entertainment zone, and fun leisure activities suitable for families and groups.
@@ -114,31 +118,51 @@
       </div>
 
       <div class="feature-card">
-        <i class="fa-solid fa-chalkboard"></i>
+        <i class="fa-solid fa-chalkboard" aria-hidden="true"></i>
         <h3>Conference & Events</h3>
         <p>
           Fully air-conditioned conference room ideal for corporate meetings, presentations, workshops, and private gatherings.
         </p>
       </div>
-
     </div>
   </section>
 
-  <section class="contact-details">
-    <h2 class="section-title">Contact Us</h2>
-    <p>For inquiries or bookings, feel free to contact us:</p>
+  <section class="contact-details" id="contact" role="region" aria-labelledby="contact-title">
+    <h2 id="contact-title" class="section-title">Contact Us</h2>
+    <p class="mb-2">For inquiries or bookings, feel free to contact us:</p>
 
     <div class="contact-items-center">
-      <p><strong>Phone:</strong> <a href="tel:+912168260583">+91 2168 260583</a></p>
-      <p><strong>Email:</strong> <a href="mailto:info@hotelsaketplaza.com">info@hotelsaketplaza.com</a></p>
+      <p><strong>Phone:</strong> <a href="tel:+912168260583" aria-label="Call us at +91 2168 260583">+91 2168 260583</a></p>
+      <p><strong>Email:</strong> <a href="mailto:info@hotelsaketplaza.com" aria-label="Email us at info@hotelsaketplaza.com">info@hotelsaketplaza.com</a></p>
     </div>
   </section>
 
-  <footer>
-    <p>© 2025 Hotel Saket Plaza | Designed by <a href="#">Sunil Danawale</a></p>
+  <footer role="contentinfo">
+    <p>© 2025 Hotel Saket Plaza | Designed by <a href="#" aria-label="Visit designer Sunil Danawale's site">Sunil Danawale</a></p>
   </footer>
 
   <script>
+    // Dark mode toggle functionality
+    const toggleButton = document.getElementById('dark-mode-toggle');
+    const body = document.body;
+    const icon = toggleButton.querySelector('i');
+
+    toggleButton.addEventListener('click', () => {
+      body.classList.toggle('dark-mode');
+      const isDark = body.classList.contains('dark-mode');
+      icon.className = isDark ? 'fa-solid fa-sun' : 'fa-solid fa-moon';
+      toggleButton.innerHTML = `<i class="${icon.className}"></i> ${isDark ? 'Light Mode' : 'Dark Mode'}`;
+      localStorage.setItem('darkMode', isDark); // Persist preference
+    });
+
+    // Load saved dark mode preference
+    if (localStorage.getItem('darkMode') === 'true') {
+      body.classList.add('dark-mode');
+      icon.className = 'fa-solid fa-sun';
+      toggleButton.innerHTML = '<i class="fa-solid fa-sun"></i> Light Mode';
+    }
+
+    // Existing card reveal animation
     const cards = document.querySelectorAll('.feature-card');
     const revealCards = () => {
       cards.forEach((card, index) => {
@@ -151,6 +175,7 @@
     window.addEventListener('scroll', revealCards);
     revealCards();
 
+    // Active nav link highlighting
     const current = window.location.pathname.split('/').pop() || 'index.html';
     document.querySelectorAll('nav a').forEach(link => {
       link.classList.toggle('active', link.getAttribute('href') === current);
