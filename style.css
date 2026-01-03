@@ -1,364 +1,203 @@
 /* ===========================
-   CSS CUSTOM PROPERTIES (VARIABLES) FOR THEME SUPPORT
+   CSS CUSTOM PROPERTIES (ENHANCED)
 =========================== */
-/* Define global variables for easy theming and consistency across all pages */
 :root {
-  --primary-color: #2b6cb0; /* Blue for links, buttons, accents */
-  --secondary-color: #805ad5; /* Purple for gradients */
-  --accent-color: #ff7eb3; /* Pink for highlights */
-  --text-color: #333;
-  --bg-color: #f7f7f7;
-  --card-bg: white;
-  --shadow: rgba(0, 0, 0, 0.12) 0px 4px 12px;
-  --shadow-strong: rgba(0, 0, 0, 0.15) 0px 8px 24px;
-  --font-primary: "Poppins", sans-serif;
-  --font-heading: "Playfair Display", serif;
-  --border-radius: 12px;
-  --border-radius-large: 16px;
-  --transition: 0.3s ease;
-  --spacing-unit: 20px; /* Base spacing for consistency */
-}
-
-/* Optional: Dark mode support (add class 'dark-mode' to body for site-wide toggle) */
-.dark-mode {
-  --primary-color: #4da3ff;
-  --text-color: #e2e8f0;
-  --bg-color: #1a202c;
-  --card-bg: #2d3748;
-  --shadow: rgba(0, 0, 0, 0.3) 0px 4px 12px;
+  --primary-color: #1a365d; /* Deeper, more luxurious blue */
+  --cta-color: #c05621;    /* Energetic Orange/Rust for "Book Now" buttons */
+  --secondary-color: #2b6cb0;
+  --accent-color: #edf2f7;
+  --text-main: #2d3748;
+  --text-muted: #718096;
+  --bg-light: #f8fafc;
+  --card-bg: #ffffff;
+  --shadow-sm: 0 2px 4px rgba(0,0,0,0.05);
+  --shadow-md: 0 10px 15px -3px rgba(0,0,0,0.1);
+  --border-radius: 8px;
+  --font-heading: 'Playfair Display', serif;
+  --font-body: 'Poppins', sans-serif;
 }
 
 /* ===========================
-   GLOBAL STYLES
-=========================== */
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-
-html {
-  scroll-behavior: smooth; /* Smooth scrolling for all pages */
-}
-
-body {
-  font-family: var(--font-primary);
-  color: var(--text-color);
-  background: var(--bg-color);
-  overflow-x: hidden;
-  line-height: 1.6; /* Improved readability */
-  /* Respect user motion preferences */
-  @media (prefers-reduced-motion: reduce) {
-    animation: none;
-    transition: none;
-  }
-}
-
-h1, h2, h3 {
-  font-family: var(--font-heading);
-  letter-spacing: 0.5px; /* Subtle enhancement */
-}
-
-.section-title {
-  text-align: center;
-  font-size: clamp(1.8rem, 4vw, 2.2rem); /* Fluid typography for better responsiveness */
-  margin-bottom: var(--spacing-unit);
-  color: var(--text-color);
-}
-
-/* Utility classes for cross-page use */
-.text-center { text-align: center; }
-.text-left { text-align: left; }
-.text-right { text-align: right; }
-.mb-1 { margin-bottom: 0.5rem; }
-.mb-2 { margin-bottom: 1rem; }
-.mb-3 { margin-bottom: 1.5rem; }
-.mt-1 { margin-top: 0.5rem; }
-.mt-2 { margin-top: 1rem; }
-.mt-3 { margin-top: 1.5rem; }
-
-/* ===========================
-   HEADER WITH WAVES
-=========================== */
-.main-header {
-  position: relative;
-  background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
-  color: white;
-  padding: 80px var(--spacing-unit) 40px;
-  text-align: center;
-  overflow: hidden;
-}
-
-.logo-box h1 {
-  font-size: clamp(2rem, 5vw, 2.5rem); /* Fluid sizing */
-  letter-spacing: 1px;
-}
-
-.subtitle {
-  font-size: 1.2rem;
-  opacity: 0.9;
-}
-
-.waves svg {
-  display: block;
-  width: 100%;
-  margin-top: -5px;
-}
-
-/* ===========================
-   NAVIGATION (GLASS NAV)
-=========================== */
-.navbar {
-  width: 100%;
-  background: rgba(255, 255, 255, 0.55);
-  backdrop-filter: blur(12px);
-  padding: 12px 0;
-  text-align: center;
-  position: sticky;
-  top: 0;
-  z-index: 1000;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.2); /* Subtle border for depth */
-}
-
-.navbar a {
-  text-decoration: none;
-  margin: 0 18px;
-  font-size: 1.05rem;
-  color: var(--text-color);
-  font-weight: 500;
-  transition: var(--transition);
-  /* Accessibility: Focus state */
-  &:focus {
-    outline: 2px solid var(--primary-color);
-    outline-offset: 2px;
-  }
-}
-
-.navbar a:hover,
-.navbar a.active {
-  color: var(--primary-color);
-  text-shadow: 0 0 10px rgba(43, 108, 176, 0.3);
-}
-
-/* ===========================
-   HERO SECTION
+   REFINED HERO SECTION
 =========================== */
 .hero {
   position: relative;
-  height: 65vh;
+  height: 85vh; /* Taller for more impact */
+  min-height: 500px;
   background: url("Images/hero.jpg") center/cover no-repeat;
   display: flex;
   align-items: center;
   justify-content: center;
+  text-align: center;
 }
 
 .hero-overlay {
   position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: rgba(0, 0, 0, 0.35);
+  inset: 0;
+  background: linear-gradient(to bottom, rgba(0,0,0,0.3), rgba(0,0,0,0.6));
 }
 
 .hero-content {
   position: relative;
+  z-index: 2;
   color: white;
-  text-align: center;
-  animation: fadeUp 1.2s ease-out;
+  padding: 0 20px;
+  max-width: 800px;
 }
 
 .hero-content h2 {
-  font-size: clamp(2rem, 6vw, 2.8rem); /* Fluid sizing */
-  margin-bottom: 10px;
-}
-
-.hero-content p {
-  font-size: 1.2rem;
+  font-size: clamp(2.5rem, 8vw, 4rem);
+  line-height: 1.1;
   margin-bottom: 20px;
-}
-
-.btn {
-  display: inline-block;
-  padding: 12px 22px;
-  background: var(--primary-color);
-  color: #fff;
-  text-decoration: none;
-  border-radius: var(--border-radius);
-  transition: var(--transition);
-  font-weight: 500;
-  /* Enhanced hover and focus */
-  &:hover {
-    background: #1e4f8a;
-    transform: translateY(-2px);
-  }
-  &:focus {
-    outline: 2px solid var(--primary-color);
-    outline-offset: 2px;
-  }
+  text-shadow: 0 2px 10px rgba(0,0,0,0.3);
 }
 
 /* ===========================
-   ABOUT SECTION (UPGRADED CARD DESIGN)
+   FAST BOOKING ENGINE (NEW)
 =========================== */
-.about.improved-about {
-  max-width: 900px;
-  margin: 30px auto 50px;
-  padding: 40px var(--spacing-unit);
-  text-align: center;
-  line-height: 1.7;
-  font-size: 1.1rem;
-  animation: fadeUp 1.2s ease-out;
-  /* Upgraded card design with variables */
-  background: var(--card-bg);
-  border-radius: var(--border-radius-large);
-  box-shadow: var(--shadow-strong);
-  border: 1px solid rgba(43, 108, 176, 0.1);
-  /* Hover effect for interactivity */
-  transition: var(--transition);
-  &:hover {
-    transform: translateY(-5px);
-    box-shadow: var(--shadow-strong);
-  }
-}
-
-.about-title {
-  font-size: 2rem;
-  margin-bottom: 25px;
-  color: var(--primary-color);
-}
-
-.about-content p {
-  margin-bottom: 18px;
-}
-
-.highlight-text {
-  margin-top: 20px;
-  font-size: 1.3rem;
-  font-weight: 600;
-  text-align: center;
-  white-space: nowrap;
-  overflow-x: auto;
-  background: linear-gradient(135deg, var(--accent-color), #ff758c, #ffb347, #ff7e5f, var(--primary-color));
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-  padding: 10px 20px;
-  border-radius: var(--border-radius);
-  background-color: rgba(255, 255, 255, 0.8);
-  backdrop-filter: blur(5px);
-}
-
-@keyframes fadeUp {
-  from {
-    opacity: 0;
-    transform: translateY(25px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-/* ===========================
-   FEATURES SECTION
-=========================== */
-.features {
-  padding: 50px var(--spacing-unit);
-}
-
-.features-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-  gap: 25px;
-  max-width: 1100px;
-  margin: auto;
-}
-
-.feature-card {
-  background: var(--card-bg);
+.booking-bar {
+  position: absolute;
+  bottom: -40px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 90%;
+  max-width: 1000px;
+  background: white;
   padding: 25px;
-  border-radius: var(--border-radius);
-  text-align: center;
-  box-shadow: var(--shadow);
-  opacity: 0;
-  transform: translateY(40px);
-  transition: var(--transition);
-  /* Enhanced hover */
-  &:hover {
-    transform: translateY(-5px);
-    box-shadow: var(--shadow-strong);
-  }
+  border-radius: 12px;
+  box-shadow: var(--shadow-md);
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  gap: 15px;
+  z-index: 10;
+  align-items: end;
 }
 
-.feature-card.show {
-  opacity: 1;
-  transform: translateY(0);
+.booking-field {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
 }
 
-.feature-card i {
-  font-size: 2.2rem;
-  margin-bottom: 12px;
-  color: var(--primary-color);
+.booking-field label {
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: var(--text-muted);
+  text-transform: uppercase;
 }
 
-/* ===========================
-   CONTACT SECTION
-=========================== */
-.contact-details {
-  text-align: center;
-  padding: 50px var(--spacing-unit);
+.booking-field input, .booking-field select {
+  padding: 10px;
+  border: 1px solid #e2e8f0;
+  border-radius: 4px;
+  font-family: inherit;
 }
 
-.contact-items-center p a {
-  color: var(--primary-color);
-  text-decoration: none;
-  transition: var(--transition);
-  /* Focus state */
-  &:focus {
-    outline: 2px solid var(--primary-color);
-    outline-offset: 2px;
-  }
-}
-
-.contact-items-center p a:hover {
-  text-decoration: underline;
-}
-
-/* ===========================
-   FOOTER
-=========================== */
-footer {
-  text-align: center;
-  padding: 20px;
-  margin-top: 30px;
-  background: #222;
+.btn-book-now {
+  background: var(--cta-color);
   color: white;
+  padding: 15px 30px;
+  border: none;
+  border-radius: var(--border-radius);
+  font-weight: 700;
+  cursor: pointer;
+  transition: transform 0.2s;
+  text-transform: uppercase;
+  text-decoration: none;
+  text-align: center;
+}
+
+.btn-book-now:hover {
+  background: #9c4221;
+  transform: scale(1.03);
+}
+
+/* ===========================
+   MODERN ROOM CARDS
+=========================== */
+.rooms-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 30px;
+  padding: 80px 5%;
+}
+
+.room-card {
+  background: var(--card-bg);
+  border-radius: var(--border-radius);
+  overflow: hidden;
+  box-shadow: var(--shadow-sm);
+  transition: var(--transition);
+  display: flex;
+  flex-direction: column;
+}
+
+.room-card:hover {
+  box-shadow: var(--shadow-md);
+  transform: translateY(-5px);
+}
+
+.room-image {
+  height: 240px;
+  overflow: hidden;
+  position: relative;
+}
+
+.room-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.room-price-tag {
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  background: rgba(255,255,255,0.9);
+  padding: 5px 12px;
+  border-radius: 20px;
+  font-weight: 600;
+  color: var(--primary-color);
+}
+
+.room-info {
+  padding: 25px;
+  flex-grow: 1;
+}
+
+.room-amenities {
+  display: flex;
+  gap: 15px;
+  margin: 15px 0;
+  color: var(--text-muted);
   font-size: 0.9rem;
 }
 
-footer a {
-  color: #4da3ff;
-  text-decoration: none;
-  transition: var(--transition);
-  &:hover {
-    text-decoration: underline;
+/* ===========================
+   MOBILE OPTIMIZATION (SEO & SPEED)
+=========================== */
+@media (max-width: 768px) {
+  .booking-bar {
+    position: static;
+    transform: none;
+    width: 100%;
+    margin-top: 20px;
+    border-radius: 0;
+  }
+  
+  .hero {
+    height: 60vh;
+  }
+
+  .navbar {
+    padding: 10px;
+    overflow-x: auto;
+    white-space: nowrap;
   }
 }
 
-/* ===========================
-   ROOMS PAGE (ENHANCED IMAGE HANDLING)
-=========================== */
-.rooms-section {
-  padding: 60px var(--spacing-unit);
-  position: relative;
-  max-width: 1200px; /* Slightly wider for better grid fit */
-  margin: 0 auto;
+/* Lazy Loading placeholder style */
+img {
+  content-visibility: auto;
+  background: #eee;
 }
-
-.rooms-wrapper {
-  background: var(--card-bg);
-  padding: 40px var(--spacing-unit);
-  border-radius: var(--border-radius-large);
-  box-shadow: var(--shadow-strong);
-  border: 1px solid rgba(43
