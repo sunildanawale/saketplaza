@@ -1,15 +1,12 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Rooms – Hotel Saket Plaza</title>
 
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet">
-
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
-
   <link rel="stylesheet" href="style.css">
 
   <style>
@@ -19,38 +16,30 @@
       padding: 20px;
     }
 
-    .rooms-wrapper {
-      background: #ffffff;
-      padding: 35px;
-      border-radius: 14px;
-      box-shadow: 0px 6px 20px rgba(0, 0, 0, 0.12);
-      border: 1px solid #e6e6e6;
-      margin-bottom: 40px;
-    }
-
     .rooms-wrapper h2 {
       text-align: center;
-      color: #d4a556;
-      font-size: 2.3rem;
+      color: #2b6cb0; /* Theme Blue */
+      font-family: "Playfair Display", serif;
+      font-size: 2.5rem;
       margin-bottom: 30px;
     }
 
     .rooms-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-      gap: 28px;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 30px;
     }
 
     .room-card {
       background: #fff;
       border-radius: 14px;
       overflow: hidden;
-      box-shadow: 0px 6px 14px rgba(0, 0, 0, 0.12);
-      border-left: 6px solid #0a1a2a;
+      box-shadow: rgba(0, 0, 0, 0.12) 0px 4px 12px;
       transition: 0.3s ease;
       padding-bottom: 20px;
       opacity: 0;
       transform: translateY(40px);
+      text-align: center;
     }
 
     .room-card.visible {
@@ -61,11 +50,24 @@
 
     .room-card:hover {
       transform: translateY(-10px);
-      box-shadow: 0px 10px 25px rgba(0, 0, 0, 0.2);
+      box-shadow: 0px 10px 25px rgba(0, 0, 0, 0.15);
     }
 
+    .room-card h3 {
+      margin: 15px 0 5px;
+      color: #2b6cb0;
+      font-size: 1.5rem;
+    }
+
+    .room-card p {
+      padding: 0 15px;
+      font-size: 0.95rem;
+      color: #666;
+    }
+
+    /* Slideshow Container */
     .room-img-wrap {
-      height: 210px;
+      height: 230px;
       overflow: hidden;
       position: relative;
     }
@@ -75,23 +77,28 @@
       height: 100%;
       object-fit: cover;
       cursor: pointer;
-      opacity: 1;
-      transition: opacity 0.4s ease-in-out;
+      transition: opacity 0.3s ease;
     }
 
     .slide-arrow {
       position: absolute;
       top: 50%;
       transform: translateY(-50%);
-      font-size: 28px;
-      background: rgba(0, 0, 0, 0.5);
-      color: #fff;
-      padding: 8px 12px;
-      border-radius: 6px;
+      background: rgba(255, 255, 255, 0.8);
+      color: #2b6cb0;
+      width: 35px;
+      height: 35px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 50%;
       cursor: pointer;
       z-index: 10;
+      transition: 0.3s;
+      font-size: 14px;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.2);
     }
-
+    .slide-arrow:hover { background: #2b6cb0; color: #fff; }
     .arrow-left { left: 10px; }
     .arrow-right { right: 10px; }
 
@@ -103,52 +110,64 @@
     }
 
     .thumb-strip img {
-      width: 60px;
-      height: 45px;
+      width: 55px;
+      height: 40px;
       object-fit: cover;
-      border-radius: 6px;
+      border-radius: 4px;
       cursor: pointer;
       border: 2px solid transparent;
+      transition: 0.2s;
     }
 
     .thumb-strip img.active {
-      border-color: #d4a556;
+      border-color: #2b6cb0;
     }
 
+    /* LIGHTBOX */
     .lightbox {
       position: fixed;
       inset: 0;
-      background: rgba(0, 0, 0, 0.85);
+      background: rgba(0, 0, 0, 0.9);
       display: none;
       justify-content: center;
       align-items: center;
-      flex-direction: column;
       z-index: 3000;
     }
 
     .lightbox.active { display: flex; }
 
     .lightbox img {
-      max-width: 90%;
-      max-height: 85%;
-      border-radius: 10px;
-      transition: opacity 0.4s ease;
+      max-width: 85%;
+      max-height: 80%;
+      border-radius: 8px;
+      box-shadow: 0 0 20px rgba(0,0,0,0.5);
     }
+
+    .lightbox-close {
+      position: absolute;
+      top: 20px;
+      right: 30px;
+      color: white;
+      font-size: 40px;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+    .lightbox-close:hover { color: #ff7e5f; }
 
     .lightbox-arrow {
       position: absolute;
       top: 50%;
-      font-size: 48px;
+      transform: translateY(-50%);
+      font-size: 40px;
       color: #fff;
-      padding: 10px 18px;
+      padding: 20px;
       cursor: pointer;
       user-select: none;
     }
 
-    .lightbox-left { left: 30px; }
-    .lightbox-right { right: 30px; }
+    .lightbox-left { left: 10px; }
+    .lightbox-right { right: 10px; }
   </style>
-
 </head>
 
 <body>
@@ -175,9 +194,9 @@
 
         <div class="room-card" data-images="luxury-room.jpg,luxury-room1.jpg,luxury-room2.jpg">
           <div class="room-img-wrap">
-            <span class="slide-arrow arrow-left">&#10094;</span>
+            <span class="slide-arrow arrow-left"><i class="fa-solid fa-chevron-left"></i></span>
             <img src="Images/luxury-room.jpg" class="main-image">
-            <span class="slide-arrow arrow-right">&#10095;</span>
+            <span class="slide-arrow arrow-right"><i class="fa-solid fa-chevron-right"></i></span>
           </div>
           <div class="thumb-strip">
             <img src="Images/luxury-room.jpg" class="active">
@@ -190,9 +209,9 @@
 
         <div class="room-card" data-images="club-room.jpg,club-room1.jpg,club-room2.jpg">
           <div class="room-img-wrap">
-            <span class="slide-arrow arrow-left">&#10094;</span>
+            <span class="slide-arrow arrow-left"><i class="fa-solid fa-chevron-left"></i></span>
             <img class="main-image" src="Images/club-room.jpg">
-            <span class="slide-arrow arrow-right">&#10095;</span>
+            <span class="slide-arrow arrow-right"><i class="fa-solid fa-chevron-right"></i></span>
           </div>
           <div class="thumb-strip">
             <img src="Images/club-room.jpg" class="active">
@@ -205,9 +224,9 @@
 
         <div class="room-card" data-images="cottage.jpg,cottage1.jpg,cottage2.jpg">
           <div class="room-img-wrap">
-            <span class="slide-arrow arrow-left">&#10094;</span>
+            <span class="slide-arrow arrow-left"><i class="fa-solid fa-chevron-left"></i></span>
             <img class="main-image" src="Images/cottage.jpg">
-            <span class="slide-arrow arrow-right">&#10095;</span>
+            <span class="slide-arrow arrow-right"><i class="fa-solid fa-chevron-right"></i></span>
           </div>
           <div class="thumb-strip">
             <img src="Images/cottage.jpg" class="active">
@@ -220,9 +239,9 @@
 
         <div class="room-card" data-images="premium-queen.jpg,premium-queen1.jpg,premium-queen2.jpg">
           <div class="room-img-wrap">
-            <span class="slide-arrow arrow-left">&#10094;</span>
+            <span class="slide-arrow arrow-left"><i class="fa-solid fa-chevron-left"></i></span>
             <img class="main-image" src="Images/premium-queen.jpg">
-            <span class="slide-arrow arrow-right">&#10095;</span>
+            <span class="slide-arrow arrow-right"><i class="fa-solid fa-chevron-right"></i></span>
           </div>
           <div class="thumb-strip">
             <img src="Images/premium-queen.jpg" class="active">
@@ -233,77 +252,35 @@
           <p>Elegant interiors with attached Jacuzzi and balcony overlooking greenery.</p>
         </div>
 
-        <div class="room-card" data-images="premium-king.jpg,premium-king1.jpg,premium-king2.jpg">
-          <div class="room-img-wrap">
-            <span class="slide-arrow arrow-left">&#10094;</span>
-            <img class="main-image" src="Images/premium-king.jpg">
-            <span class="slide-arrow arrow-right">&#10095;</span>
-          </div>
-          <div class="thumb-strip">
-            <img src="Images/premium-king.jpg" class="active">
-            <img src="Images/premium-king1.jpg">
-            <img src="Images/premium-king2.jpg">
-          </div>
-          <h3>Premium King</h3>
-          <p>A luxurious suite with Jacuzzi and private patio — perfect for couples.</p>
-        </div>
-
       </div>
     </div>
   </main>
 
   <footer>
-    <p>© 2025 Hotel Saket Plaza | Designed by <a href="#">Sunil Danawale</a></p>
+    <p>© 2026 Hotel Saket Plaza | Old Band Road, Mahabaleshwar</p>
   </footer>
 
-  <div class="floating-buttons">
-    <a href="https://wa.me/919420972666?text=Hello%20Hotel%20Saket%20Plaza!" class="whatsapp" target="_blank">
-      <i class="fa-brands fa-whatsapp"></i>
-    </a>
-    <a href="tel:+912168260583" class="call-now"><i class="fa-solid fa-phone"></i></a>
-  </div>
-
-  <div id="backToTop"><i class="fa-solid fa-arrow-up"></i></div>
-
   <div class="lightbox" id="lightbox">
-    <span class="lightbox-arrow lightbox-left">&#10094;</span>
-    <img src="">
-    <span class="lightbox-arrow lightbox-right">&#10095;</span>
+    <span class="lightbox-close">&times;</span>
+    <span class="lightbox-arrow lightbox-left"><i class="fa-solid fa-angle-left"></i></span>
+    <img src="" id="lightbox-img">
+    <span class="lightbox-arrow lightbox-right"><i class="fa-solid fa-angle-right"></i></span>
   </div>
 
   <script>
-    /* ACTIVE NAV */
-    const currentPage = window.location.pathname.split('/').pop();
-    document.querySelectorAll("nav a").forEach(a => {
-      a.classList.toggle("active", a.href.includes(currentPage));
-    });
-
-    /* BACK TO TOP */
-    const backToTop = document.getElementById("backToTop");
-    window.addEventListener("scroll", () => {
-      backToTop.style.display = window.scrollY > 200 ? "flex" : "none";
-    });
-    backToTop.addEventListener("click", () => window.scrollTo({ top: 0, behavior: "smooth" }));
-
     /***********************
       SLIDESHOW PER ROOM
     ************************/
     document.querySelectorAll(".room-card").forEach(card => {
       const mainImg = card.querySelector(".main-image");
       const thumbs = card.querySelectorAll(".thumb-strip img");
-      // Updated path to use Images/
       const images = card.dataset.images.split(",").map(a => "Images/" + a);
 
       let index = 0;
 
       function changeImage(i) {
         index = i;
-        mainImg.style.opacity = 0;
-        setTimeout(() => {
-          mainImg.src = images[index];
-          mainImg.style.opacity = 1;
-        }, 200);
-
+        mainImg.src = images[index];
         thumbs.forEach(t => t.classList.remove("active"));
         if(thumbs[index]) thumbs[index].classList.add("active");
       }
@@ -322,28 +299,27 @@
     });
 
     /*************************
-        FULLSCREEN LIGHTBOX
+        LIGHTBOX LOGIC
     *************************/
     const lightbox = document.getElementById("lightbox");
-    const lightboxImg = lightbox.querySelector("img");
+    const lightboxImg = document.getElementById("lightbox-img");
+    const closeBtn = document.querySelector(".lightbox-close");
     let activeImages = [];
     let activeIndex = 0;
 
     document.querySelectorAll(".main-image").forEach(img => {
       img.addEventListener("click", () => {
         const card = img.closest(".room-card");
-        // Updated path to use Images/
         activeImages = card.dataset.images.split(",").map(a => "Images/" + a);
-
-        const clickedSrc = img.src.split("/").pop(); 
-        activeIndex = activeImages.findIndex(x => x.endsWith(clickedSrc));
-
-        if (activeIndex === -1) activeIndex = 0; 
-
+        const clickedSrc = img.getAttribute('src');
+        activeIndex = activeImages.indexOf(clickedSrc);
+        
         lightboxImg.src = activeImages[activeIndex];
         lightbox.classList.add("active");
       });
     });
+
+    closeBtn.onclick = () => lightbox.classList.remove("active");
 
     document.querySelector(".lightbox-left").onclick = (e) => {
       e.stopPropagation();
@@ -361,15 +337,14 @@
       if (e.target === lightbox) lightbox.classList.remove("active");
     });
 
-    /* Fade in cards */
+    /* Intersection Observer for Fade In */
     const observer = new IntersectionObserver(entries => {
       entries.forEach(entry => {
         if (entry.isIntersecting) {
           entry.target.classList.add("visible");
-          observer.unobserve(entry.target);
         }
       });
-    }, { threshold: 0.2 });
+    }, { threshold: 0.1 });
 
     document.querySelectorAll(".room-card").forEach(card => observer.observe(card));
   </script>
