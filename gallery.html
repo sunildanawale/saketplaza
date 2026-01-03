@@ -38,8 +38,26 @@
       box-shadow: 0 3px 10px rgba(0,0,0,0.15);
     }
     .gallery img:hover {
-      transform: scale(1.07);
+      transform: scale(1.05);
       box-shadow: 0 10px 25px rgba(0,0,0,0.25);
+    }
+
+    /* Simple Lightbox Style */
+    #gallery-lightbox {
+      position: fixed;
+      inset: 0;
+      background: rgba(0,0,0,0.9);
+      display: none;
+      justify-content: center;
+      align-items: center;
+      z-index: 9999;
+      cursor: pointer;
+    }
+    #gallery-lightbox img {
+      max-width: 90%;
+      max-height: 80%;
+      border-radius: 8px;
+      border: 3px solid white;
     }
   </style>
 </head>
@@ -64,24 +82,41 @@
   <h2>Photo Gallery</h2>
 
   <div class="gallery">
-    <img src="Images/garden.jpg" alt="Beautiful Garden with colorful flowers and lush greenery">
-    <img src="Images/parking.jpg" alt="Spacious Parking Area for Guests">
-    <img src="Images/swimming-pool.jpg" alt="Refreshing Swimming Pool with relaxing atmosphere">
-    <img src="Images/waterfall.jpg" alt="Scenic Artificial Waterfall inside the resort">
-    <img src="Images/landscape.jpg" alt="Scenic Landscape View with lush greenery and panoramic surroundings">
-    <img src="Images/dining-hall.jpg" alt="Elegant Dining Hall serving delicious meals">
-    <img src="Images/movie-theatre.jpg" alt="Private Movie Theater for entertainment">
-    <img src="Images/conference-hall.jpg" alt="Well-equipped Conference Hall for meetings and events">
-    <img src="Images/indoor-games.jpg" alt="Indoor Games Room with fun activities">
-    <img src="Images/machan-night.jpg" alt="Machan Night View with warm lighting and peaceful ambience">
-    <img src="Images/swimming-pool-night.jpg" alt="Swimming Pool Night View with illuminated blue water">
-    <img src="Images/wedding.jpg" alt="Wedding Decoration Setup with elegant floral arrangements">
+    <img src="Images/garden.jpg" alt="Beautiful Garden">
+    <img src="Images/parking.jpg" alt="Parking Area">
+    <img src="Images/swimming-pool.jpg" alt="Swimming Pool">
+    <img src="Images/waterfall.jpg" alt="Waterfall">
+    <img src="Images/landscape.jpg" alt="Landscape View">
+    <img src="Images/dining-hall.jpg" alt="Dining Hall">
+    <img src="Images/movie-theatre.jpg" alt="Movie Theater">
+    <img src="Images/conference-hall.jpg" alt="Conference Hall">
+    <img src="Images/indoor-games.jpg" alt="Indoor Games">
+    <img src="Images/machan-night.jpg" alt="Machan Night View">
+    <img src="Images/swimming-pool-night.jpg" alt="Swimming Pool Night">
+    <img src="Images/wedding.jpg" alt="Wedding Setup">
   </div>
 </main>
+
+<div id="gallery-lightbox" onclick="this.style.display='none'">
+  <img id="lightbox-img" src="">
+</div>
 
 <footer>
   <p>© 2025 Hotel Saket Plaza | Designed by <a href="#">Sunil Danawale</a></p>
 </footer>
+
+<script>
+  // Script to open images in a larger view
+  const lightbox = document.getElementById('gallery-lightbox');
+  const lightboxImg = document.getElementById('lightbox-img');
+  
+  document.querySelectorAll('.gallery img').forEach(image => {
+    image.onclick = () => {
+      lightbox.style.display = 'flex';
+      lightboxImg.src = image.src;
+    };
+  });
+</script>
 
 </body>
 </html>
