@@ -4,18 +4,14 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta name="description" content="Explore the vibrant gallery of Hotel Saket Plaza, showcasing our gardens, pool, dining, and more in Mahabaleshwar." />
-  <meta name="keywords" content="Hotel Saket Plaza gallery, Mahabaleshwar hotel photos, swimming pool, garden, dining hall, conference room" />
   <title>Gallery – Hotel Saket Plaza</title>
 
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
   <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
-  <!-- Dark Mode Toggle Button (for site-wide theme support) -->
-  <button id="dark-mode-toggle" class="btn" style="position: fixed; top: 10px; right: 10px; z-index: 1001; padding: 8px 12px; font-size: 0.9rem;" aria-label="Toggle dark mode">
-    <i class="fa-solid fa-moon"></i> Dark Mode
-  </button>
 
   <header class="main-header">
     <div class="logo-box">
@@ -25,89 +21,136 @@
   </header>
 
   <nav class="navbar">
-    <a href="index.html" aria-label="Go to Home page">Home</a>
-    <a href="rooms.html" aria-label="Go to Rooms page">Rooms</a>
-    <a href="gallery.html" aria-label="Go to Gallery page" class="active">Gallery</a>
-    <a href="facilities.html" aria-label="Go to Facilities page">Facilities</a>
-    <a href="tariff.html" aria-label="Go to Tariff page">Tariff</a>
-    <a href="contact.html" aria-label="Go to Contact page">Contact</a>
+    <a href="index.html">Home</a>
+    <a href="rooms.html">Rooms</a>
+    <a href="gallery.html" class="active">Gallery</a>
+    <a href="facilities.html">Facilities</a>
+    <a href="tariff.html">Tariff</a>
+    <a href="contact.html">Contact</a>
   </nav>
 
-  <section class="gallery-section" role="main" aria-labelledby="gallery-title">
+  <section class="gallery-section">
     <div class="gallery-wrapper">
-      <h2 id="gallery-title" class="section-title">Photo Gallery</h2>
+      <h2 class="section-title">Photo Gallery</h2>
 
       <div class="gallery-grid">
-        <img src="Images/Garden.jpg" alt="Beautiful Garden at Hotel Saket Plaza" width="250" height="200" loading="lazy" decoding="async">
-        <img src="Images/Landscape.jpg" alt="Stunning Landscape View from the hotel" width="250" height="200" loading="lazy" decoding="async">
-        <img src="Images/Wedding.jpg" alt="Elegant Wedding Setup in the gardens" width="250" height="200" loading="lazy" decoding="async">
-        <img src="Images/movie-theater.jpg" alt="Cozy Movie Theater for entertainment" width="250" height="200" loading="lazy" decoding="async">
-        
-        <img src="Images/parking.jpg" alt="Spacious Parking Area" width="250" height="200" loading="lazy" decoding="async">
-        <img src="Images/swimming-pool.jpg" alt="Vibrant Swimming Pool with colors" width="250" height="200" loading="lazy" decoding="async">
-        <img src="Images/waterfall.jpg" alt="Refreshing Waterfall feature" width="250" height="200" loading="lazy" decoding="async">
-        <img src="Images/dining-hall.jpg" alt="Delicious Pure Veg Dining Hall" width="250" height="200" loading="lazy" decoding="async">
-        <img src="Images/conference-hall.jpg" alt="Modern Conference Hall for events" width="250" height="200" loading="lazy" decoding="async">
-        <img src="Images/indoor-games.jpg" alt="Fun Indoor Games Area" width="250" height="200" loading="lazy" decoding="async">
-        <img src="Images/machan-night.jpg" alt="Romantic Machan Night View" width="250" height="200" loading="lazy" decoding="async">
-        <img src="Images/swimming-pool-night.jpg" alt="Illuminated Swimming Pool at Night" width="250" height="200" loading="lazy" decoding="async">
+        <div class="gallery-item">
+          <img src="Images/Garden.jpg" alt="Lush Green Gardens" loading="lazy">
+          <div class="caption">Lush Green Gardens</div>
+        </div>
+        <div class="gallery-item">
+          <img src="Images/swimming-pool.jpg" alt="Multi-Colour Swimming Pool" loading="lazy">
+          <div class="caption">Vibrant Swimming Pool</div>
+        </div>
+        <div class="gallery-item">
+          <img src="Images/dining-hall.jpg" alt="Pure Veg Dining Hall" loading="lazy">
+          <div class="caption">Pure Veg Dining Hall</div>
+        </div>
+        <div class="gallery-item">
+          <img src="Images/waterfall.jpg" alt="Refreshing Waterfall Feature" loading="lazy">
+          <div class="caption">Waterfall Feature</div>
+        </div>
+        <div class="gallery-item">
+          <img src="Images/conference-hall.jpg" alt="Modern Conference Hall" loading="lazy">
+          <div class="caption">Conference Hall</div>
+        </div>
+        <div class="gallery-item">
+          <img src="Images/machan-night.jpg" alt="Romantic Machan View" loading="lazy">
+          <div class="caption">The Machan (Tree House)</div>
+        </div>
+        <div class="gallery-item">
+          <img src="Images/indoor-games.jpg" alt="Indoor Games & Entertainment" loading="lazy">
+          <div class="caption">Games & Entertainment</div>
+        </div>
+        <div class="gallery-item">
+          <img src="Images/movie-theater.jpg" alt="Private Movie Theater" loading="lazy">
+          <div class="caption">AC Home Theatre</div>
+        </div>
+        <div class="gallery-item">
+          <img src="Images/swimming-pool-night.jpg" alt="Poolside Night View" loading="lazy">
+          <div class="caption">Poolside Night View</div>
+        </div>
       </div>
     </div>
   </section>
 
-  <div id="gallery-lightbox" onclick="this.style.display='none'" role="dialog" aria-modal="true" aria-labelledby="lightbox-title">
-    <img id="lightbox-img" src="" alt="Gallery image in lightbox" width="800" height="600" loading="lazy" decoding="async">
+  <div id="gallery-lightbox" class="lightbox">
+    <span class="lightbox-close" onclick="closeLightbox()">&times;</span>
+    <span class="lightbox-arrow lightbox-left" onclick="changeImage(-1)">&#10094;</span>
+    <div class="lightbox-content">
+      <img id="lightbox-img" src="" alt="Zoom View">
+      <p id="lightbox-caption"></p>
+    </div>
+    <span class="lightbox-arrow lightbox-right" onclick="changeImage(1)">&#10095;</span>
   </div>
 
-  <footer role="contentinfo">
-    <p>© 2025 Hotel Saket Plaza | Designed by <a href="#" aria-label="Visit designer Sunil Danawale's site">Sunil Danawale</a></p>
+  <footer>
+    <p>© 2026 Hotel Saket Plaza | Designed by Sunil Danawale</p>
   </footer>
 
   <script>
-    // Dark mode toggle functionality
-    const toggleButton = document.getElementById('dark-mode-toggle');
-    const body = document.body;
-    const icon = toggleButton.querySelector('i');
+    let currentImgIdx = 0;
+    const galleryItems = document.querySelectorAll('.gallery-item');
+    const images = Array.from(galleryItems).map(item => ({
+      src: item.querySelector('img').src,
+      cap: item.querySelector('.caption').innerText
+    }));
 
-    toggleButton.addEventListener('click', () => {
-      body.classList.toggle('dark-mode');
-      const isDark = body.classList.contains('dark-mode');
-      icon.className = isDark ? 'fa-solid fa-sun' : 'fa-solid fa-moon';
-      toggleButton.innerHTML = `<i class="${icon.className}"></i> ${isDark ? 'Light Mode' : 'Dark Mode'}`;
-      localStorage.setItem('darkMode', isDark); // Persist preference
-    });
-
-    // Load saved dark mode preference
-    if (localStorage.getItem('darkMode') === 'true') {
-      body.classList.add('dark-mode');
-      icon.className = 'fa-solid fa-sun';
-      toggleButton.innerHTML = '<i class="fa-solid fa-sun"></i> Light Mode';
-    }
-
-    // Gallery lightbox functionality with error handling
     const lightbox = document.getElementById('gallery-lightbox');
     const lightboxImg = document.getElementById('lightbox-img');
-    
-    document.querySelectorAll('.gallery-grid img').forEach(image => {
-      image.addEventListener('click', () => {
-        lightbox.style.display = 'flex';
-        lightboxImg.src = image.src;
-        lightboxImg.alt = image.alt; // Update alt for accessibility
-        // Handle load errors
-        lightboxImg.onerror = () => {
-          lightboxImg.src = 'Images/placeholder.jpg'; // Add a placeholder if available
-          console.warn(`Image not found: ${image.src}`);
-        };
+    const lightboxCap = document.getElementById('lightbox-caption');
+
+    // Open Lightbox
+    galleryItems.forEach((item, index) => {
+      item.addEventListener('click', () => {
+        currentImgIdx = index;
+        showImage(currentImgIdx);
+        lightbox.classList.add('active');
       });
     });
 
-    // Close lightbox on escape key or click outside
+    function showImage(index) {
+      lightboxImg.style.opacity = '0';
+      setTimeout(() => {
+        lightboxImg.src = images[index].src;
+        lightboxCap.innerText = images[index].cap;
+        lightboxImg.style.opacity = '1';
+      }, 200);
+    }
+
+    function changeImage(step) {
+      currentImgIdx = (currentImgIdx + step + images.length) % images.length;
+      showImage(currentImgIdx);
+    }
+
+    function closeLightbox() {
+      lightbox.classList.remove('active');
+    }
+
+    // Keyboard support
     document.addEventListener('keydown', (e) => {
-      if (e.key === 'Escape' && lightbox.style.display === 'flex') {
-        lightbox.style.display = 'none';
-      }
+      if (!lightbox.classList.contains('active')) return;
+      if (e.key === 'ArrowRight') changeImage(1);
+      if (e.key === 'ArrowLeft') changeImage(-1);
+      if (e.key === 'Escape') closeLightbox();
+    });
+
+    // Fade-in animation for gallery items
+    const observer = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.style.opacity = "1";
+          entry.target.style.transform = "translateY(0)";
+        }
+      });
+    }, { threshold: 0.1 });
+
+    galleryItems.forEach(item => {
+      item.style.opacity = "0";
+      item.style.transform = "translateY(30px)";
+      item.style.transition = "all 0.6s ease-out";
+      observer.observe(item);
     });
   </script>
-
 </body>
 </html>
