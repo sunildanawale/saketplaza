@@ -130,21 +130,17 @@ h1, h2, h3 {
   transition: 0.3s;
 }
 
-.btn:hover {
-  background: #1e4f8a;
-}
-
 /* ===========================
     ABOUT SECTION (CARD FIX)
 =========================== */
 .about.improved-about {
   max-width: 900px;
-  margin: 60px auto; /* No overlap, clean spacing below Hero */
-  padding: 50px 60px; /* Internal spacing for card feel */
+  margin: 60px auto; /* No overlap with hero */
+  padding: 50px 60px;
   text-align: center;
   background: #ffffff;
   border-radius: 15px;
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08); /* Soft professional shadow */
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
   animation: fadeUp 1.2s ease-out;
 }
 
@@ -160,20 +156,28 @@ h1, h2, h3 {
   font-size: 1.05rem;
   line-height: 1.8;
   color: #444;
-  text-align: justify; /* Clean alignment for body text */
+  text-align: justify; /* Aligns body text beautifully */
   text-justify: inter-word;
 }
 
-/* Center last line/highlight text */
+/* Animated Colorful Highlight Text centered at bottom */
 .highlight-text {
   display: block;
-  margin-top: 25px;
-  font-size: 1.2rem;
-  font-weight: 600;
+  margin-top: 30px;
+  font-size: 1.3rem;
+  font-weight: 700;
   text-align: center;
-  background: linear-gradient(to right, #ff7eb3, #ff758c, #ffb347, #ff7e5f);
+  background: linear-gradient(90deg, #2b6cb0, #ff758c, #ffb347, #2b6cb0);
+  background-size: 200% auto;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
+  animation: shine 3s linear infinite;
+}
+
+@keyframes shine {
+  to {
+    background-position: 200% center;
+  }
 }
 
 /* ===========================
@@ -238,25 +242,11 @@ footer {
   font-size: 0.9rem;
 }
 
-footer a {
-  color: #4da3ff;
-  text-decoration: none;
-}
-
 /* ===========================
     ROOMS PAGE
 =========================== */
 .rooms-section {
   padding: 60px 20px;
-  position: relative;
-}
-
-.rooms-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-  gap: 25px;
-  max-width: 1100px;
-  margin: auto;
 }
 
 .room-card {
@@ -285,12 +275,7 @@ footer a {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  cursor: pointer;
   transition: 0.4s;
-}
-
-.room-img-wrap img:hover {
-  transform: scale(1.05);
 }
 
 /* ===========================
@@ -317,16 +302,10 @@ footer a {
   }
   
   .about-content p {
-    text-align: center; /* Better readability on mobile */
-  }
-
-  .navbar a {
-    margin: 0 10px;
-    font-size: 0.95rem;
+    text-align: center; /* Better readability on small screens */
   }
 
   .highlight-text {
-    white-space: normal;
     font-size: 1.1rem;
   }
 }
