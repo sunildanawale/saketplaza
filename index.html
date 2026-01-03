@@ -4,7 +4,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Hotel Saket Plaza</title>
+  <title>Hotel Saket Plaza | Mahabaleshwar</title>
 
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet" />
 
@@ -41,37 +41,33 @@
   </section>
 
   <section class="about improved-about">
-    <div class="about-container">
+    <h2 class="about-title">
+      ✨ Where Nature Meets Luxury — Hotel Saket Plaza, Mahabaleshwar
+    </h2>
 
-      <h2 class="section-title about-title">
-        ✨ Where Nature Meets Luxury — Hotel Saket Plaza, Mahabaleshwar
-      </h2>
+    <div class="about-content">
+      <p>
+        Nestled in the lush green hills of the Sahyadri range in Maharashtra lies the beautiful hill station of Mahabaleshwar.
+      </p>
 
-      <div class="about-content">
-        <p>
-          Nestled in the lush green hills of the Sahyadri range in Maharashtra lies the beautiful hill station of Mahabaleshwar.
-        </p>
+      <p>
+        Hotel Saket Plaza is one of the finest attractions—one more reason to visit this enchanting destination. Surrounded by greenery and within walking distance from the market, the hotel offers a serene yet convenient stay. Whether you are honeymooners, families, groups, or conference delegates, Hotel Saket Plaza ensures a delightful experience for every guest.
+      </p>
 
-        <p>
-          Hotel Saket Plaza is one of the finest attractions—one more reason to visit this enchanting destination. Surrounded by greenery and within walking distance from the market, the hotel offers a serene yet convenient stay. Whether you are honeymooners, families, groups, or conference delegates, Hotel Saket Plaza ensures a delightful experience for every guest.
-        </p>
-
-        <p>
-          A multi-coloured swimming pool, waterfall features, a machan (tree house), colourful fountains, and beautifully landscaped gardens—our list of attractions is truly captivating. We offer a variety of tastefully designed rooms with facilities that exceed typical 3-star expectations.
-        </p>
-
-        <p class="highlight-text">
-          Visit us and experience it yourself. Nature existed; we added luxury.
-        </p>
-      </div>
+      <p>
+        A multi-coloured swimming pool, waterfall features, a machan (tree house), colourful fountains, and beautifully landscaped gardens—our list of attractions is truly captivating. We offer a variety of tastefully designed rooms with facilities that exceed typical 3-star expectations.
+      </p>
     </div>
+
+    <span class="highlight-text">
+      Visit us and experience it yourself. Nature existed; we added luxury.
+    </span>
   </section>
 
   <section class="features">
     <h2 class="section-title">Why Choose Us</h2>
 
     <div class="features-grid">
-
       <div class="feature-card">
         <i class="fa-solid fa-bed"></i>
         <h3>Choice of Rooms</h3>
@@ -120,7 +116,6 @@
           Fully air-conditioned conference room ideal for corporate meetings, presentations, workshops, and private gatherings.
         </p>
       </div>
-
     </div>
   </section>
 
@@ -135,10 +130,11 @@
   </section>
 
   <footer>
-    <p>© 2025 Hotel Saket Plaza | Designed by <a href="#">Sunil Danawale</a></p>
+    <p>© 2026 Hotel Saket Plaza | Designed by <a href="#">Sunil Danawale</a></p>
   </footer>
 
   <script>
+    // Reveal Feature Cards on Scroll
     const cards = document.querySelectorAll('.feature-card');
     const revealCards = () => {
       cards.forEach((card, index) => {
@@ -151,6 +147,7 @@
     window.addEventListener('scroll', revealCards);
     revealCards();
 
+    // Navigation Active Link Highlight
     const current = window.location.pathname.split('/').pop() || 'index.html';
     document.querySelectorAll('nav a').forEach(link => {
       link.classList.toggle('active', link.getAttribute('href') === current);
@@ -158,5 +155,4 @@
   </script>
 
 </body>
-
 </html>
