@@ -4,7 +4,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="Explore luxurious accommodations at Hotel Saket Plaza, Mahabaleshwar. Featuring Jacuzzi suites, private patios, and modern amenities." />
+  <meta name="description" content="Explore luxurious accommodations at Hotel Saket Plaza, Mahabaleshwar." />
   <title>Rooms & Suites | Hotel Saket Plaza Mahabaleshwar</title>
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -32,28 +32,6 @@
     <a href="contact.html">Contact</a>
   </nav>
 
-  <section class="booking-sticky-bar">
-    <form class="booking-engine" action="https://live.ipms247.com/booking/book-rooms-hotelsaketplaza" target="_blank">
-      <div class="booking-group">
-        <label>CHECK-IN</label>
-        <input type="date" required>
-      </div>
-      <div class="booking-group">
-        <label>CHECK-OUT</label>
-        <input type="date" required>
-      </div>
-      <div class="booking-group">
-        <label>ADULTS</label>
-        <select name="adults">
-          <option value="1">1 Adult</option>
-          <option value="2" selected>2 Adults</option>
-          <option value="3">3 Adults</option>
-        </select>
-      </div>
-      <button type="submit" class="btn-book">BOOK NOW</button>
-    </form>
-  </section>
-
   <main class="rooms-section">
     <h2 class="section-title">Our Premium Accommodations</h2>
 
@@ -72,11 +50,11 @@
         </div>
         <div class="room-details">
           <h3>Luxury Room</h3>
-          <p>Modern elegance with premium interiors designed for ultimate relaxation. Includes Split AC and LCD TV.</p>
+          <p>Modern elegance with premium interiors. Includes Split AC and LCD TV.</p>
           <div class="room-amenities-icons">
             <i class="fa-solid fa-snowflake"></i> <i class="fa-solid fa-tv"></i> <i class="fa-solid fa-wifi"></i>
           </div>
-          <a href="https://live.ipms247.com/booking/book-rooms-hotelsaketplaza" class="btn-book-outline">Reserve Room</a>
+          <a href="https://live.ipms247.com/booking/book-rooms-hotelsaketplaza" class="btn-book-outline" target="_blank">Book Now</a>
         </div>
       </div>
 
@@ -93,11 +71,11 @@
         </div>
         <div class="room-details">
           <h3>Cottage (Jacuzzi)</h3>
-          <p>Enjoy a private Jacuzzi, rain shower, and a serene outdoor sit-out area for total privacy.</p>
+          <p>Features a private Jacuzzi, rain shower, and a serene outdoor sit-out area.</p>
           <div class="room-amenities-icons">
             <i class="fa-solid fa-hot-tub-stone"></i> <i class="fa-solid fa-leaf"></i> <i class="fa-solid fa-couch"></i>
           </div>
-          <a href="https://live.ipms247.com/booking/book-rooms-hotelsaketplaza" class="btn-book-outline">Reserve Cottage</a>
+          <a href="https://live.ipms247.com/booking/book-rooms-hotelsaketplaza" class="btn-book-outline" target="_blank">Book Now</a>
         </div>
       </div>
 
@@ -114,11 +92,11 @@
         </div>
         <div class="room-details">
           <h3>Premium King</h3>
-          <p>A luxurious suite featuring a private patio and an attached Jacuzzi. Perfect for honeymooners.</p>
+          <p>A luxurious suite with a private patio and an attached Jacuzzi. Perfect for couples.</p>
           <div class="room-amenities-icons">
             <i class="fa-solid fa-crown"></i> <i class="fa-solid fa-hot-tub-stone"></i> <i class="fa-solid fa-mountain-sun"></i>
           </div>
-          <a href="https://live.ipms247.com/booking/book-rooms-hotelsaketplaza" class="btn-book-outline">Reserve King</a>
+          <a href="https://live.ipms247.com/booking/book-rooms-hotelsaketplaza" class="btn-book-outline" target="_blank">Book Now</a>
         </div>
       </div>
 
@@ -127,14 +105,7 @@
 
   <div class="lightbox" id="lightbox">
     <span class="lightbox-close">&times;</span>
-    <span class="lightbox-arrow lightbox-left">&#10094;</span>
     <img src="" alt="Room Full View">
-    <span class="lightbox-arrow lightbox-right">&#10095;</span>
-  </div>
-
-  <div class="floating-buttons">
-    <a href="https://wa.me/919420972666" class="whatsapp" target="_blank"><i class="fa-brands fa-whatsapp"></i></a>
-    <a href="tel:+912168260583" class="call-now"><i class="fa-solid fa-phone"></i></a>
   </div>
 
   <footer style="background: #222; color: white; text-align: center; padding: 40px 20px;">
@@ -142,7 +113,6 @@
   </footer>
 
   <script>
-    /* SLIDESHOW LOGIC */
     document.querySelectorAll(".room-card").forEach(card => {
       const mainImg = card.querySelector(".main-image");
       const thumbs = card.querySelectorAll(".thumb-strip img");
@@ -160,16 +130,15 @@
       card.querySelector(".arrow-right").onclick = () => updateUI((index + 1) % images.length);
       thumbs.forEach((t, i) => t.onclick = () => updateUI(i));
       
-      // Lightbox Trigger
       mainImg.onclick = () => {
         const lb = document.getElementById("lightbox");
-        const lbImg = lb.querySelector("img");
-        lbImg.src = mainImg.src;
+        lb.querySelector("img").src = mainImg.src;
         lb.classList.add("active");
       };
     });
 
     document.querySelector(".lightbox-close").onclick = () => document.getElementById("lightbox").classList.remove("active");
+    document.getElementById("lightbox").onclick = (e) => { if(e.target.id === 'lightbox') e.target.classList.remove("active"); };
   </script>
 </body>
 </html>
