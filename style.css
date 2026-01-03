@@ -1,15 +1,10 @@
-/* =========================== 
-   GLOBAL STYLES & VARIABLES
-=========================== */
 :root {
   --primary-blue: #2b6cb0;
   --secondary-purple: #805ad5;
-  --cta-orange: #e67e22; /* High contrast for Book Now */
+  --cta-orange: #e67e22;
   --bg-light: #f7f7f7;
   --text-dark: #333;
-  --white: #ffffff;
   --shadow: rgba(0, 0, 0, 0.12) 0px 4px 12px;
-  --transition: 0.3s ease-in-out;
 }
 
 * { margin: 0; padding: 0; box-sizing: border-box; }
@@ -18,7 +13,6 @@ body {
   font-family: "Poppins", sans-serif;
   color: var(--text-dark);
   background: var(--bg-light);
-  overflow-x: hidden;
   line-height: 1.6;
 }
 
@@ -27,139 +21,133 @@ h1, h2, h3 { font-family: "Playfair Display", serif; }
 .section-title {
   text-align: center;
   font-size: 2.2rem;
-  margin: 40px 0 20px;
-  color: #222;
+  margin: 50px 0 30px;
 }
 
-/* ===========================
-   HEADER & NAVIGATION
-=========================== */
+/* HEADER */
 .main-header {
   background: linear-gradient(135deg, var(--primary-blue), var(--secondary-purple));
   color: white;
-  padding: 60px 20px 30px;
+  padding: 60px 20px;
   text-align: center;
 }
 
+/* NAVBAR */
 .navbar {
-  width: 100%;
-  background: rgba(255, 255, 255, 0.85);
-  backdrop-filter: blur(12px);
+  background: rgba(255, 255, 255, 0.9);
+  backdrop-filter: blur(10px);
   padding: 15px 0;
   text-align: center;
   position: sticky;
   top: 0;
   z-index: 1000;
-  box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
 }
 
 .navbar a {
   text-decoration: none;
   margin: 0 15px;
-  font-size: 1rem;
   color: #444;
   font-weight: 600;
-  transition: var(--transition);
+  transition: 0.3s;
 }
 
-.navbar a:hover, .navbar a.active { color: var(--primary-blue); }
+.navbar a.active, .navbar a:hover { color: var(--primary-blue); }
 
-/* ===========================
-   HERO & BOOKING ENGINE
-=========================== */
+/* HERO & BOOKING BAR */
 .hero {
   position: relative;
-  height: 80vh;
-  background: url('Images/hero.jpg') center/cover no-repeat;
+  height: 70vh;
+  background-size: cover;
+  background-position: center;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  color: white;
+  text-align: center;
 }
 
 .hero-overlay {
   position: absolute;
   inset: 0;
-  background: rgba(0, 0, 0, 0.4);
+  background: rgba(0,0,0,0.4);
 }
 
-.hero-content {
-  position: relative;
-  color: white;
-  text-align: center;
-  padding: 0 20px;
-  margin-bottom: 40px;
-}
+.hero-content { position: relative; z-index: 2; margin-bottom: 30px; }
 
-.hero-content h2 { font-size: clamp(2rem, 5vw, 3.5rem); margin-bottom: 15px; }
-
-/* The Fast Booking Bar */
 .booking-engine {
   position: relative;
+  z-index: 5;
   background: white;
   padding: 20px;
   border-radius: 12px;
-  box-shadow: 0 10px 30px rgba(0,0,0,0.2);
   display: flex;
   flex-wrap: wrap;
   gap: 15px;
-  justify-content: center;
-  max-width: 950px;
-  width: 90%;
+  box-shadow: 0 15px 35px rgba(0,0,0,0.3);
+  max-width: 900px;
 }
 
-.booking-group { display: flex; flex-direction: column; align-items: flex-start; }
-.booking-group label { font-size: 0.8rem; font-weight: 700; color: #666; margin-bottom: 5px; }
-.booking-group input, .booking-group select { 
-  padding: 10px; border: 1px solid #ddd; border-radius: 5px; outline: none; 
-}
+.booking-group { display: flex; flex-direction: column; text-align: left; }
+.booking-group label { font-size: 0.75rem; font-weight: 700; color: #777; margin-bottom: 5px; }
+.booking-group input, .booking-group select { padding: 10px; border: 1px solid #ddd; border-radius: 4px; }
 
 .btn-book {
   background: var(--cta-orange);
   color: white;
   border: none;
-  padding: 12px 30px;
+  padding: 12px 25px;
   font-weight: 700;
   border-radius: 6px;
   cursor: pointer;
   align-self: flex-end;
-  transition: var(--transition);
 }
 
-.btn-book:hover { background: #d35400; transform: translateY(-2px); }
+/* ABOUT SECTION */
+.improved-about {
+  max-width: 900px;
+  margin: 60px auto;
+  padding: 40px;
+  background: white;
+  border-radius: 15px;
+  box-shadow: var(--shadow);
+  text-align: center;
+}
 
-/* ===========================
-   CARDS & FEATURES
-=========================== */
+.highlight-text {
+  margin-top: 25px;
+  font-size: 1.2rem;
+  font-weight: 600;
+  background: linear-gradient(to right, #ff7eb3, #ffb347);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* FEATURE CARDS */
 .features-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
   gap: 25px;
   max-width: 1200px;
-  margin: 0 auto 50px;
+  margin: 0 auto 60px;
   padding: 0 20px;
 }
 
 .feature-card {
   background: white;
   padding: 30px;
-  border-radius: 15px;
+  border-radius: 12px;
   text-align: center;
   box-shadow: var(--shadow);
-  transition: var(--transition);
+  transition: 0.3s;
 }
 
-.feature-card:hover { transform: translateY(-10px); box-shadow: 0 12px 24px rgba(0,0,0,0.15); }
-
+.feature-card:hover { transform: translateY(-8px); }
 .feature-card i { font-size: 2.5rem; color: var(--primary-blue); margin-bottom: 15px; }
 
-/* ===========================
-   RESPONSIVE FIXES
-=========================== */
+/* MOBILE */
 @media (max-width: 768px) {
-  .hero { height: auto; padding: 100px 0; }
-  .booking-engine { flex-direction: column; width: 85%; }
-  .booking-group { width: 100%; }
-  .booking-group input { width: 100%; }
-  .btn-book { width: 100%; margin-top: 10px; }
+  .booking-engine { flex-direction: column; width: 90%; }
+  .hero { height: auto; padding: 100px 20px; }
 }
