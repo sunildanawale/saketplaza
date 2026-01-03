@@ -1,23 +1,47 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>Gallery | Hotel Saket Plaza</title>
+  <meta charset="UTF-8"><title>Gallery | Hotel Saket Plaza</title>
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <header class="main-header"><h1>Visual Tour</h1></header>
   <nav class="navbar">
     <a href="index.html">Home</a><a href="rooms.html">Rooms</a><a href="gallery.html" class="active">Gallery</a><a href="facilities.html">Facilities</a><a href="tariff.html">Tariff</a><a href="contact.html">Contact</a>
   </nav>
 
+  <h2 style="text-align:center; margin-top:40px;">Photo Gallery</h2>
   <div class="gallery-grid">
-    <div class="gallery-item"><img src="Images/Garden.jpg"></div>
-    <div class="gallery-item"><img src="Images/swimming-pool.jpg"></div>
-    <div class="gallery-item"><img src="Images/dining-hall.jpg"></div>
-    <div class="gallery-item"><img src="Images/waterfall.jpg"></div>
-    <div class="gallery-item"><img src="Images/conference-hall.jpg"></div>
-    <div class="gallery-item"><img src="Images/machan-night.jpg"></div>
+    <div class="gallery-item" onclick="openLightbox(0, galData)"><img src="Images/Garden.jpg"><div class="caption">Lush Green Gardens</div></div>
+    <div class="gallery-item" onclick="openLightbox(1, galData)"><img src="Images/swimming-pool.jpg"><div class="caption">Vibrant Pool</div></div>
+    <div class="gallery-item" onclick="openLightbox(2, galData)"><img src="Images/dining-hall.jpg"><div class="caption">Pure Veg Dining</div></div>
+    <div class="gallery-item" onclick="openLightbox(3, galData)"><img src="Images/waterfall.jpg"><div class="caption">Refreshing Waterfall</div></div>
+    <div class="gallery-item" onclick="openLightbox(4, galData)"><img src="Images/conference-hall.jpg"><div class="caption">AC Conference Room</div></div>
+    <div class="gallery-item" onclick="openLightbox(5, galData)"><img src="Images/machan-night.jpg"><div class="caption">The Machan at Night</div></div>
   </div>
+
+  <div id="lb" class="lightbox">
+    <span class="lb-close" onclick="closeLightbox()">&times;</span>
+    <div class="lb-nav"><button class="lb-btn" onclick="changeSlide(-1)">&#10094;</button><button class="lb-btn" onclick="changeSlide(1)">&#10095;</button></div>
+    <img id="lb-img" src=""><p id="lb-cap" class="lb-caption"></p>
+  </div>
+
+  <script>
+    const galData = [
+      {src: 'Images/Garden.jpg', cap: 'Lush Green Gardens'},
+      {src: 'Images/swimming-pool.jpg', cap: 'Vibrant Multi-color Pool'},
+      {src: 'Images/dining-hall.jpg', cap: 'Pure Veg Dining Hall'},
+      {src: 'Images/waterfall.jpg', cap: 'Refreshing Waterfall Feature'},
+      {src: 'Images/conference-hall.jpg', cap: 'Modern Conference Hall'},
+      {src: 'Images/machan-night.jpg', cap: 'Romantic Machan (Tree House) View'}
+    ];
+    let currentIndex = 0;
+    function openLightbox(i, set) { currentIndex = i; updateLightbox(); document.getElementById('lb').classList.add('active'); }
+    function closeLightbox() { document.getElementById('lb').classList.remove('active'); }
+    function updateLightbox() {
+      document.getElementById('lb-img').src = galData[currentIndex].src;
+      document.getElementById('lb-cap').innerText = galData[currentIndex].cap;
+    }
+    function changeSlide(n) { currentIndex = (currentIndex + n + galData.length) % galData.length; updateLightbox(); }
+  </script>
 </body>
 </html>
