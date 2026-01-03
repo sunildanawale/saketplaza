@@ -1,35 +1,23 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8">
   <title>Gallery | Hotel Saket Plaza</title>
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <header class="main-header"><h1>Hotel Saket Plaza</h1><p>A Splash of Color and Comfort</p></header>
+  <header class="main-header"><h1>Visual Tour</h1></header>
   <nav class="navbar">
     <a href="index.html">Home</a><a href="rooms.html">Rooms</a><a href="gallery.html" class="active">Gallery</a><a href="facilities.html">Facilities</a><a href="tariff.html">Tariff</a><a href="contact.html">Contact</a>
   </nav>
 
-  <h2 class="section-title">Photo Gallery</h2>
   <div class="gallery-grid">
-    <div class="gallery-item"><img src="Images/Garden.jpg"><div class="caption">Lush Green Gardens</div></div>
-    <div class="gallery-item"><img src="Images/swimming-pool.jpg"><div class="caption">Vibrant Pool</div></div>
-    <div class="gallery-item"><img src="Images/dining-hall.jpg"><div class="caption">Dining Hall</div></div>
-    <div class="gallery-item"><img src="Images/waterfall.jpg"><div class="caption">Refreshing Waterfall</div></div>
-    <div class="gallery-item"><img src="Images/conference-hall.jpg"><div class="caption">Conference Hall</div></div>
-    <div class="gallery-item"><img src="Images/machan-night.jpg"><div class="caption">The Machan (Tree House)</div></div>
+    <div class="gallery-item"><img src="Images/Garden.jpg"></div>
+    <div class="gallery-item"><img src="Images/swimming-pool.jpg"></div>
+    <div class="gallery-item"><img src="Images/dining-hall.jpg"></div>
+    <div class="gallery-item"><img src="Images/waterfall.jpg"></div>
+    <div class="gallery-item"><img src="Images/conference-hall.jpg"></div>
+    <div class="gallery-item"><img src="Images/machan-night.jpg"></div>
   </div>
-
-  <div class="lightbox" id="gallery-lightbox" onclick="this.classList.remove('active')"><img id="lightbox-img" src=""></div>
-
-  <script>
-    document.querySelectorAll('.gallery-item img').forEach(img => {
-      img.onclick = () => {
-        document.getElementById('lightbox-img').src = img.src;
-        document.getElementById('gallery-lightbox').classList.add('active');
-      }
-    });
-  </script>
 </body>
 </html>
