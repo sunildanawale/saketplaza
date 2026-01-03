@@ -1,6 +1,4 @@
-/* ============================================================
-   GLOBAL RESET & THEME
-   ============================================================ */
+/* GLOBAL SETTINGS */
 :root {
   --primary: #2b6cb0;
   --secondary: #805ad5;
@@ -23,69 +21,48 @@ h1, h2, h3 { font-family: "Playfair Display", serif; }
   background: white; position: sticky; top: 0; z-index: 1000;
   padding: 15px 0; text-align: center; box-shadow: 0 2px 5px rgba(0,0,0,0.1);
 }
-.navbar a { text-decoration: none; margin: 0 15px; color: #444; font-weight: 600; transition: 0.3s; }
-.navbar a.active, .navbar a:hover { color: var(--primary); }
+.navbar a { text-decoration: none; margin: 0 15px; color: #444; font-weight: 600; }
+.navbar a.active { color: var(--primary); border-bottom: 2px solid var(--primary); }
 
-/* SECTION TITLES */
-.section-title { text-align: center; font-size: 2.2rem; margin: 40px 0; }
-
-/* ============================================================
-   IMAGE BOX FIX (Prevents "Full Size" / Stretching)
-   ============================================================ */
+/* FIXED IMAGE CONTAINERS (THE FIX) */
 .room-img-wrap, .gallery-item {
-  position: relative;
-  width: 100%;
-  height: 280px; /* Force uniform height */
-  overflow: hidden;
-  background: #ddd;
-  border-radius: 8px;
+  position: relative; width: 100%; height: 260px; /* Uniform height */
+  overflow: hidden; background: #eee;
 }
-
-/* THE CRITICAL FIX */
 .room-img-wrap img, .gallery-item img {
-  width: 100%;
-  height: 100% !important;
-  object-fit: cover !important; /* Crops image to fill box without stretching */
-  display: block;
+  width: 100%; height: 100%; 
+  object-fit: cover; /* CROPS IMAGE INSTEAD OF STRETCHING */
+  display: block; transition: 0.4s;
 }
 
-/* ============================================================
-   GRIDS & CARDS
-   ============================================================ */
-.rooms-grid, .gallery-grid, .features-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  gap: 25px;
-  max-width: 1200px;
-  margin: 0 auto 50px;
-  padding: 0 20px;
+/* GRIDS */
+.features-grid, .rooms-grid, .gallery-grid {
+  display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 30px; max-width: 1200px; margin: 40px auto; padding: 0 20px;
 }
 
-.room-card, .feature-card {
+/* CARDS */
+.feature-card, .room-card {
   background: white; border-radius: 12px; overflow: hidden;
   box-shadow: var(--shadow); transition: 0.3s;
 }
+.feature-card { padding: 30px; text-align: center; }
+.feature-card i { font-size: 2.5rem; color: var(--primary); margin-bottom: 15px; }
 
-/* THUMBNAILS (For Rooms) */
-.thumb-strip { display: flex; justify-content: center; gap: 8px; padding: 10px; background: #eee; }
+/* ROOM EXTRAS */
+.thumb-strip { display: flex; justify-content: center; gap: 8px; padding: 10px; background: #f9f9f9; }
 .thumb-strip img { width: 50px; height: 38px; object-fit: cover; cursor: pointer; opacity: 0.5; border-radius: 4px; }
 .thumb-strip img.active { opacity: 1; border: 2px solid var(--primary); }
+.room-details { padding: 25px; text-align: center; }
+.btn-book { display: inline-block; margin-top: 15px; padding: 10px 20px; border: 2px solid var(--primary); color: var(--primary); text-decoration: none; font-weight: 600; border-radius: 5px; }
 
-/* GALLERY CAPTIONS */
-.gallery-item .caption {
-  position: absolute; bottom: 0; left: 0; right: 0;
-  background: rgba(0,0,0,0.7); color: white; padding: 8px;
-  text-align: center; font-size: 0.85rem;
-  transform: translateY(100%); transition: 0.3s;
-}
-.gallery-item:hover .caption { transform: translateY(0); }
+/* ARROWS */
+.slide-arrow { position: absolute; top: 50%; transform: translateY(-50%); background: rgba(0,0,0,0.5); color: white; width: 35px; height: 35px; border-radius: 50%; display: flex; align-items: center; justify-content: center; cursor: pointer; z-index: 5; }
+.arrow-left { left: 10px; } .arrow-right { right: 10px; }
 
 /* LIGHTBOX */
-.lightbox {
-  position: fixed; inset: 0; background: rgba(0,0,0,0.95);
-  display: none; z-index: 2000; justify-content: center; align-items: center; flex-direction: column;
-}
+.lightbox { position: fixed; inset: 0; background: rgba(0,0,0,0.9); display: none; z-index: 2000; justify-content: center; align-items: center; }
 .lightbox.active { display: flex; }
-.lightbox img { max-width: 90%; max-height: 80vh; border-radius: 5px; }
+.lightbox img { max-width: 90%; max-height: 80vh; }
 
-footer { background: #222; color: white; text-align: center; padding: 40px 20px; }
+footer { background: #222; color: white; text-align: center; padding: 40px 20px; margin-top: 50px; }
