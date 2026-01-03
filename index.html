@@ -1,159 +1,109 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="Book your stay at Hotel Saket Plaza, Mahabaleshwar. Luxury rooms with Jacuzzis, multi-colour swimming pool, and pure veg dining. Best rates guaranteed." />
-  <meta name="keywords" content="Hotel Saket Plaza, Mahabaleshwar Hotel Booking, Luxury Resort Mahabaleshwar, Hotel with Jacuzzi Maharashtra" />
-  <title>Hotel Saket Plaza | Luxury Retreat in Mahabaleshwar</title>
-
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Official Site - Hotel Saket Plaza Mahabaleshwar. Book rooms with Jacuzzi, multi-color pool, and pure veg dining.">
+  <title>Hotel Saket Plaza | Luxury Retreat Mahabaleshwar</title>
+  
   <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet">
 </head>
-
 <body>
-  <a href="#main-content" class="skip-link" style="position:absolute; left:-10000px;">Skip to content</a>
-
-  <button id="dark-mode-toggle" class="btn-toggle" aria-label="Toggle dark mode">
-    <i class="fa-solid fa-moon"></i>
-  </button>
 
   <header class="main-header">
     <div class="logo-box">
       <h1>Hotel Saket Plaza</h1>
-      <p class="subtitle">Nature Existed; We Added Luxury</p>
+      <p class="subtitle">Mahabaleshwar’s Colorful Luxury Retreat</p>
     </div>
   </header>
 
   <nav class="navbar">
-    <div class="nav-container">
-      <a href="index.html">Home</a>
-      <a href="rooms.html">Rooms</a>
-      <a href="gallery.html">Gallery</a>
-      <a href="facilities.html">Facilities</a>
-      <a href="tariff.html">Tariff</a>
-      <a href="contact.html">Contact</a>
-    </div>
+    <a href="index.html" class="active">Home</a>
+    <a href="rooms.html">Rooms</a>
+    <a href="gallery.html">Gallery</a>
+    <a href="facilities.html">Facilities</a>
+    <a href="tariff.html">Tariff</a>
+    <a href="contact.html">Contact</a>
   </nav>
 
-  <main id="main-content">
-    <section class="hero" role="banner">
-      <div class="hero-overlay"></div>
-      <div class="hero-content">
-        <h2>Luxury Living in the Heart of Mahabaleshwar</h2>
-        <p>Experience the only multi-coloured swimming pool and premium Jacuzzi suites.</p>
-        <div class="hero-btns">
-            <a href="#about" class="btn-secondary">Learn More</a>
-        </div>
+  <section class="hero">
+    <div class="hero-overlay"></div>
+    <div class="hero-content">
+      <h2>Experience Nature & Luxury</h2>
+      <p>Your perfect getaway in the hills of Mahabaleshwar</p>
+    </div>
+
+    <form class="booking-engine" action="https://live.ipms247.com/booking/book-rooms-hotelsaketplaza" target="_blank">
+      <div class="booking-group">
+        <label>CHECK-IN</label>
+        <input type="date" required>
       </div>
-
-      <form class="booking-bar" action="https://live.ipms247.com/booking/book-rooms-hotelsaketplaza" method="GET" target="_blank">
-        <div class="booking-field">
-          <label for="checkin">Check-In</label>
-          <input type="date" id="checkin" name="checkin" required>
-        </div>
-        <div class="booking-field">
-          <label for="checkout">Check-Out</label>
-          <input type="date" id="checkout" name="checkout" required>
-        </div>
-        <div class="booking-field">
-          <label for="guests">Guests</label>
-          <select id="guests" name="adults">
-            <option value="1">1 Adult</option>
-            <option value="2" selected>2 Adults</option>
-            <option value="3">3 Adults</option>
-            <option value="4">4 Adults</option>
-          </select>
-        </div>
-        <button type="submit" class="btn-book-now">Book Now <i class="fa-solid fa-calendar-check"></i></button>
-      </form>
-    </section>
-
-    <section class="about improved-about" id="about">
-      <div class="about-container">
-        <h2 class="section-title">✨ A Colorful Luxury Retreat</h2>
-        <div class="about-content">
-          <p>Hotel Saket Plaza is one of Mahabaleshwar's finest attractions. Nestled in lush greenery yet walking distance from the main market, we offer a serene escape for families, honeymooners, and corporate groups.</p>
-          <p class="highlight-text">Mahabaleshwar's only hotel with a unique multi-colour swimming pool.</p>
-        </div>
+      <div class="booking-group">
+        <label>CHECK-OUT</label>
+        <input type="date" required>
       </div>
-    </section>
-
-    <section class="features">
-      <h2 class="section-title">Our Premium Amenities</h2>
-      <div class="features-grid">
-        <div class="feature-card">
-          <div class="feature-icon"><i class="fa-solid fa-water"></i></div>
-          <h3>Waterfall & Pool</h3>
-          <p>Relax in our signature multi-colour swimming pool with a refreshing waterfall feature.</p>
-        </div>
-        <div class="feature-card">
-          <div class="feature-icon"><i class="fa-solid fa-hot-tub-stone"></i></div>
-          <h3>Jacuzzi Suites</h3>
-          <p>Premium King and Queen rooms featuring private Jacuzzis for ultimate relaxation.</p>
-        </div>
-        <div class="feature-card">
-          <div class="feature-icon"><i class="fa-solid fa-leaf"></i></div>
-          <h3>Machan & Garden</h3>
-          <p>Beautifully landscaped gardens and a traditional Machan (Tree House) with fountains.</p>
-        </div>
-        <div class="feature-card">
-          <div class="feature-icon"><i class="fa-solid fa-clapperboard"></i></div>
-          <h3>Entertainment</h3>
-          <p>AC Home Theatre, Indoor Games, and an Entertainment Zone for all ages.</p>
-        </div>
+      <div class="booking-group">
+        <label>GUESTS</label>
+        <select>
+          <option>1 Adult</option>
+          <option selected>2 Adults</option>
+          <option>3 Adults</option>
+        </select>
       </div>
-    </section>
+      <button type="submit" class="btn-book">BOOK NOW</button>
+    </form>
+  </section>
 
-    <section class="reviews" style="padding: 60px 20px; background: var(--bg-light); text-align: center;">
-        <h2 class="section-title">What Our Guests Say</h2>
-        <div class="features-grid">
-            <div class="feature-card review-card">
-                <div class="stars" style="color: #f6ad55; margin-bottom: 10px;">
-                    <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
-                </div>
-                <p>"Excellent service and the pool is amazing at night. The Jacuzzi room was worth every penny!"</p>
-                <h4 style="margin-top: 15px;">- Rahul Sharma</h4>
-            </div>
-            <div class="feature-card review-card">
-                <div class="stars" style="color: #f6ad55; margin-bottom: 10px;">
-                    <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
-                </div>
-                <p>"Best pure veg food in Mahabaleshwar. Great location near the market but very peaceful."</p>
-                <h4 style="margin-top: 15px;">- Priya Mehta</h4>
-            </div>
+  <section class="features">
+    <h2 class="section-title">Why Stay With Us?</h2>
+    <div class="features-grid">
+      <div class="feature-card">
+        <i class="fa-solid fa-water"></i>
+        <h3>Unique Pool</h3>
+        <p>The only multi-colour swimming pool in Mahabaleshwar with a refreshing waterfall.</p>
+      </div>
+      <div class="feature-card">
+        <i class="fa-solid fa-hot-tub-stone"></i>
+        <h3>Luxury Jacuzzis</h3>
+        <p>Premium rooms equipped with private Jacuzzis for the ultimate relaxation.</p>
+      </div>
+      <div class="feature-card">
+        <i class="fa-solid fa-utensils"></i>
+        <h3>Pure Veg Dining</h3>
+        <p>Delightful multi-cuisine vegetarian dishes prepared by expert chefs.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="reviews" style="background: #eee; padding: 60px 20px;">
+    <h2 class="section-title">Guest Reviews</h2>
+    <div class="features-grid">
+      <div class="feature-card" style="text-align: left;">
+        <div style="color: #f1c40f; margin-bottom: 10px;">
+          <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
         </div>
-    </section>
-  </main>
+        <p>"Amazing location and the pool is beautiful. Best hotel for families!"</p>
+        <strong style="display: block; margin-top: 10px;">- Amit Verma</strong>
+      </div>
+      <div class="feature-card" style="text-align: left;">
+        <div style="color: #f1c40f; margin-bottom: 10px;">
+          <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+        </div>
+        <p>"The Jacuzzi room was sparkling clean. Excellent hospitality."</p>
+        <strong style="display: block; margin-top: 10px;">- Sneha Kapoor</strong>
+      </div>
+    </div>
+  </section>
 
-  <footer role="contentinfo">
-    <div class="footer-content">
-        <p>© 2026 Hotel Saket Plaza | Mahabaleshwar</p>
-        <p>Designed with ❤️ by <a href="#">Sunil Danawale</a></p>
+  <footer style="background: #222; color: white; text-align: center; padding: 40px 20px;">
+    <p>© 2026 Hotel Saket Plaza Mahabaleshwar</p>
+    <div style="margin-top: 15px;">
+        <a href="tel:+912168260583" style="color: #4da3ff; text-decoration: none;">+91 2168 260583</a> | 
+        <a href="mailto:info@hotelsaketplaza.com" style="color: #4da3ff; text-decoration: none;">info@hotelsaketplaza.com</a>
     </div>
   </footer>
 
-  <script>
-    // Theme logic
-    const toggle = document.getElementById('dark-mode-toggle');
-    toggle.addEventListener('click', () => {
-      document.body.classList.toggle('dark-mode');
-      const isDark = document.body.classList.contains('dark-mode');
-      toggle.innerHTML = isDark ? '<i class="fa-solid fa-sun"></i>' : '<i class="fa-solid fa-moon"></i>';
-    });
-
-    // Reveal animations
-    const observer = new IntersectionObserver((entries) => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) entry.target.classList.add('show');
-      });
-    }, { threshold: 0.1 });
-
-    document.querySelectorAll('.feature-card').forEach(card => observer.observe(card));
-  </script>
 </body>
 </html>
