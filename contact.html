@@ -7,51 +7,10 @@
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
   <link rel="stylesheet" href="style.css" />
-  <style>
-    /* Internal styles for the dynamic form toggle */
-    .form-toggle-wrapper {
-      display: flex;
-      margin-bottom: 25px;
-      background: #eee;
-      border-radius: 8px;
-      padding: 5px;
-    }
-    .toggle-btn {
-      flex: 1;
-      padding: 10px;
-      border: none;
-      background: transparent;
-      cursor: pointer;
-      font-weight: 600;
-      font-family: 'Poppins', sans-serif;
-      transition: 0.3s;
-      border-radius: 6px;
-    }
-    .toggle-btn.active {
-      background: #2b6cb0;
-      color: white;
-    }
-    .toggle-btn.active.agent-theme {
-      background: #ff8c00;
-    }
-    .form-section { display: none; animation: fadeIn 0.5s; }
-    .form-section.active { display: block; }
-
-    @keyframes fadeIn {
-      from { opacity: 0; transform: translateY(10px); }
-      to { opacity: 1; transform: translateY(0); }
-    }
-
-    .form-group { margin-bottom: 15px; text-align: left; }
-    .form-group label { display: block; margin-bottom: 5px; font-weight: 600; font-size: 0.9rem; }
-    .form-group input, .form-group textarea, .form-group select {
-      width: 100%; padding: 10px; border: 1px solid #ccc; border-radius: 6px;
-    }
-  </style>
 </head>
 <body>
 
-  <a href="https://wa.me/919420972666?text=Hi!%20I%20have%20an%20inquiry%20regarding%20Hotel%20Saket%20Plaza." class="whatsapp-float" target="_blank">
+  <a href="https://wa.me/919420972666?text=Hi!%20I%20have%20an%20inquiry%20regarding%20Hotel%20Saket%20Plaza." class="whatsapp-float" target="_blank" aria-label="Chat on WhatsApp">
     <i class="fab fa-whatsapp"></i>
   </a>
 
@@ -72,7 +31,6 @@
   </nav>
 
   <div class="contact-container">
-    
     <div>
       <div class="contact-card">
         <h2 class="about-title" id="form-heading">Guest Inquiry</h2>
@@ -83,7 +41,7 @@
         </div>
 
         <div id="guest-form" class="form-section active">
-          <form action="mailto:info@saketplaza.com" method="post" enctype="text/plain">
+          <form action="sendmail.php" method="POST">
             <div class="form-group">
               <label>Full Name</label>
               <input type="text" name="Guest_Name" placeholder="Enter your name" required>
@@ -95,21 +53,21 @@
             <div class="form-group">
               <label>Preferred Room</label>
               <select name="Room_Type">
-                <option>Luxury Room</option>
-                <option>Club Room</option>
-                <option>Cottage (Jacuzzi)</option>
+                <option value="Luxury Room">Luxury Room</option>
+                <option value="Club Room">Club Room</option>
+                <option value="Cottage (Jacuzzi)">Cottage (Jacuzzi)</option>
               </select>
             </div>
             <div class="form-group">
               <label>Message</label>
               <textarea name="Message" rows="4" placeholder="How can we help you?"></textarea>
             </div>
-            <button type="submit" class="contact-btn btn-blue" style="border:none; width:100%;">Send Inquiry</button>
+            <button type="submit" class="contact-btn btn-blue" style="border:none; width:100%; cursor:pointer;">Send Inquiry</button>
           </form>
         </div>
 
         <div id="agent-form" class="form-section">
-          <form action="mailto:info@saketplaza.com" method="post" enctype="text/plain">
+          <form action="sendmail.php" method="POST">
             <div class="form-group">
               <label>Agency Name</label>
               <input type="text" name="Agency_Name" placeholder="Enter Company Name" required>
@@ -126,7 +84,7 @@
               <label>Partnership Details</label>
               <textarea name="Details" rows="4" placeholder="Briefly describe your agency..."></textarea>
             </div>
-            <button type="submit" class="contact-btn btn-orange" style="border:none; width:100%;">Submit Agent Application</button>
+            <button type="submit" class="contact-btn btn-orange" style="border:none; width:100%; cursor:pointer;">Submit Agent Application</button>
           </form>
         </div>
       </div>
@@ -146,18 +104,17 @@
           <p><strong>Bank:</strong> State Bank of India</p>
         </div>
 
-        <a href="https://hotelsaketplaza.nowpay.co.in/" class="btn" style="width:100%; text-align:center; background:#28a745;" target="_blank">
+        <a href="https://hotelsaketplaza.nowpay.co.in/" class="btn" style="width:100%; text-align:center; background:#28a745; margin-bottom: 20px;" target="_blank">
           <i class="fa-solid fa-credit-card"></i> Online Payment Portal
         </a>
 
-        <iframe class="map-frame" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3791.5475630605!2d73.7126!3d17.9234!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMTfCsDU1JzI0LjIiTiA3M8KwNDInNDUuNCJF!5e0!3m2!1sen!2sin!4v1620000000000" allowfullscreen="" loading="lazy"></iframe>
+        <iframe class="map-frame" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3792.833535978434!2d73.71536637518095!3d17.928424183050116!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bc2667086055555%3A0x7427494f6e3c088c!2sHotel%20Saket%20Plaza!5e0!3m2!1sen!2sin!4v1700000000000!5m2!1sen!2sin" allowfullscreen="" loading="lazy"></iframe>
       </div>
     </div>
-
   </div>
 
   <footer>
-    <p>© 2026 Hotel Saket Plaza | Old Band Road, Mahabaleshwar</p>
+    <p>© <script>document.write(new Date().getFullYear())</script> Hotel Saket Plaza | Old Band Road, Mahabaleshwar</p>
   </footer>
 
   <script>
