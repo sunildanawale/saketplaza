@@ -30,7 +30,9 @@ h1, h2, h3 {
     HEADER (COMPACT)
 =========================== */
 .main-header {
-  position: relative;
+  position: sticky;
+  top: 0;
+  z-index: 1001;
   background: linear-gradient(135deg, #2b6cb0, #805ad5);
   color: white;
   padding: 40px 20px 30px; 
