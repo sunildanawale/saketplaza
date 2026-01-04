@@ -7,17 +7,58 @@
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
   <link rel="stylesheet" href="style.css" />
+  <style>
+    /* Internal styles for the dynamic form toggle */
+    .form-toggle-wrapper {
+      display: flex;
+      margin-bottom: 25px;
+      background: #eee;
+      border-radius: 8px;
+      padding: 5px;
+    }
+    .toggle-btn {
+      flex: 1;
+      padding: 10px;
+      border: none;
+      background: transparent;
+      cursor: pointer;
+      font-weight: 600;
+      font-family: 'Poppins', sans-serif;
+      transition: 0.3s;
+      border-radius: 6px;
+    }
+    .toggle-btn.active {
+      background: #2b6cb0;
+      color: white;
+    }
+    .toggle-btn.active.agent-theme {
+      background: #ff8c00;
+    }
+    .form-section { display: none; animation: fadeIn 0.5s; }
+    .form-section.active { display: block; }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(10px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    .form-group { margin-bottom: 15px; text-align: left; }
+    .form-group label { display: block; margin-bottom: 5px; font-weight: 600; font-size: 0.9rem; }
+    .form-group input, .form-group textarea, .form-group select {
+      width: 100%; padding: 10px; border: 1px solid #ccc; border-radius: 6px;
+    }
+  </style>
 </head>
 <body>
 
-  <a href="https://wa.me/919420972666?text=Hi!%20I%20want%20to%20inquire%20about%20Hotel%20Saket%20Plaza." class="whatsapp-float" target="_blank">
+  <a href="https://wa.me/919420972666?text=Hi!%20I%20have%20an%20inquiry%20regarding%20Hotel%20Saket%20Plaza." class="whatsapp-float" target="_blank">
     <i class="fab fa-whatsapp"></i>
   </a>
 
   <header class="main-header">
     <div class="logo-box">
       <h1>Hotel Saket Plaza</h1>
-      <p class="subtitle">Book Your Stay in Mahabaleshwar</p>
+      <p class="subtitle">Book Your Mahabaleshwar Getaway</p>
     </div>
   </header>
 
@@ -34,22 +75,59 @@
     
     <div>
       <div class="contact-card">
-        <h2 class="about-title">Direct Inquiries</h2>
+        <h2 class="about-title" id="form-heading">Guest Inquiry</h2>
         
-        <div class="action-box">
-          <h3>Guest Inquiry</h3>
-          <p>Click below to send us an email for bookings and rates.</p>
-          <a href="mailto:info@saketplaza.com?subject=Guest%20Inquiry" class="contact-btn btn-blue">
-            <i class="fa-solid fa-envelope"></i> Email Guest Inquiry
-          </a>
+        <div class="form-toggle-wrapper">
+          <button class="toggle-btn active" onclick="switchForm('guest')">Guest Inquiry</button>
+          <button class="toggle-btn" id="agent-tab" onclick="switchForm('agent')">Become an Agent</button>
         </div>
 
-        <div class="action-box agent">
-          <h3>Travel Agent</h3>
-          <p>Contact us for travel agent partnerships and B2B rates.</p>
-          <a href="mailto:info@saketplaza.com?subject=Agent%20Inquiry" class="contact-btn btn-orange">
-            <i class="fa-solid fa-briefcase"></i> Agent Partnership
-          </a>
+        <div id="guest-form" class="form-section active">
+          <form action="mailto:info@saketplaza.com" method="post" enctype="text/plain">
+            <div class="form-group">
+              <label>Full Name</label>
+              <input type="text" name="Guest_Name" placeholder="Enter your name" required>
+            </div>
+            <div class="form-group">
+              <label>Phone Number</label>
+              <input type="tel" name="Phone" placeholder="Your Mobile Number" required>
+            </div>
+            <div class="form-group">
+              <label>Preferred Room</label>
+              <select name="Room_Type">
+                <option>Luxury Room</option>
+                <option>Club Room</option>
+                <option>Cottage (Jacuzzi)</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label>Message</label>
+              <textarea name="Message" rows="4" placeholder="How can we help you?"></textarea>
+            </div>
+            <button type="submit" class="contact-btn btn-blue" style="border:none; width:100%;">Send Inquiry</button>
+          </form>
+        </div>
+
+        <div id="agent-form" class="form-section">
+          <form action="mailto:info@saketplaza.com" method="post" enctype="text/plain">
+            <div class="form-group">
+              <label>Agency Name</label>
+              <input type="text" name="Agency_Name" placeholder="Enter Company Name" required>
+            </div>
+            <div class="form-group">
+              <label>Contact Person</label>
+              <input type="text" name="Agent_Name" placeholder="Full Name" required>
+            </div>
+            <div class="form-group">
+              <label>City</label>
+              <input type="text" name="City" placeholder="Your Location">
+            </div>
+            <div class="form-group">
+              <label>Partnership Details</label>
+              <textarea name="Details" rows="4" placeholder="Briefly describe your agency..."></textarea>
+            </div>
+            <button type="submit" class="contact-btn btn-orange" style="border:none; width:100%;">Submit Agent Application</button>
+          </form>
         </div>
       </div>
     </div>
@@ -57,21 +135,22 @@
     <div>
       <div class="contact-card">
         <h2 class="about-title">Contact Details</h2>
-        <p><strong>Mobile:</strong> +91 94209 72666</p>
-        <p><strong>Email:</strong> info@saketplaza.com</p>
+        <p><strong><i class="fa-solid fa-phone"></i> Mobile:</strong> +91 94209 72666</p>
+        <p><strong><i class="fa-solid fa-envelope"></i> Email:</strong> info@saketplaza.com</p>
         
         <div class="bank-box">
-          <h3 style="color:#2b6cb0; margin-bottom:10px;">Bank Details</h3>
+          <h3 style="color:#2b6cb0; margin-bottom:10px;">Official Bank Details</h3>
           <p><strong>Name:</strong> SAKET HOTEL PVT LTD</p>
           <p><strong>Account:</strong> 11266770566</p>
           <p><strong>IFSC:</strong> SBIN0000274</p>
+          <p><strong>Bank:</strong> State Bank of India</p>
         </div>
 
         <a href="https://hotelsaketplaza.nowpay.co.in/" class="btn" style="width:100%; text-align:center; background:#28a745;" target="_blank">
-          <i class="fa-solid fa-credit-card"></i> Pay Online Now
+          <i class="fa-solid fa-credit-card"></i> Online Payment Portal
         </a>
 
-        <iframe class="map-frame" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3794.321855651631!2d73.6593452759312!3d17.91740928881476!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bc25e683707255f%3A0xe67f97972828b029!2sHotel%20Saket%20Plaza!5e0!3m2!1sen!2sin!4v1700000000000" allowfullscreen="" loading="lazy"></iframe>
+        <iframe class="map-frame" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3791.5475630605!2d73.7126!3d17.9234!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMTfCsDU1JzI0LjIiTiA3M8KwNDInNDUuNCJF!5e0!3m2!1sen!2sin!4v1620000000000" allowfullscreen="" loading="lazy"></iframe>
       </div>
     </div>
 
@@ -80,6 +159,29 @@
   <footer>
     <p>© 2026 Hotel Saket Plaza | Old Band Road, Mahabaleshwar</p>
   </footer>
+
+  <script>
+    function switchForm(type) {
+      const guestForm = document.getElementById('guest-form');
+      const agentForm = document.getElementById('agent-form');
+      const heading = document.getElementById('form-heading');
+      const btns = document.querySelectorAll('.toggle-btn');
+
+      btns.forEach(btn => btn.classList.remove('active', 'agent-theme'));
+
+      if (type === 'guest') {
+        guestForm.classList.add('active');
+        agentForm.classList.remove('active');
+        heading.innerText = "Guest Inquiry";
+        btns[0].classList.add('active');
+      } else {
+        agentForm.classList.add('active');
+        guestForm.classList.remove('active');
+        heading.innerText = "Agent Partnership";
+        btns[1].classList.add('active', 'agent-theme');
+      }
+    }
+  </script>
 
 </body>
 </html>
