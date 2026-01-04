@@ -42,6 +42,31 @@
       border-radius: 8px; 
       font-family: inherit; 
     }
+
+    /* Button Actions Styling */
+    .button-group {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      margin-top: 20px;
+    }
+    
+    .btn-submit {
+      width: 100%;
+      border: none;
+      cursor: pointer;
+      text-align: center;
+      font-size: 1rem;
+    }
+
+    .btn-call {
+      background: #ff8c00; /* Matching your Orange Navbar */
+      color: white;
+    }
+
+    .btn-call:hover {
+      background: #e67e00;
+    }
     
     .bank-box { 
       background: #f0f7ff; 
@@ -88,8 +113,10 @@
 <body>
 
   <header class="main-header">
-    <h1>Hotel Saket Plaza</h1>
-    <p class="subtitle">Connect With Us for Bookings & Inquiries</p>
+    <div class="logo-box">
+        <h1>Hotel Saket Plaza</h1>
+        <p class="subtitle">Connect With Us for Bookings & Inquiries</p>
+    </div>
   </header>
 
   <nav class="navbar">
@@ -104,47 +131,48 @@
   <div class="contact-container">
     <div>
       <div class="contact-card">
-        <h2>Inquiry & Booking</h2>
-        <form action="#">
+        <h2 id="formTitle">Guest Inquiry & Booking</h2>
+        
+        <div class="form-group">
+          <label>I am a...</label>
+          <select id="formType" onchange="toggleForm(this.value)">
+            <option value="inquiry">Guest (Inquiry/Booking)</option>
+            <option value="agent">Travel Agent (Partnership)</option>
+          </select>
+        </div>
+
+        <div class="form-group">
+          <label>Full Name / Agency Name</label>
+          <input type="text" id="userName" placeholder="Enter name" required>
+        </div>
+
+        <div id="inquiryFields">
           <div class="form-group">
-            <label>Purpose of Contact</label>
-            <select id="formType" onchange="toggleForm(this.value)">
-              <option value="inquiry">Make an Inquiry / Booking</option>
-              <option value="agent">Become an Agent</option>
+            <label>Preferred Room Category</label>
+            <select id="roomType">
+              <option>Luxury Room</option>
+              <option>Club Room</option>
+              <option>Cottage (Jacuzzi)</option>
+              <option>Premium Queen</option>
+              <option>Premium King</option>
             </select>
           </div>
-          <div class="form-group">
-            <label>Full Name</label>
-            <input type="text" placeholder="Your Name" required>
-          </div>
-          <div class="form-group">
-            <label>Phone Number</label>
-            <input type="tel" placeholder="91-XXXXXXXXXX" required>
-          </div>
-          <div id="inquiryFields">
-            <div class="form-group">
-              <label>Room Category</label>
-              <select>
-                <option>Luxury Room</option>
-                <option>Club Room</option>
-                <option>Cottage (Jacuzzi)</option>
-                <option>Premium Queen</option>
-                <option>Premium King</option>
-              </select>
-            </div>
-          </div>
-          <div id="agentFields" style="display:none;">
-            <div class="form-group">
-              <label>Agency Name</label>
-              <input type="text" placeholder="Enter Agency Name">
-            </div>
-          </div>
-          <div class="form-group">
-            <label>Message</label>
-            <textarea rows="4" placeholder="How can we help you?"></textarea>
-          </div>
-          <button type="submit" class="btn" style="width: 100%; border: none; cursor: pointer;">Send Inquiry</button>
-        </form>
+        </div>
+
+        <div class="form-group">
+          <label>Message / Special Requirements</label>
+          <textarea id="userMessage" rows="3" placeholder="How can we help you?"></textarea>
+        </div>
+
+        <div class="button-group">
+          <a href="javascript:void(0)" onclick="sendEmail()" class="btn btn-submit">
+            <i class="fa-solid fa-envelope"></i> Send Email Inquiry
+          </a>
+          
+          <a href="tel:+919420972666" class="btn btn-call btn-submit">
+            <i class="fa-solid fa-phone"></i> Call to Discuss: 94209 72666
+          </a>
+        </div>
       </div>
 
       <a href="https://hotelsaketplaza.nowpay.co.in/" class="payment-link" target="_blank">
@@ -159,6 +187,7 @@
     <div>
       <div class="contact-card">
         <h2>Contact Details</h2>
+        <p style="margin-bottom: 10px;"><strong><i class="fa-solid fa-envelope" style="color: #2b6cb0;"></i> Email:</strong> <a href="mailto:info@saketplaza.com" style="text-decoration:none; color:inherit;">info@saketplaza.com</a></p>
         <p style="margin-bottom: 10px;"><strong><i class="fa-solid fa-phone" style="color: #2b6cb0;"></i> Mobile:</strong> <a href="tel:+919420972666" style="text-decoration:none; color:inherit;">+91 94209 72666</a></p>
         <p style="margin-bottom: 10px;"><strong><i class="fa-solid fa-phone-flip" style="color: #2b6cb0;"></i> Landline:</strong> 02168-260583 / 260272</p>
         
@@ -168,10 +197,9 @@
           <p><strong>Account:</strong> 11266770566</p>
           <p><strong>IFSC:</strong> SBIN0000274</p>
           <p><strong>Bank:</strong> State Bank of India</p>
-          <p><strong>Branch:</strong> Mahabaleshwar</p>
         </div>
 
-        <iframe class="map-frame" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3800.000000000000!2d73.65!3d17.92!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMTfCsDU1JzEyLjAiTiA3M8KwMzknMDAuMCJF!5e0!3m2!1sen!2sin!4v1600000000000" allowfullscreen="" loading="lazy"></iframe>
+        <iframe class="map-frame" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3790.623192451042!2d73.715!3d17.925!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMTfCsDU1JzMwLjAiTiA3M8KwNDInNTQuMCJF!5e0!3m2!1sen!2sin!4v1620000000000!5m2!1sen!2sin" allowfullscreen="" loading="lazy"></iframe>
       </div>
     </div>
   </div>
@@ -182,8 +210,28 @@
 
   <script>
     function toggleForm(val) {
-      document.getElementById('inquiryFields').style.display = (val === 'inquiry') ? 'block' : 'none';
-      document.getElementById('agentFields').style.display = (val === 'agent') ? 'block' : 'none';
+      const title = document.getElementById('formTitle');
+      const inquiryFields = document.getElementById('inquiryFields');
+      
+      if (val === 'agent') {
+        title.innerText = "Become an Agent";
+        inquiryFields.style.display = 'none';
+      } else {
+        title.innerText = "Guest Inquiry & Booking";
+        inquiryFields.style.display = 'block';
+      }
+    }
+
+    function sendEmail() {
+      const type = document.getElementById('formType').value;
+      const name = document.getElementById('userName').value;
+      const room = document.getElementById('roomType').value;
+      const msg = document.getElementById('userMessage').value;
+      
+      const subject = type === 'agent' ? `Agent Partnership Request: ${name}` : `Guest Inquiry: ${name}`;
+      const body = `Name/Agency: ${name}%0D%0A${type === 'inquiry' ? 'Room Category: ' + room : ''}%0D%0AMessage: ${msg}`;
+      
+      window.location.href = `mailto:info@saketplaza.com?subject=${subject}&body=${body}`;
     }
   </script>
 
