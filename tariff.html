@@ -1,24 +1,148 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Tariff & Packages | Hotel Saket Plaza Mahabaleshwar</title>
+  <title>Tariff – Hotel Saket Plaza</title>
 
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&family=Playfair+Display:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet">
+
+  <!-- Global CSS -->
   <link rel="stylesheet" href="style.css">
+
+  <style>
+    /* ---------------- TARIF PAGE CUSTOM STYLING ---------------- */
+
+    .tariff-header-box {
+      margin: 30px auto;
+      padding: 25px;
+      text-align: center;
+      background: linear-gradient(90deg, #ff7a8a, #ffb84d);
+      border-radius: 14px;
+      color: white;
+      max-width: 950px;
+      box-shadow: 0 6px 18px rgba(0,0,0,0.15);
+    }
+
+    .tariff-header-box h2 {
+      margin-bottom: 8px;
+      font-size: 2rem;
+      font-family: 'Playfair Display', serif;
+    }
+
+    .tariff-subtitle {
+      font-size: 1rem;
+      font-weight: 600;
+      letter-spacing: 1px;
+    }
+
+    /* TARIFF CARDS GRID */
+    .tariff-cards {
+      max-width: 1100px;
+      margin: 40px auto;
+      padding: 20px;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(310px, 1fr));
+      gap: 30px;
+    }
+
+    /* Prevent conflict with global card class */
+    .tariff-card {
+      background: white;
+      border-radius: 15px;
+      padding: 22px;
+      border-top: 6px solid #ff7a8a;
+      box-shadow: 0 6px 18px rgba(0,0,0,0.12);
+      transition: 0.3s ease;
+    }
+
+    .tariff-card:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 12px 26px rgba(0,0,0,0.18);
+    }
+
+    .tariff-card h3 {
+      margin-top: 0;
+      font-size: 22px;
+      font-weight: 600;
+      color: #333;
+    }
+
+    .price-box {
+      margin-top: 12px;
+      background: #fff3f6;
+      padding: 12px;
+      border-radius: 10px;
+    }
+
+    .price-item {
+      display: flex;
+      justify-content: space-between;
+      padding: 4px 0;
+      font-size: 15px;
+    }
+
+    .three-night-offer {
+      background: #fff6e2;
+      margin-top: 12px;
+      padding: 12px;
+      border-radius: 10px;
+    }
+
+    /* Notes Section */
+    .notes-box {
+      max-width: 1000px;
+      margin: 40px auto;
+      background: #e8f7ff;
+      padding: 22px;
+      border-left: 6px solid #2ea3ff;
+      border-radius: 10px;
+      box-shadow: 0 5px 14px rgba(0,0,0,0.12);
+    }
+
+    .notes-box h3 {
+      margin-top: 0;
+      font-size: 20px;
+      color: #0a1a2a;
+    }
+
+    .notes-box ul {
+      padding-left: 22px;
+      margin: 0;
+      line-height: 1.6;
+    }
+
+    /* Download Button */
+    .download-btn {
+      padding: 14px 30px;
+      background: linear-gradient(90deg, #ff7a8a, #ffb84d);
+      text-decoration: none;
+      color: #fff;
+      font-weight: 600;
+      border-radius: 8px;
+      display: inline-block;
+      margin-top: 20px;
+      box-shadow: 0 6px 14px rgba(0,0,0,0.15);
+    }
+
+    .download-btn:hover {
+      opacity: 0.9;
+    }
+
+  </style>
 </head>
 
-<body class="tariff-page">
+<body>
 
+  <!-- HEADER (Updated for global styling) -->
   <header class="main-header">
-    <div class="logo-box">
-      <h1>Hotel Saket Plaza</h1>
-      <p class="subtitle">Curated Seasonal Pricing & Packages</p>
-    </div>
+    <h1>Hotel Saket Plaza</h1>
+    <p class="subtitle">Tariff & Special Seasonal Offers</p>
   </header>
 
+  <!-- NAVIGATION (Updated) -->
   <nav class="navbar">
     <a href="index.html">Home</a>
     <a href="rooms.html">Rooms</a>
@@ -28,154 +152,125 @@
     <a href="contact.html">Contact</a>
   </nav>
 
-  <main class="tariff-container" style="max-width: 1200px; margin: 0 auto; padding: 60px 20px;">
-    
-    <section class="tariff-hero" style="text-align: center; margin-bottom: 50px; background: var(--bg-soft); padding: 40px; border-radius: 15px; border: 1px solid var(--gold-soft);">
-      <h2 style="font-family: 'Playfair Display', serif; color: var(--navy); font-size: 2.5rem; margin-bottom: 10px;">Winter Season Portfolio</h2>
-      <p style="text-transform: uppercase; letter-spacing: 2px; color: var(--gold); font-weight: 500; font-size: 0.9rem;">
-        Valid: January 1, 2026 – March 31, 2026
-      </p>
-    </section>
+  <!-- COLORFUL BANNER -->
+  <div class="tariff-header-box">
+    <h2>Winter Season Tariff</h2>
+    <p class="tariff-subtitle">
+      Effective: 1 Jan 2026 – 31 Mar 2026
+    </p>
+  </div>
 
-    <div class="tariff-grid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(340px, 1fr)); gap: 30px;">
+  <!-- TARIFF CARDS GRID -->
+  <section class="tariff-cards">
 
-      <article class="tariff-card" style="background: white; border-radius: 12px; overflow: hidden; box-shadow: var(--shadow-md); border: 1px solid #eee;">
-        <div class="card-head" style="background: var(--navy); color: white; padding: 25px; text-align: center;">
-          <h3 style="font-family: 'Playfair Display', serif; font-size: 1.5rem;">Luxury Room A.C.</h3>
-        </div>
-        <div class="card-body" style="padding: 30px;">
-          <div class="rate-group" style="margin-bottom: 25px;">
-            <p style="font-size: 0.75rem; text-transform: uppercase; color: var(--gold); font-weight: 600; margin-bottom: 10px;">Daily Investment</p>
-            <div style="display: flex; justify-content: space-between; padding: 8px 0; border-bottom: 1px solid #f5f5f5;"><span>Per Couple</span><strong>₹5,000</strong></div>
-            <div style="display: flex; justify-content: space-between; padding: 8px 0; border-bottom: 1px solid #f5f5f5;"><span>Extra Adult</span><strong>₹1,500</strong></div>
-            <div style="display: flex; justify-content: space-between; padding: 8px 0;"><span>Child (5–12)</span><strong>₹1,200</strong></div>
-          </div>
-          <div class="package-group" style="background: #fafafa; padding: 20px; border-radius: 8px; border-left: 3px solid var(--gold);">
-            <p style="font-size: 0.75rem; text-transform: uppercase; color: var(--navy); font-weight: 600; margin-bottom: 10px;">3-Night Signature Offer</p>
-            <div style="display: flex; justify-content: space-between; padding: 5px 0;"><span>Couple Package</span><strong>₹13,500</strong></div>
-            <div style="display: flex; justify-content: space-between; padding: 5px 0;"><span>Extra Adult</span><strong>₹4,200</strong></div>
-          </div>
-        </div>
-      </article>
-
-      <article class="tariff-card" style="background: white; border-radius: 12px; overflow: hidden; box-shadow: var(--shadow-md); border: 1px solid #eee;">
-        <div class="card-head" style="background: var(--navy); color: white; padding: 25px; text-align: center;">
-          <h3 style="font-family: 'Playfair Display', serif; font-size: 1.5rem;">Club Room A.C.</h3>
-        </div>
-        <div class="card-body" style="padding: 30px;">
-          <div class="rate-group" style="margin-bottom: 25px;">
-            <p style="font-size: 0.75rem; text-transform: uppercase; color: var(--gold); font-weight: 600; margin-bottom: 10px;">Daily Investment</p>
-            <div style="display: flex; justify-content: space-between; padding: 8px 0; border-bottom: 1px solid #f5f5f5;"><span>Per Couple</span><strong>₹5,500</strong></div>
-            <div style="display: flex; justify-content: space-between; padding: 8px 0; border-bottom: 1px solid #f5f5f5;"><span>Extra Adult</span><strong>₹1,500</strong></div>
-            <div style="display: flex; justify-content: space-between; padding: 8px 0;"><span>Child (5–12)</span><strong>₹1,200</strong></div>
-          </div>
-          <div class="package-group" style="background: #fafafa; padding: 20px; border-radius: 8px; border-left: 3px solid var(--gold);">
-            <p style="font-size: 0.75rem; text-transform: uppercase; color: var(--navy); font-weight: 600; margin-bottom: 10px;">3-Night Signature Offer</p>
-            <div style="display: flex; justify-content: space-between; padding: 5px 0;"><span>Couple Package</span><strong>₹15,000</strong></div>
-            <div style="display: flex; justify-content: space-between; padding: 5px 0;"><span>Extra Adult</span><strong>₹4,200</strong></div>
-          </div>
-        </div>
-      </article>
-
-      <article class="tariff-card" style="background: white; border-radius: 12px; overflow: hidden; box-shadow: var(--shadow-md); border: 1px solid #eee;">
-        <div class="card-head" style="background: var(--gold); color: white; padding: 25px; text-align: center;">
-          <h3 style="font-family: 'Playfair Display', serif; font-size: 1.5rem;">Cottage with Jacuzzi</h3>
-        </div>
-        <div class="card-body" style="padding: 30px;">
-          <div class="rate-group" style="margin-bottom: 25px;">
-            <p style="font-size: 0.75rem; text-transform: uppercase; color: var(--gold); font-weight: 600; margin-bottom: 10px;">Daily Investment</p>
-            <div style="display: flex; justify-content: space-between; padding: 8px 0; border-bottom: 1px solid #f5f5f5;"><span>Per Couple</span><strong>₹6,400</strong></div>
-            <div style="display: flex; justify-content: space-between; padding: 8px 0; border-bottom: 1px solid #f5f5f5;"><span>Extra Adult</span><strong>₹1,500</strong></div>
-            <div style="display: flex; justify-content: space-between; padding: 8px 0;"><span>Child (5–12)</span><strong>₹1,200</strong></div>
-          </div>
-          <div class="package-group" style="background: #fdfaf4; padding: 20px; border-radius: 8px; border-left: 3px solid var(--navy);">
-            <p style="font-size: 0.75rem; text-transform: uppercase; color: var(--navy); font-weight: 600; margin-bottom: 10px;">3-Night Signature Offer</p>
-            <div style="display: flex; justify-content: space-between; padding: 5px 0;"><span>Couple Package</span><strong>₹18,000</strong></div>
-            <div style="display: flex; justify-content: space-between; padding: 5px 0;"><span>Extra Adult</span><strong>₹4,200</strong></div>
-          </div>
-        </div>
-      </article>
-
-      <article class="tariff-card" style="background: white; border-radius: 12px; overflow: hidden; box-shadow: var(--shadow-md); border: 1px solid #eee;">
-        <div class="card-head" style="background: var(--navy); color: white; padding: 25px; text-align: center;">
-          <h3 style="font-family: 'Playfair Display', serif; font-size: 1.5rem;">Premium Queen</h3>
-        </div>
-        <div class="card-body" style="padding: 30px;">
-          <div class="rate-group" style="margin-bottom: 25px;">
-            <p style="font-size: 0.75rem; text-transform: uppercase; color: var(--gold); font-weight: 600; margin-bottom: 10px;">Daily Investment</p>
-            <div style="display: flex; justify-content: space-between; padding: 8px 0; border-bottom: 1px solid #f5f5f5;"><span>Per Couple</span><strong>₹6,600</strong></div>
-            <div style="display: flex; justify-content: space-between; padding: 8px 0; border-bottom: 1px solid #f5f5f5;"><span>Extra Adult</span><strong>₹1,500</strong></div>
-            <div style="display: flex; justify-content: space-between; padding: 8px 0;"><span>Child (5–12)</span><strong>₹1,200</strong></div>
-          </div>
-          <div class="package-group" style="background: #fafafa; padding: 20px; border-radius: 8px; border-left: 3px solid var(--gold);">
-            <p style="font-size: 0.75rem; text-transform: uppercase; color: var(--navy); font-weight: 600; margin-bottom: 10px;">3-Night Signature Offer</p>
-            <div style="display: flex; justify-content: space-between; padding: 5px 0;"><span>Couple Package</span><strong>₹18,600</strong></div>
-            <div style="display: flex; justify-content: space-between; padding: 5px 0;"><span>Extra Adult</span><strong>₹4,200</strong></div>
-          </div>
-        </div>
-      </article>
-
-      <article class="tariff-card" style="background: white; border-radius: 12px; overflow: hidden; box-shadow: var(--shadow-md); border: 1px solid #eee;">
-        <div class="card-head" style="background: var(--navy); color: white; padding: 25px; text-align: center;">
-          <h3 style="font-family: 'Playfair Display', serif; font-size: 1.5rem;">Premium King</h3>
-        </div>
-        <div class="card-body" style="padding: 30px;">
-          <div class="rate-group" style="margin-bottom: 25px;">
-            <p style="font-size: 0.75rem; text-transform: uppercase; color: var(--gold); font-weight: 600; margin-bottom: 10px;">Daily Investment</p>
-            <div style="display: flex; justify-content: space-between; padding: 8px 0; border-bottom: 1px solid #f5f5f5;"><span>Per Couple</span><strong>₹6,900</strong></div>
-            <div style="display: flex; justify-content: space-between; padding: 8px 0; border-bottom: 1px solid #f5f5f5;"><span>Extra Adult</span><strong>₹1,500</strong></div>
-            <div style="display: flex; justify-content: space-between; padding: 8px 0;"><span>Child (5–12)</span><strong>₹1,200</strong></div>
-          </div>
-          <div class="package-group" style="background: #fafafa; padding: 20px; border-radius: 8px; border-left: 3px solid var(--gold);">
-            <p style="font-size: 0.75rem; text-transform: uppercase; color: var(--navy); font-weight: 600; margin-bottom: 10px;">3-Night Signature Offer</p>
-            <div style="display: flex; justify-content: space-between; padding: 5px 0;"><span>Couple Package</span><strong>₹19,200</strong></div>
-            <div style="display: flex; justify-content: space-between; padding: 5px 0;"><span>Extra Adult</span><strong>₹4,200</strong></div>
-          </div>
-        </div>
-      </article>
-
-      <article class="tariff-card" style="background: white; border-radius: 12px; overflow: hidden; box-shadow: var(--shadow-md); border: 2px solid var(--gold-soft);">
-        <div class="card-head" style="background: var(--gold); color: white; padding: 25px; text-align: center;">
-          <h3 style="font-family: 'Playfair Display', serif; font-size: 1.5rem;">Club 4-PAX Offer</h3>
-        </div>
-        <div class="card-body" style="padding: 30px;">
-          <div class="rate-group" style="margin-bottom: 25px;">
-            <p style="font-size: 0.75rem; text-transform: uppercase; color: var(--gold); font-weight: 600; margin-bottom: 10px;">Group Daily Investment</p>
-            <div style="display: flex; justify-content: space-between; padding: 8px 0; border-bottom: 1px solid #f5f5f5;"><span>Per Group</span><strong>₹7,350</strong></div>
-            <div style="display: flex; justify-content: space-between; padding: 8px 0; border-bottom: 1px solid #f5f5f5;"><span>Extra Adult</span><strong>₹1,500</strong></div>
-            <div style="display: flex; justify-content: space-between; padding: 8px 0;"><span>Child (5–12)</span><strong>₹1,200</strong></div>
-          </div>
-          <div class="package-group" style="background: #fdfaf4; padding: 20px; border-radius: 8px; border-left: 3px solid var(--navy);">
-            <p style="font-size: 0.75rem; text-transform: uppercase; color: var(--navy); font-weight: 600; margin-bottom: 10px;">3-Night Signature Offer</p>
-            <div style="display: flex; justify-content: space-between; padding: 5px 0;"><span>Total Package</span><strong>₹19,800</strong></div>
-            <div style="display: flex; justify-content: space-between; padding: 5px 0;"><span>Extra Adult</span><strong>₹4,200</strong></div>
-          </div>
-        </div>
-      </article>
-
+    <div class="tariff-card">
+      <h3>Luxury Room A.C.</h3>
+      <div class="price-box">
+        <div class="price-item"><span>Per Couple</span><strong>₹5000</strong></div>
+        <div class="price-item"><span>Extra Adult</span><strong>₹1500</strong></div>
+        <div class="price-item"><span>Child 5–12</span><strong>₹1200</strong></div>
+      </div>
+      <div class="three-night-offer">
+        <div class="price-item"><span>3-Night Offer</span><strong>₹13500</strong></div>
+        <div class="price-item"><span>Extra Adult</span><strong>₹4200</strong></div>
+        <div class="price-item"><span>Child</span><strong>₹3300</strong></div>
+      </div>
     </div>
 
-    <section class="tariff-notes" style="margin-top: 60px; padding: 40px; background: var(--navy); color: white; border-radius: 15px;">
-      <h3 style="font-family: 'Playfair Display', serif; margin-bottom: 20px; border-bottom: 1px solid rgba(255,255,255,0.1); padding-bottom: 10px;">Essential Details</h3>
-      <ul style="list-style: none; line-height: 2;">
-        <li><i class="fa-solid fa-circle-check" style="color: var(--gold); margin-right: 10px;"></i> GST applicable as per government rates (5% – 18%)</li>
-        <li><i class="fa-solid fa-circle-check" style="color: var(--gold); margin-right: 10px;"></i> Complimentary stay for children below 5 years (valid ID required)</li>
-        <li><i class="fa-solid fa-circle-check" style="color: var(--gold); margin-right: 10px;"></i> All dining experiences are 100% pure vegetarian</li>
-        <li><i class="fa-solid fa-circle-check" style="color: var(--gold); margin-right: 10px;"></i> Check-in: 12:00 PM • Check-out: 9:00 AM</li>
-      </ul>
-      
-      <div style="text-align: center; margin-top: 40px;">
-        <a href="tariff-2026.pdf" download class="btn" style="display: inline-block; background: var(--gold); border: none; padding: 15px 40px;">
-          <i class="fa-solid fa-file-pdf"></i> Download Official Tariff PDF
-        </a>
+    <div class="tariff-card">
+      <h3>Club Room A.C.</h3>
+      <div class="price-box">
+        <div class="price-item"><span>Per Couple</span><strong>₹5500</strong></div>
+        <div class="price-item"><span>Extra Adult</span><strong>₹1500</strong></div>
+        <div class="price-item"><span>Child 5–12</span><strong>₹1200</strong></div>
       </div>
-    </section>
+      <div class="three-night-offer">
+        <div class="price-item"><span>3-Night Offer</span><strong>₹15000</strong></div>
+        <div class="price-item"><span>Extra Adult</span><strong>₹4200</strong></div>
+        <div class="price-item"><span>Child</span><strong>₹3300</strong></div>
+      </div>
+    </div>
 
-  </main>
+    <div class="tariff-card">
+      <h3>Cottage A.C. with Jacuzzi</h3>
+      <div class="price-box">
+        <div class="price-item"><span>Per Couple</span><strong>₹6400</strong></div>
+        <div class="price-item"><span>Extra Adult</span><strong>₹1500</strong></div>
+        <div class="price-item"><span>Child 5–12</span><strong>₹1200</strong></div>
+      </div>
+      <div class="three-night-offer">
+        <div class="price-item"><span>3-Night Offer</span><strong>₹18000</strong></div>
+        <div class="price-item"><span>Extra Adult</span><strong>₹4200</strong></div>
+        <div class="price-item"><span>Child</span><strong>₹3300</strong></div>
+      </div>
+    </div>
 
+    <div class="tariff-card">
+      <h3>Premium Queen A.C.</h3>
+      <div class="price-box">
+        <div class="price-item"><span>Per Couple</span><strong>₹6600</strong></div>
+        <div class="price-item"><span>Extra Adult</span><strong>₹1500</strong></div>
+        <div class="price-item"><span>Child 5–12</span><strong>₹1200</strong></div>
+      </div>
+      <div class="three-night-offer">
+        <div class="price-item"><span>3-Night Offer</span><strong>₹18600</strong></div>
+        <div class="price-item"><span>Extra Adult</span><strong>₹4200</strong></div>
+        <div class="price-item"><span>Child</span><strong>₹3300</strong></div>
+      </div>
+    </div>
+
+    <div class="tariff-card">
+      <h3>Premium King A.C.</h3>
+      <div class="price-box">
+        <div class="price-item"><span>Per Couple</span><strong>₹6900</strong></div>
+        <div class="price-item"><span>Extra Adult</span><strong>₹1500</strong></div>
+        <div class="price-item"><span>Child 5–12</span><strong>₹1200</strong></div>
+      </div>
+      <div class="three-night-offer">
+        <div class="price-item"><span>3-Night Offer</span><strong>₹19200</strong></div>
+        <div class="price-item"><span>Extra Adult</span><strong>₹4200</strong></div>
+        <div class="price-item"><span>Child</span><strong>₹3300</strong></div>
+      </div>
+    </div>
+
+    <div class="tariff-card">
+      <h3>Club Room A.C. – 4 PAX Offer</h3>
+      <div class="price-box">
+        <div class="price-item"><span>Per Couple</span><strong>₹7350</strong></div>
+        <div class="price-item"><span>Extra Adult</span><strong>₹1500</strong></div>
+        <div class="price-item"><span>Child 5–12</span><strong>₹1200</strong></div>
+      </div>
+      <div class="three-night-offer">
+        <div class="price-item"><span>3-Night Offer</span><strong>₹19800</strong></div>
+        <div class="price-item"><span>Extra Adult</span><strong>₹4200</strong></div>
+        <div class="price-item"><span>Child</span><strong>₹3300</strong></div>
+      </div>
+    </div>
+
+  </section>
+
+  <!-- NOTES SECTION -->
+  <div class="notes-box">
+    <h3>Important Notes</h3>
+    <ul>
+      <li>GST applicable as per government rates (5% – 18%)</li>
+      <li>Children below 5 years stay complimentary with valid ID</li>
+      <li>All meals are 100% pure vegetarian</li>
+      <li>Check-in: 12:00 PM • Check-out: 9:00 AM</li>
+      <li>Cancellation policy available in the downloadable PDF</li>
+    </ul>
+  </div>
+
+  <!-- DOWNLOAD BUTTON -->
+  <div style="text-align:center;">
+    <a href="tariff-2026.pdf" download class="download-btn">⬇ Download Tariff PDF</a>
+  </div>
+
+  <!-- FOOTER -->
   <footer>
-    <p>© 2026 Hotel Saket Plaza | Old Band Road, Mahabaleshwar</p>
+    <p>© 2026 Hotel Saket Plaza | Designed by <a href="#">Sunil Danawale</a></p>
   </footer>
 
 </body>
+
 </html>
