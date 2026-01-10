@@ -364,4 +364,43 @@
         t.addEventListener("keydown", (e) => {
           if (e.key === "Enter" || e.key === " ") {
             e.preventDefault();
-            changeImage
+            changeImage(i);
+          }
+        });
+      });
+
+      card.querySelector(".arrow-left").onclick = () => {
+        changeImage((index - 1 + images.length) % images.length);
+      };
+
+      card.querySelector(".arrow-right").onclick = () => {
+        changeImage((index + 1) % images.length);
+      };
+
+      // Keyboard support for arrows
+      card.querySelector(".arrow-left").addEventListener("keydown", (e) => {
+        if (e.key === "Enter" || e.key === " ") {
+          e.preventDefault();
+          changeImage((index - 1 + images.length) % images.length);
+        }
+      });
+
+      card.querySelector(".arrow-right").addEventListener("keydown", (e) => {
+        if (e.key === "Enter" || e.key === " ") {
+          e.preventDefault();
+          changeImage((index + 1) % images.length);
+        }
+      });
+    });
+
+    /*************************
+        LIGHTBOX LOGIC
+    *************************/
+    const lightbox = document.getElementById("lightbox");
+    const lightboxImg = document.getElementById("lightbox-img");
+    const closeBtn = document.querySelector(".lightbox-close");
+    let activeImages = [];
+    let activeIndex = 0;
+
+    document.querySelectorAll(".main-image").forEach(img => {
+      img.addEventListener("click", () => {
