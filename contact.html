@@ -3,13 +3,12 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Contact & Reservations | Hotel Saket Plaza</title>
-  
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&family=Playfair+Display:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet" />
+  <title>Contact – Hotel Saket Plaza</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
   <link rel="stylesheet" href="style.css" />
 </head>
-<body class="contact-page">
+<body>
 
   <a href="https://wa.me/919420972666?text=Hi!%20I%20have%20an%20inquiry%20regarding%20Hotel%20Saket%20Plaza." class="whatsapp-float" target="_blank" aria-label="Chat on WhatsApp">
     <i class="fab fa-whatsapp"></i>
@@ -18,7 +17,7 @@
   <header class="main-header">
     <div class="logo-box">
       <h1>Hotel Saket Plaza</h1>
-      <p class="subtitle">Personalized Concierge & Bookings</p>
+      <p class="subtitle">Book Your Mahabaleshwar Getaway</p>
     </div>
   </header>
 
@@ -31,101 +30,91 @@
     <a href="contact.html" class="active">Contact</a>
   </nav>
 
-  <main class="contact-container" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(350px, 1fr)); gap: 40px; padding: 60px 20px; max-width: 1200px; margin: 0 auto;">
-    
-    <div class="form-wrapper">
-      <div class="contact-card" style="height: 100%;">
-        <h2 class="about-title" id="form-heading" style="font-size: 2rem; margin-bottom: 20px;">Guest Inquiry</h2>
+  <div class="contact-container">
+    <div>
+      <div class="contact-card">
+        <h2 class="about-title" id="form-heading">Guest Inquiry</h2>
         
-        <div class="form-toggle-wrapper" style="margin-bottom: 30px; display: flex; gap: 10px;">
-          <button class="btn toggle-btn active" onclick="switchForm('guest')" style="padding: 10px 20px; font-size: 0.8rem; margin-top: 0;">For Guests</button>
-          <button class="btn toggle-btn" id="agent-tab" onclick="switchForm('agent')" style="padding: 10px 20px; font-size: 0.8rem; margin-top: 0; background: transparent; color: var(--gold);">For Agents</button>
+        <div class="form-toggle-wrapper">
+          <button class="toggle-btn active" onclick="switchForm('guest')">Guest Inquiry</button>
+          <button class="toggle-btn" id="agent-tab" onclick="switchForm('agent')">Become an Agent</button>
         </div>
 
         <div id="guest-form" class="form-section active">
           <form action="sendmail.php" method="POST">
-            <div class="form-group" style="margin-bottom: 20px;">
-              <label style="display: block; font-size: 0.8rem; text-transform: uppercase; letter-spacing: 1px; color: var(--text-light);">Full Name</label>
-              <input type="text" name="Guest_Name" placeholder="e.g. John Doe" required style="width: 100%;">
+            <div class="form-group">
+              <label>Full Name</label>
+              <input type="text" name="Guest_Name" placeholder="Enter your name" required>
             </div>
-            <div class="form-group" style="margin-bottom: 20px;">
-              <label style="display: block; font-size: 0.8rem; text-transform: uppercase; letter-spacing: 1px; color: var(--text-light);">Phone Number</label>
-              <input type="tel" name="Phone" placeholder="+91 00000 00000" required style="width: 100%;">
+            <div class="form-group">
+              <label>Phone Number</label>
+              <input type="tel" name="Phone" placeholder="Your Mobile Number" required>
             </div>
-            <div class="form-group" style="margin-bottom: 20px;">
-              <label style="display: block; font-size: 0.8rem; text-transform: uppercase; letter-spacing: 1px; color: var(--text-light);">Preferred Room</label>
-              <select name="Room_Type" style="width: 100%; padding: 10px; border: none; border-bottom: 1px solid #ccc; font-family: inherit;">
+            <div class="form-group">
+              <label>Preferred Room</label>
+              <select name="Room_Type">
                 <option value="Luxury Room">Luxury Room</option>
                 <option value="Club Room">Club Room</option>
                 <option value="Cottage (Jacuzzi)">Cottage (Jacuzzi)</option>
-                <option value="Premium King/Queen">Premium King/Queen</option>
               </select>
             </div>
-            <div class="form-group" style="margin-bottom: 25px;">
-              <label style="display: block; font-size: 0.8rem; text-transform: uppercase; letter-spacing: 1px; color: var(--text-light);">Message</label>
-              <textarea name="Message" rows="4" placeholder="Tell us about your travel dates or special requests..." style="width: 100%; border: none; border-bottom: 1px solid #ccc;"></textarea>
+            <div class="form-group">
+              <label>Message</label>
+              <textarea name="Message" rows="4" placeholder="How can we help you?"></textarea>
             </div>
-            <button type="submit" class="btn" style="width: 100%; cursor: pointer; border: none;">Send Inquiry</button>
+            <button type="submit" class="contact-btn btn-blue" style="border:none; width:100%; cursor:pointer;">Send Inquiry</button>
           </form>
         </div>
 
-        <div id="agent-form" class="form-section" style="display: none;">
+        <div id="agent-form" class="form-section">
           <form action="sendmail.php" method="POST">
-            <div class="form-group" style="margin-bottom: 20px;">
-              <label style="display: block; font-size: 0.8rem; text-transform: uppercase; letter-spacing: 1px; color: var(--text-light);">Agency Name</label>
-              <input type="text" name="Agency_Name" placeholder="Official Company Name" required style="width: 100%;">
+            <div class="form-group">
+              <label>Agency Name</label>
+              <input type="text" name="Agency_Name" placeholder="Enter Company Name" required>
             </div>
-            <div class="form-group" style="margin-bottom: 20px;">
-              <label style="display: block; font-size: 0.8rem; text-transform: uppercase; letter-spacing: 1px; color: var(--text-light);">Contact Person</label>
-              <input type="text" name="Agent_Name" placeholder="Full Name" required style="width: 100%;">
+            <div class="form-group">
+              <label>Contact Person</label>
+              <input type="text" name="Agent_Name" placeholder="Full Name" required>
             </div>
-            <div class="form-group" style="margin-bottom: 20px;">
-              <label style="display: block; font-size: 0.8rem; text-transform: uppercase; letter-spacing: 1px; color: var(--text-light);">City</label>
-              <input type="text" name="City" placeholder="City of Operation" style="width: 100%;">
+            <div class="form-group">
+              <label>City</label>
+              <input type="text" name="City" placeholder="Your Location">
             </div>
-            <div class="form-group" style="margin-bottom: 25px;">
-              <label style="display: block; font-size: 0.8rem; text-transform: uppercase; letter-spacing: 1px; color: var(--text-light);">Partnership Details</label>
-              <textarea name="Details" rows="4" placeholder="Tell us about your agency's requirements..." style="width: 100%; border: none; border-bottom: 1px solid #ccc;"></textarea>
+            <div class="form-group">
+              <label>Partnership Details</label>
+              <textarea name="Details" rows="4" placeholder="Briefly describe your agency..."></textarea>
             </div>
-            <button type="submit" class="btn" style="width: 100%; cursor: pointer; border: none;">Apply for Partnership</button>
+            <button type="submit" class="contact-btn btn-orange" style="border:none; width:100%; cursor:pointer;">Submit Agent Application</button>
           </form>
         </div>
       </div>
     </div>
 
-    <div class="details-wrapper">
-      <div class="contact-card" style="height: 100%;">
-        <h2 class="about-title" style="font-size: 2rem; margin-bottom: 20px;">Connect With Us</h2>
+    <div>
+      <div class="contact-card">
+        <h2 class="about-title">Contact Details</h2>
+        <p><strong><i class="fa-solid fa-phone"></i> Mobile:</strong> +91 94209 72666</p>
+        <p><strong><i class="fa-solid fa-envelope"></i> Email:</strong> info@saketplaza.com</p>
         
-        <div class="contact-methods" style="margin-bottom: 30px;">
-          <p style="margin-bottom: 15px;"><strong style="color: var(--gold);"><i class="fa-solid fa-phone"></i> Mobile:</strong> <a href="tel:+919420972666" style="text-decoration: none; color: inherit;">+91 94209 72666</a></p>
-          <p style="margin-bottom: 15px;"><strong style="color: var(--gold);"><i class="fa-solid fa-envelope"></i> Email:</strong> <a href="mailto:info@saketplaza.com" style="text-decoration: none; color: inherit;">info@saketplaza.com</a></p>
-          <p style="margin-bottom: 15px;"><strong style="color: var(--gold);"><i class="fa-solid fa-location-dot"></i> Location:</strong> Old Band Road, Mahabaleshwar</p>
-        </div>
-        
-        <div class="bank-box" style="background: var(--bg-soft); padding: 25px; border-left: 4px solid var(--gold); margin-bottom: 30px;">
-          <h3 style="font-family: 'Playfair Display', serif; color: var(--navy); margin-bottom: 15px;">Official Bank Details</h3>
-          <div style="font-size: 0.9rem; line-height: 1.8;">
-            <p><strong>Beneficiary:</strong> SAKET HOTEL PVT LTD</p>
-            <p><strong>Account Number:</strong> 11266770566</p>
-            <p><strong>IFSC Code:</strong> SBIN0000274</p>
-            <p><strong>Banker:</strong> State Bank of India</p>
-          </div>
+        <div class="bank-box">
+          <h3 style="color:#2b6cb0; margin-bottom:10px;">Official Bank Details</h3>
+          <p><strong>Name:</strong> SAKET HOTEL PVT LTD</p>
+          <p><strong>Account:</strong> 11266770566</p>
+          <p><strong>IFSC:</strong> SBIN0000274</p>
+          <p><strong>Bank:</strong> State Bank of India</p>
         </div>
 
-        <a href="https://hotelsaketplaza.nowpay.co.in/" class="btn" style="width: 100%; text-align: center; background: var(--navy); color: white; border: none; display: block; box-sizing: border-box;" target="_blank">
+        <a href="https://hotelsaketplaza.nowpay.co.in/" class="btn" style="width:100%; text-align:center; background:#28a745; margin-bottom: 20px;" target="_blank">
           <i class="fa-solid fa-credit-card"></i> Online Payment Portal
         </a>
 
-        <div class="map-container" style="margin-top: 30px; height: 250px; border: 1px solid #eee;">
-          <iframe class="map-frame" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3790.380481077587!2d73.65545237595562!3d17.914878288597374!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bc26679860b2401%3A0x897984856f64c679!2sHotel%20Saket%20Plaza!5e0!3m2!1sen!2sin!4v1700000000000!5m2!1sen!2sin" width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
-        </div>
+        <iframe class="map-frame" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3792.833535978434!2d73.71536637518095!3d17.928424183050116!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bc2667086055555%3A0x7427494f6e3c088c!2sHotel%20Saket%20Plaza!5e0!3m2!1sen!2sin!4v1700000000000!5m2!1sen!2sin" allowfullscreen="" loading="lazy"></iframe>
       </div>
     </div>
-  </main>
+  </div>
 
   <footer>
-    <p>© 2026 Hotel Saket Plaza | Old Band Road, Mahabaleshwar</p>
+    <p>© <script>document.write(new Date().getFullYear())</script> Hotel Saket Plaza | Old Band Road, Mahabaleshwar</p>
   </footer>
 
   <script>
@@ -135,22 +124,18 @@
       const heading = document.getElementById('form-heading');
       const btns = document.querySelectorAll('.toggle-btn');
 
+      btns.forEach(btn => btn.classList.remove('active', 'agent-theme'));
+
       if (type === 'guest') {
-        guestForm.style.display = 'block';
-        agentForm.style.display = 'none';
+        guestForm.classList.add('active');
+        agentForm.classList.remove('active');
         heading.innerText = "Guest Inquiry";
-        btns[0].style.background = "var(--gold)";
-        btns[0].style.color = "white";
-        btns[1].style.background = "transparent";
-        btns[1].style.color = "var(--gold)";
+        btns[0].classList.add('active');
       } else {
-        agentForm.style.display = 'block';
-        guestForm.style.display = 'none';
+        agentForm.classList.add('active');
+        guestForm.classList.remove('active');
         heading.innerText = "Agent Partnership";
-        btns[1].style.background = "var(--gold)";
-        btns[1].style.color = "white";
-        btns[0].style.background = "transparent";
-        btns[0].style.color = "var(--gold)";
+        btns[1].classList.add('active', 'agent-theme');
       }
     }
   </script>
