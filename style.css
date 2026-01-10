@@ -1,22 +1,6 @@
-/* HOTEL SAKET PLAZA - MASTER STYLESHEET 2026
-   Theme: Boutique Luxury & Nature
-*/
-
-:root {
-  --navy: #0a1a2a;
-  --gold: #c5a059;
-  --gold-soft: #e5d5b7;
-  --text-dark: #333333;
-  --text-light: #666666;
-  --bg-soft: #fcfaf7;
-  --white: #ffffff;
-  --shadow-sm: 0 2px 10px rgba(0,0,0,0.05);
-  --shadow-md: 0 5px 20px rgba(0,0,0,0.1);
-  --shadow-lg: 0 15px 35px rgba(0,0,0,0.15);
-  --transition: all 0.3s ease;
-}
-
-/* --- Global Reset --- */
+/* =========================== 
+    GLOBAL STYLES
+=========================== */
 * {
   margin: 0;
   padding: 0;
@@ -24,277 +8,387 @@
 }
 
 body {
-  font-family: 'Poppins', sans-serif;
-  color: var(--text-dark);
-  background-color: #fff;
-  line-height: 1.6;
+  font-family: "Poppins", sans-serif;
+  color: #333;
+  background: #f7f7f7;
   overflow-x: hidden;
 }
 
-h1, h2, h3, .playfair {
-  font-family: 'Playfair Display', serif;
-}
-
-/* --- Header & Logo --- */
-.main-header {
-  padding: 40px 20px;
-  text-align: center;
-  background-color: var(--white);
-}
-
-.logo-box h1 {
-  font-size: 2.8rem;
-  color: var(--navy);
-  letter-spacing: 2px;
-  text-transform: uppercase;
-}
-
-.subtitle {
-  color: var(--gold);
-  text-transform: uppercase;
-  letter-spacing: 3px;
-  font-size: 0.85rem;
-  font-weight: 500;
-}
-
-/* --- Navigation --- */
-.navbar {
-  display: flex;
-  justify-content: center;
-  background: var(--navy);
-  position: sticky;
-  top: 0;
-  z-index: 1000;
-  padding: 10px 0;
-}
-
-.navbar a {
-  color: var(--white);
-  padding: 12px 25px;
-  text-decoration: none;
-  font-size: 0.9rem;
-  text-transform: uppercase;
-  letter-spacing: 1px;
-  transition: var(--transition);
-}
-
-.navbar a:hover, .navbar a.active {
-  color: var(--gold);
-}
-
-/* --- Hero Section Fix --- */
-.hero {
-  position: relative;
-  height: 85vh; /* Optimal height for desktop */
-  width: 100%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  text-align: center;
-  color: var(--white);
-  background: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), 
-              url('Images/hero-bg.jpg'); /* Ensure this path is correct */
-  background-size: cover;
-  background-position: center center;
-  background-repeat: no-repeat;
-}
-
-.hero-content h2 {
-  font-size: 3.5rem;
-  margin-bottom: 20px;
-}
-
-/* --- Shared Layout Containers --- */
-.section-padding {
-  padding: 80px 20px;
-  max-width: 1200px;
-  margin: 0 auto;
+h1, h2, h3 {
+  font-family: "Playfair Display", serif;
 }
 
 .section-title {
   text-align: center;
-  font-size: 2.5rem;
-  color: var(--navy);
-  margin-bottom: 10px;
+  font-size: 2.2rem;
+  margin-bottom: 25px;
+  color: #222;
+  font-weight: 700;
 }
 
-.section-subtitle {
-  text-align: center;
-  color: var(--gold);
-  margin-bottom: 50px;
-}
-
-/* --- Luxury Cards (Rooms, Facilities, Tariff) --- */
-.card-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-  gap: 30px;
-}
-
-.feature-card, .room-card, .tariff-card {
-  background: var(--white);
-  border-radius: 12px;
-  overflow: hidden;
-  box-shadow: var(--shadow-md);
-  transition: var(--transition);
-  border: 1px solid #f0f0f0;
-}
-
-.feature-card:hover {
-  transform: translateY(-10px);
-  box-shadow: var(--shadow-lg);
-}
-
-/* --- Gallery Styling --- */
-.gallery-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
-  gap: 15px;
-  padding: 20px;
-}
-
-.gallery-item {
+/* ===========================
+    HEADER (COMPACT)
+=========================== */
+.main-header {
   position: relative;
-  height: 250px;
-  overflow: hidden;
-  cursor: pointer;
-  border-radius: 8px;
+  background: linear-gradient(135deg, #2b6cb0, #805ad5);
+  color: white;
+  padding: 40px 20px 30px; 
+  text-align: center;
 }
 
-.gallery-item img {
+.logo-box h1 {
+  font-size: 2.2rem;
+}
+
+.subtitle {
+  font-size: 1rem;
+  opacity: 0.9;
+}
+
+/* ===========================
+    NAVIGATION (ORANGE THEME)
+=========================== */
+.navbar {
   width: 100%;
-  height: 100%;
-  object-fit: cover;
-  transition: transform 0.5s ease;
+  background: #ff8c00;
+  padding: 0;
+  text-align: center;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.15);
 }
 
-.gallery-item:hover img {
-  transform: scale(1.1);
+.navbar a {
+  display: inline-block;
+  text-decoration: none;
+  padding: 15px 20px;
+  font-size: 1rem;
+  color: #1a202c;
+  font-weight: 600;
+  position: relative;
+  transition: all 0.3s ease;
 }
 
-/* --- Form Elements --- */
-input, textarea, select {
-  padding: 12px;
-  border: none;
-  border-bottom: 1px solid #ddd;
-  font-family: 'Poppins', sans-serif;
-  margin-bottom: 15px;
-  transition: var(--transition);
+.navbar a:hover, 
+.navbar a.active {
+  color: #ffffff;
+  background: rgba(0, 0, 0, 0.1);
+  text-shadow: 0px 0px 8px rgba(255, 255, 255, 0.5);
 }
 
-input:focus {
-  outline: none;
-  border-bottom: 1px solid var(--gold);
+.navbar a::after {
+  content: '';
+  position: absolute;
+  width: 0;
+  height: 3px;
+  bottom: 8px;
+  left: 50%;
+  background: #ffffff;
+  transition: all 0.3s ease;
+  transform: translateX(-50%);
 }
+
+.navbar a:hover::after,
+.navbar a.active::after {
+  width: 60%;
+}
+
+/* ===========================
+    HERO SECTION
+=========================== */
+.hero {
+  position: relative;
+  height: 80vh; 
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.hero-overlay {
+  position: absolute;
+  top: 0; left: 0; width: 100%; height: 100%;
+  background: rgba(0, 0, 0, 0.4);
+}
+
+.hero-content {
+  position: relative;
+  color: white;
+  text-align: center;
+  animation: fadeUp 1.2s ease-out;
+}
+
+.hero-content h2 { font-size: 3.5rem; }
 
 .btn {
   display: inline-block;
-  padding: 14px 35px;
-  background: var(--gold);
-  color: var(--white);
+  margin-top: 35px;
+  padding: 14px 28px;
+  background: #2b6cb0;
+  color: #fff;
   text-decoration: none;
-  text-transform: uppercase;
-  font-size: 0.8rem;
-  letter-spacing: 2px;
-  border-radius: 4px;
-  transition: var(--transition);
-  border: none;
-  cursor: pointer;
+  border-radius: 6px;
+  font-weight: 600;
+  transition: 0.3s;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.2);
 }
 
 .btn:hover {
-  background: var(--navy);
+  background: #1e4f8a;
+  transform: translateY(-2px);
 }
 
-/* --- Centered Call to Action (Plan Your Stay) --- */
-.booking-footer-cta {
+/* ===========================
+    ABOUT SECTION
+=========================== */
+.about.improved-about {
+  max-width: 850px;
+  margin: 60px auto 30px; 
+  padding: 40px 50px;
   text-align: center;
-  padding: 80px 20px;
-  background-color: var(--bg-soft);
-  margin-top: 50px;
+  background: #ffffff;
+  border-radius: 20px;
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.06);
+  border-top: 5px solid #ff8c00;
+  animation: fadeUp 1.2s ease-out;
 }
 
-.booking-footer-cta h2 {
-  font-size: 2.2rem;
-  color: var(--navy);
-  margin-bottom: 10px;
-}
-
-.booking-footer-cta h3 {
-  color: var(--gold);
-  font-weight: 400;
+.about-title {
+  font-size: 1.8rem;
+  color: #2b6cb0;
   margin-bottom: 20px;
-  font-size: 1.4rem;
 }
 
-.booking-footer-cta p {
-  max-width: 600px;
-  margin: 0 auto 10px;
+.about-content p {
+  font-size: 1.05rem;
+  line-height: 1.8;
+  color: #555;
+  margin-bottom: 15px;
 }
 
-/* --- Footer Area --- */
-footer {
-  background-color: var(--navy);
-  color: var(--white);
-  padding: 50px 20px;
+.highlight-text {
+  display: block;
+  margin-top: 25px;
+  font-size: 1.25rem;
+  font-weight: 700;
+  background: linear-gradient(90deg, #2b6cb0, #ff758c, #ffb347, #2b6cb0);
+  background-size: 200% auto;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: shine 4s linear infinite;
+}
+
+/* ===========================
+    FEATURES SECTION
+=========================== */
+.features { 
+  padding: 30px 20px 60px; 
+}
+
+.features-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 30px;
+  max-width: 1200px;
+  margin: auto;
+}
+
+.feature-card {
+  background: white;
+  padding: 35px 25px;
+  border-radius: 15px;
   text-align: center;
-  font-size: 0.9rem;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.05);
+  position: relative;
+  overflow: hidden;
+  transition: all 0.4s ease;
+  opacity: 0;
+  transform: translateY(40px);
 }
 
-footer .footer-content p {
-  margin: 8px 0;
-  opacity: 0.8;
+.feature-card::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; width: 100%; height: 5px;
+  background: linear-gradient(to right, #ff8c00, #ffb347);
 }
 
-footer a {
-  color: var(--gold-soft);
+.feature-card.show { opacity: 1; transform: translateY(0); }
+
+.feature-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 15px 30px rgba(255, 140, 0, 0.15);
+}
+
+.feature-card i {
+  font-size: 2.5rem;
+  margin-bottom: 15px;
+  color: #ff8c00;
+}
+
+/* ===========================
+    CONTACT LAYOUT & CENTERING
+=========================== */
+.contact-details {
+  text-align: center;
+  padding: 60px 20px;
+  background: #fff;
+}
+
+.contact-items-center {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+}
+
+.contact-items-center a {
+  color: #ff8c00;
   text-decoration: none;
-  transition: var(--transition);
+  font-weight: 700;
 }
 
-footer a:hover {
-  color: var(--gold);
+.contact-container { 
+  max-width: 1200px; 
+  margin: 40px auto; 
+  padding: 0 20px; 
+  display: grid; 
+  grid-template-columns: 1fr 1fr; 
+  gap: 40px; 
 }
 
-/* --- Floating Elements --- */
+.contact-card { 
+  background: white; 
+  padding: 30px; 
+  border-radius: 12px; 
+  box-shadow: rgba(0, 0, 0, 0.12) 0px 4px 12px; 
+  height: fit-content; 
+}
+
+/* Action Boxes & Buttons */
+.action-box {
+  border-left: 5px solid #2b6cb0;
+  padding: 20px;
+  margin-bottom: 20px;
+  background: #fcfcfc;
+  border-radius: 0 10px 10px 0;
+}
+
+.action-box.agent { border-left-color: #ff8c00; }
+
+.contact-btn {
+  display: block;
+  text-align: center;
+  padding: 14px;
+  margin-top: 15px;
+  border-radius: 8px;
+  text-decoration: none;
+  font-weight: 700;
+  color: white;
+  transition: 0.3s;
+}
+
+.btn-blue { background: #2b6cb0; }
+.btn-orange { background: #ff8c00; }
+.contact-btn:hover { opacity: 0.9; transform: translateY(-2px); }
+
+/* Bank and Maps */
+.bank-box { 
+  background: #f0f7ff; 
+  border: 1px solid #c2d9ff; 
+  padding: 20px; 
+  border-radius: 10px; 
+  margin-top: 20px; 
+  text-align: left;
+}
+
+.map-frame { 
+  width: 100%; 
+  height: 350px; 
+  border-radius: 12px; 
+  border: none; 
+  margin-top: 20px; 
+}
+
+/* =========================== 
+    FLOATING WHATSAPP BUTTON
+=========================== */
 .whatsapp-float {
   position: fixed;
-  bottom: 30px;
-  right: 30px;
+  width: 60px;
+  height: 60px;
+  bottom: 25px;
+  right: 25px;
   background-color: #25d366;
-  color: #fff;
-  width: 60px;
-  height: 60px;
+  color: #FFF;
   border-radius: 50px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  text-align: center;
   font-size: 30px;
-  box-shadow: 2px 2px 10px rgba(0,0,0,0.2);
-  z-index: 2000;
-}
-
-/* --- Responsive Adjustments --- */
-@media (max-width: 768px) {
-  .logo-box h1 { font-size: 2rem; }
-  .hero { height: 60vh; }
-  .hero-content h2 { font-size: 2.2rem; }
-  .navbar { flex-wrap: wrap; }
-  .navbar a { padding: 10px 15px; font-size: 0.8rem; }
-  .section-padding { padding: 40px 20px; }
-}
-
-/* --- Special Facility Icon Wrap --- */
-.facility-icon-wrap {
-  width: 60px;
-  height: 60px;
-  background: var(--bg-soft);
-  color: var(--gold);
-  border-radius: 50%;
+  box-shadow: 2px 5px 15px rgba(0,0,0,0.3);
+  z-index: 10000;
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 1.5rem;
-  margin: 0 auto 20px;
-  border: 1px solid var(--gold-soft);
+  text-decoration: none;
+  transition: transform 0.3s ease;
+}
+
+.whatsapp-float:hover {
+  transform: scale(1.1);
+  background-color: #128c7e;
+  color: white;
+}
+
+/* ===========================
+    DYNAMIC FORM STYLES
+=========================== */
+.form-toggle-wrapper {
+  display: flex;
+  margin-bottom: 25px;
+  background: #eee;
+  border-radius: 8px;
+  padding: 5px;
+}
+.toggle-btn {
+  flex: 1; padding: 10px; border: none; background: transparent; cursor: pointer;
+  font-weight: 600; font-family: 'Poppins', sans-serif; transition: 0.3s; border-radius: 6px;
+}
+.toggle-btn.active { background: #2b6cb0; color: white; }
+.toggle-btn.active.agent-theme { background: #ff8c00; }
+
+.form-section { display: none; animation: fadeIn 0.5s; }
+.form-section.active { display: block; }
+
+.form-group { margin-bottom: 15px; text-align: left; }
+.form-group label { display: block; margin-bottom: 5px; font-weight: 600; font-size: 0.9rem; }
+.form-group input, .form-group textarea, .form-group select {
+  width: 100%; padding: 10px; border: 1px solid #ccc; border-radius: 6px; font-family: inherit;
+}
+
+/* ===========================
+    FOOTER & ANIMATIONS
+=========================== */
+footer { text-align: center; padding: 30px; background: #1a202c; color: white; }
+footer a { color: #ff8c00; text-decoration: none; font-weight: 600; }
+
+@keyframes shine { to { background-position: 200% center; } }
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(30px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@media (max-width: 768px) {
+  .hero-content h2 { font-size: 2.2rem; }
+  .navbar a { padding: 12px 10px; font-size: 0.9rem; }
+  .contact-container { grid-template-columns: 1fr; }
+  .whatsapp-float { width: 50px; height: 50px; font-size: 24px; bottom: 20px; right: 20px; }
 }
