@@ -1,98 +1,103 @@
 /* =========================== 
-    GLOBAL STYLES
+    LUXURY VARIABLES & CORE
 =========================== */
+:root {
+  --gold: #c5a059;
+  --gold-dark: #a68549;
+  --navy: #1a2a3a;
+  --text-main: #34495e;
+  --text-light: #7f8c8d;
+  --bg-soft: #faf9f6; /* Off-white luxury feel */
+  --white: #ffffff;
+  --shadow-sm: 0 4px 20px rgba(0, 0, 0, 0.05);
+  --shadow-lg: 0 20px 40px rgba(0, 0, 0, 0.08);
+  --transition: all 0.5s cubic-bezier(0.165, 0.84, 0.44, 1);
+}
+
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 body {
   font-family: "Poppins", sans-serif;
-  color: #333;
-  background: #f7f7f7;
+  color: var(--text-main);
+  background: var(--bg-soft);
+  line-height: 1.6;
   overflow-x: hidden;
 }
 
-h1, h2, h3 {
+h1, h2, h3, .about-title {
   font-family: "Playfair Display", serif;
-}
-
-.section-title {
-  text-align: center;
-  font-size: 2.2rem;
-  margin-bottom: 25px;
-  color: #222;
   font-weight: 700;
+  letter-spacing: 0.5px;
 }
 
 /* ===========================
-    HEADER (COMPACT)
+    HEADER & NAVIGATION
 =========================== */
 .main-header {
-  position: relative;
-  background: linear-gradient(135deg, #2b6cb0, #805ad5);
-  color: white;
-  padding: 40px 20px 30px; 
+  background: var(--navy);
+  color: var(--white);
+  padding: 60px 20px;
   text-align: center;
-}
-
-.logo-box h1 {
-  font-size: 2.2rem;
+  border-bottom: 3px solid var(--gold);
 }
 
 .subtitle {
-  font-size: 1rem;
-  opacity: 0.9;
+  text-transform: uppercase;
+  letter-spacing: 4px;
+  font-size: 0.8rem;
+  margin-top: 10px;
+  color: var(--gold);
 }
 
-/* ===========================
-    NAVIGATION (ORANGE THEME)
-=========================== */
 .navbar {
   width: 100%;
-  background: #ff8c00;
-  padding: 0;
-  text-align: center;
+  background: rgba(255, 255, 255, 0.85);
+  backdrop-filter: blur(15px); /* Modern frosted glass */
   position: sticky;
   top: 0;
   z-index: 1000;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+  border-bottom: 1px solid rgba(0,0,0,0.05);
+  transition: var(--transition);
 }
 
 .navbar a {
   display: inline-block;
   text-decoration: none;
-  padding: 15px 20px;
-  font-size: 1rem;
-  color: #1a202c;
-  font-weight: 600;
-  position: relative;
-  transition: all 0.3s ease;
+  padding: 20px 25px;
+  font-size: 0.9rem;
+  color: var(--navy);
+  font-weight: 500;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  transition: var(--transition);
 }
 
-.navbar a:hover, 
-.navbar a.active {
-  color: #ffffff;
-  background: rgba(0, 0, 0, 0.1);
-  text-shadow: 0px 0px 8px rgba(255, 255, 255, 0.5);
+.navbar a:hover, .navbar a.active {
+  color: var(--gold);
 }
 
 .navbar a::after {
   content: '';
   position: absolute;
   width: 0;
-  height: 3px;
-  bottom: 8px;
+  height: 2px;
+  bottom: 15px;
   left: 50%;
-  background: #ffffff;
-  transition: all 0.3s ease;
+  background: var(--gold);
+  transition: var(--transition);
   transform: translateX(-50%);
 }
 
-.navbar a:hover::after,
-.navbar a.active::after {
-  width: 60%;
+.navbar a:hover::after, .navbar a.active::after {
+  width: 30%;
 }
 
 /* ===========================
@@ -100,295 +105,168 @@ h1, h2, h3 {
 =========================== */
 .hero {
   position: relative;
-  height: 80vh; 
-  background-position: center;
-  background-size: cover;
-  background-repeat: no-repeat;
+  height: 90vh; 
   display: flex;
   align-items: center;
   justify-content: center;
+  background-attachment: fixed; /* Parallax effect */
 }
 
 .hero-overlay {
   position: absolute;
   top: 0; left: 0; width: 100%; height: 100%;
-  background: rgba(0, 0, 0, 0.4);
+  background: linear-gradient(to bottom, rgba(26, 42, 58, 0.4), rgba(26, 42, 58, 0.7));
 }
 
-.hero-content {
-  position: relative;
-  color: white;
-  text-align: center;
-  animation: fadeUp 1.2s ease-out;
+.hero-content h2 {
+  font-size: 4rem;
+  margin-bottom: 10px;
 }
-
-.hero-content h2 { font-size: 3.5rem; }
 
 .btn {
+  position: relative;
   display: inline-block;
   margin-top: 35px;
-  padding: 14px 28px;
-  background: #2b6cb0;
-  color: #fff;
+  padding: 16px 40px;
+  background: var(--gold);
+  color: var(--white);
   text-decoration: none;
-  border-radius: 6px;
+  font-size: 0.9rem;
+  letter-spacing: 2px;
+  text-transform: uppercase;
   font-weight: 600;
-  transition: 0.3s;
-  box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+  transition: var(--transition);
+  border: 1px solid var(--gold);
+  overflow: hidden;
+  z-index: 1;
 }
 
 .btn:hover {
-  background: #1e4f8a;
-  transform: translateY(-2px);
+  background: transparent;
+  color: var(--gold);
+  transform: translateY(-3px);
+  box-shadow: 0 10px 20px rgba(197, 160, 89, 0.2);
 }
 
 /* ===========================
-    ABOUT SECTION
+    ABOUT SECTION (LUXURY CARD)
 =========================== */
 .about.improved-about {
-  max-width: 850px;
-  margin: 60px auto 30px; 
-  padding: 40px 50px;
+  max-width: 1000px;
+  margin: -80px auto 60px; /* Overlap with hero */
+  padding: 80px;
+  background: var(--white);
+  position: relative;
+  z-index: 10;
+  box-shadow: var(--shadow-lg);
   text-align: center;
-  background: #ffffff;
-  border-radius: 20px;
-  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.06);
-  border-top: 5px solid #ff8c00;
-  animation: fadeUp 1.2s ease-out;
 }
 
 .about-title {
-  font-size: 1.8rem;
-  color: #2b6cb0;
-  margin-bottom: 20px;
-}
-
-.about-content p {
-  font-size: 1.05rem;
-  line-height: 1.8;
-  color: #555;
-  margin-bottom: 15px;
+  font-size: 2.5rem;
+  color: var(--navy);
+  margin-bottom: 30px;
 }
 
 .highlight-text {
   display: block;
-  margin-top: 25px;
-  font-size: 1.25rem;
-  font-weight: 700;
-  background: linear-gradient(90deg, #2b6cb0, #ff758c, #ffb347, #2b6cb0);
-  background-size: 200% auto;
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  animation: shine 4s linear infinite;
+  margin-top: 30px;
+  font-size: 1.4rem;
+  color: var(--gold);
+  font-family: "Playfair Display", serif;
+  font-style: italic;
 }
 
 /* ===========================
-    FEATURES SECTION
+    FEATURES GRID
 =========================== */
-.features { 
-  padding: 30px 20px 60px; 
-}
-
 .features-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  gap: 30px;
-  max-width: 1200px;
-  margin: auto;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 40px;
+  padding: 40px;
 }
 
 .feature-card {
-  background: white;
-  padding: 35px 25px;
-  border-radius: 15px;
-  text-align: center;
-  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.05);
-  position: relative;
-  overflow: hidden;
-  transition: all 0.4s ease;
-  opacity: 0;
-  transform: translateY(40px);
+  background: var(--white);
+  padding: 50px 30px;
+  border-radius: 0; /* Sharp edges look more premium */
+  transition: var(--transition);
+  border: 1px solid #eee;
+  opacity: 1; /* Set to 1 if not using JS to trigger */
+  transform: translateY(0);
 }
-
-.feature-card::before {
-  content: '';
-  position: absolute;
-  top: 0; left: 0; width: 100%; height: 5px;
-  background: linear-gradient(to right, #ff8c00, #ffb347);
-}
-
-.feature-card.show { opacity: 1; transform: translateY(0); }
 
 .feature-card:hover {
-  transform: translateY(-10px);
-  box-shadow: 0 15px 30px rgba(255, 140, 0, 0.15);
+  transform: translateY(-15px);
+  border-color: var(--gold);
+  box-shadow: var(--shadow-lg);
 }
 
 .feature-card i {
-  font-size: 2.5rem;
-  margin-bottom: 15px;
-  color: #ff8c00;
+  font-size: 3rem;
+  color: var(--gold);
+  margin-bottom: 25px;
 }
 
 /* ===========================
-    CONTACT LAYOUT & CENTERING
+    CONTACT & FORMS
 =========================== */
-.contact-details {
-  text-align: center;
-  padding: 60px 20px;
-  background: #fff;
+.contact-card {
+  border-radius: 0;
+  padding: 50px;
+  border-top: 4px solid var(--gold);
 }
 
-.contact-items-center {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  gap: 10px;
+.form-group input, .form-group textarea {
+  border: none;
+  border-bottom: 1px solid #ccc;
+  border-radius: 0;
+  padding: 15px 5px;
+  transition: var(--transition);
 }
 
-.contact-items-center a {
-  color: #ff8c00;
-  text-decoration: none;
-  font-weight: 700;
+.form-group input:focus {
+  outline: none;
+  border-bottom: 2px solid var(--gold);
 }
 
-.contact-container { 
-  max-width: 1200px; 
-  margin: 40px auto; 
-  padding: 0 20px; 
-  display: grid; 
-  grid-template-columns: 1fr 1fr; 
-  gap: 40px; 
+.toggle-btn.active {
+  background: var(--navy) !important;
 }
 
-.contact-card { 
-  background: white; 
-  padding: 30px; 
-  border-radius: 12px; 
-  box-shadow: rgba(0, 0, 0, 0.12) 0px 4px 12px; 
-  height: fit-content; 
-}
-
-/* Action Boxes & Buttons */
-.action-box {
-  border-left: 5px solid #2b6cb0;
-  padding: 20px;
-  margin-bottom: 20px;
-  background: #fcfcfc;
-  border-radius: 0 10px 10px 0;
-}
-
-.action-box.agent { border-left-color: #ff8c00; }
-
-.contact-btn {
-  display: block;
-  text-align: center;
-  padding: 14px;
-  margin-top: 15px;
-  border-radius: 8px;
-  text-decoration: none;
-  font-weight: 700;
-  color: white;
-  transition: 0.3s;
-}
-
-.btn-blue { background: #2b6cb0; }
-.btn-orange { background: #ff8c00; }
-.contact-btn:hover { opacity: 0.9; transform: translateY(-2px); }
-
-/* Bank and Maps */
-.bank-box { 
-  background: #f0f7ff; 
-  border: 1px solid #c2d9ff; 
-  padding: 20px; 
-  border-radius: 10px; 
-  margin-top: 20px; 
-  text-align: left;
-}
-
-.map-frame { 
-  width: 100%; 
-  height: 350px; 
-  border-radius: 12px; 
-  border: none; 
-  margin-top: 20px; 
-}
-
-/* =========================== 
-    FLOATING WHATSAPP BUTTON
+/* ===========================
+    FLOATING WHATSAPP
 =========================== */
 .whatsapp-float {
-  position: fixed;
-  width: 60px;
-  height: 60px;
-  bottom: 25px;
-  right: 25px;
   background-color: #25d366;
-  color: #FFF;
-  border-radius: 50px;
-  text-align: center;
-  font-size: 30px;
-  box-shadow: 2px 5px 15px rgba(0,0,0,0.3);
-  z-index: 10000;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  text-decoration: none;
-  transition: transform 0.3s ease;
-}
-
-.whatsapp-float:hover {
-  transform: scale(1.1);
-  background-color: #128c7e;
-  color: white;
+  right: 40px;
+  bottom: 40px;
+  box-shadow: 0 10px 25px rgba(37, 211, 102, 0.3);
 }
 
 /* ===========================
-    DYNAMIC FORM STYLES
+    FOOTER
 =========================== */
-.form-toggle-wrapper {
-  display: flex;
-  margin-bottom: 25px;
-  background: #eee;
-  border-radius: 8px;
-  padding: 5px;
-}
-.toggle-btn {
-  flex: 1; padding: 10px; border: none; background: transparent; cursor: pointer;
-  font-weight: 600; font-family: 'Poppins', sans-serif; transition: 0.3s; border-radius: 6px;
-}
-.toggle-btn.active { background: #2b6cb0; color: white; }
-.toggle-btn.active.agent-theme { background: #ff8c00; }
-
-.form-section { display: none; animation: fadeIn 0.5s; }
-.form-section.active { display: block; }
-
-.form-group { margin-bottom: 15px; text-align: left; }
-.form-group label { display: block; margin-bottom: 5px; font-weight: 600; font-size: 0.9rem; }
-.form-group input, .form-group textarea, .form-group select {
-  width: 100%; padding: 10px; border: 1px solid #ccc; border-radius: 6px; font-family: inherit;
+footer {
+  background: var(--navy);
+  padding: 80px 20px;
+  border-top: 1px solid rgba(255,255,255,0.1);
 }
 
 /* ===========================
-    FOOTER & ANIMATIONS
+    RESPONSIVE
 =========================== */
-footer { text-align: center; padding: 30px; background: #1a202c; color: white; }
-footer a { color: #ff8c00; text-decoration: none; font-weight: 600; }
-
-@keyframes shine { to { background-position: 200% center; } }
-@keyframes fadeUp {
-  from { opacity: 0; transform: translateY(30px); }
-  to { opacity: 1; transform: translateY(0); }
-}
-@keyframes fadeIn {
-  from { opacity: 0; transform: translateY(10px); }
-  to { opacity: 1; transform: translateY(0); }
-}
-
 @media (max-width: 768px) {
-  .hero-content h2 { font-size: 2.2rem; }
-  .navbar a { padding: 12px 10px; font-size: 0.9rem; }
-  .contact-container { grid-template-columns: 1fr; }
-  .whatsapp-float { width: 50px; height: 50px; font-size: 24px; bottom: 20px; right: 20px; }
+  .hero-content h2 { font-size: 2.5rem; }
+  .about.improved-about { 
+    margin: 20px auto;
+    padding: 40px 20px;
+  }
+  .navbar a { padding: 15px 10px; font-size: 0.75rem; }
 }
+
+/* CUSTOM SCROLLBAR */
+::-webkit-scrollbar { width: 10px; }
+::-webkit-scrollbar-track { background: var(--bg-soft); }
+::-webkit-scrollbar-thumb { background: var(--gold); }
