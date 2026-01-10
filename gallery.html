@@ -3,190 +3,222 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Photo Gallery | Hotel Saket Plaza Mahabaleshwar</title>
+  <title>Gallery – Hotel Saket Plaza</title>
 
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&family=Playfair+Display:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
   <link rel="stylesheet" href="style.css">
-</head>
 
-<body class="gallery-page">
-
-  <header class="main-header">
-    <div class="logo-box">
-      <h1>Hotel Saket Plaza</h1>
-      <p class="subtitle">A Visual Journey of Luxury & Color</p>
-    </div>
-  </header>
-
-  <nav class="navbar">
-    <a href="index.html">Home</a>
-    <a href="rooms.html">Rooms</a>
-    <a href="gallery.html" class="active">Gallery</a>
-    <a href="facilities.html">Facilities</a>
-    <a href="tariff.html">Tariff</a>
-    <a href="contact.html">Contact</a>
-  </nav>
-
-  <main class="gallery-wrapper">
-    <section class="gallery-intro">
-      <h2 class="section-title">Capturing Perfection</h2>
-      <p class="section-subtitle">Take a glimpse into the serene landscapes and vibrant experiences awaiting you.</p>
-    </section>
-
-    <div class="gallery-grid">
-      <div class="gallery-item" data-aos="fade-up">
-        <img src="Images/Garden.jpg" alt="Lush Green Gardens">
-        <div class="img-overlay"><span>View Image</span></div>
-      </div>
-      <div class="gallery-item" data-aos="fade-up">
-        <img src="Images/Landscape.jpg" alt="Scenic Mountain Landscape">
-        <div class="img-overlay"><span>View Image</span></div>
-      </div>
-      <div class="gallery-item" data-aos="fade-up">
-        <img src="Images/Wedding.jpg" alt="Royal Wedding Reception Setup">
-        <div class="img-overlay"><span>View Image</span></div>
-      </div>
-      <div class="gallery-item" data-aos="fade-up">
-        <img src="Images/movie-theater.jpg" alt="Private Luxury Movie Theater">
-        <div class="img-overlay"><span>View Image</span></div>
-      </div>
-      <div class="gallery-item" data-aos="fade-up">
-        <img src="Images/parking.jpg" alt="Spacious Secure Parking Area">
-        <div class="img-overlay"><span>View Image</span></div>
-      </div>
-      <div class="gallery-item" data-aos="fade-up">
-        <img src="Images/swimming-pool.jpg" alt="Crystal Clear Swimming Pool">
-        <div class="img-overlay"><span>View Image</span></div>
-      </div>
-      <div class="gallery-item" data-aos="fade-up">
-        <img src="Images/waterfall.jpg" alt="Relaxing In-house Waterfall">
-        <div class="img-overlay"><span>View Image</span></div>
-      </div>
-      <div class="gallery-item" data-aos="fade-up">
-        <img src="Images/dining-hall.jpg" alt="Multi-Cuisine Dining Hall">
-        <div class="img-overlay"><span>View Image</span></div>
-      </div>
-      <div class="gallery-item" data-aos="fade-up">
-        <img src="Images/conference-hall.jpg" alt="Corporate Conference Hall">
-        <div class="img-overlay"><span>View Image</span></div>
-      </div>
-      <div class="gallery-item" data-aos="fade-up">
-        <img src="Images/indoor-games.jpg" alt="Entertainment & Indoor Games">
-        <div class="img-overlay"><span>View Image</span></div>
-      </div>
-      <div class="gallery-item" data-aos="fade-up">
-        <img src="Images/machan-night.jpg" alt="Machan Sit-out Night View">
-        <div class="img-overlay"><span>View Image</span></div>
-      </div>
-      <div class="gallery-item" data-aos="fade-up">
-        <img src="Images/swimming-pool-night.jpg" alt="Illuminated Pool Side at Night">
-        <div class="img-overlay"><span>View Image</span></div>
-      </div>
-    </div>
-  </main>
-
-  <div id="gallery-lightbox" class="lightbox">
-    <span class="close-btn" aria-label="Close">&times;</span>
-    <span class="nav-btn prev-btn"><i class="fa-solid fa-chevron-left"></i></span>
+  <style>
+    main {
+      max-width: 1100px;
+      margin: 40px auto;
+      background: white;
+      border-radius: 12px;
+      padding: 30px;
+      box-shadow: 0 6px 18px rgba(0,0,0,0.1);
+    }
     
-    <div class="lightbox-content">
-      <img id="lightbox-img" src="" alt="Gallery Image Enlarged">
-      <div id="lightbox-caption"></div>
-    </div>
-    
-    <span class="nav-btn next-btn"><i class="fa-solid fa-chevron-right"></i></span>
-  </div>
-
-  <footer>
-    <div class="footer-content">
-      <p>© 2026 Hotel Saket Plaza | Old Band Road, Mahabaleshwar</p>
-      <p style="font-size: 0.8rem; opacity: 0.6; margin-top: 10px;">Capturing moments, creating memories.</p>
-    </div>
-  </footer>
-
-  <script>
-    const lightbox = document.getElementById('gallery-lightbox');
-    const lightboxImg = document.getElementById('lightbox-img');
-    const lightboxCaption = document.getElementById('lightbox-caption');
-    const images = Array.from(document.querySelectorAll('.gallery-item img'));
-    const closeBtn = document.querySelector('.close-btn');
-    const prevBtn = document.querySelector('.prev-btn');
-    const nextBtn = document.querySelector('.next-btn');
-
-    let currentIndex = 0;
-
-    function showImage(index) {
-      if (index < 0) index = images.length - 1;
-      if (index >= images.length) index = 0;
-      currentIndex = index;
-      
-      // Smooth fade transition for images
-      lightboxImg.style.opacity = '0';
-      setTimeout(() => {
-        lightboxImg.src = images[currentIndex].src;
-        lightboxCaption.textContent = images[currentIndex].alt;
-        lightboxImg.style.opacity = '1';
-      }, 200);
+    h2 {
+      text-align: center;
+      font-size: 2.5rem;
+      color: #2b6cb0;
+      font-family: "Playfair Display", serif;
+      margin-bottom: 25px;
     }
 
-    images.forEach((image, index) => {
-      image.parentElement.onclick = () => {
-        lightbox.style.display = 'flex';
-        // Small timeout to allow the flex display to trigger CSS transitions
-        setTimeout(() => lightbox.classList.add('active'), 10);
-        showImage(index);
-      };
-    });
+    .gallery {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 20px;
+    }
 
-    const closeLightbox = () => {
-      lightbox.classList.remove('active');
-      setTimeout(() => lightbox.style.display = 'none', 300);
+    .gallery-item {
+      position: relative;
+      overflow: hidden;
+      border-radius: 10px;
+      height: 200px;
+      box-shadow: 0 3px 10px rgba(0,0,0,0.15);
+    }
+
+    .gallery img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      cursor: pointer;
+      transition: 0.4s ease;
+    }
+
+    .gallery-item:hover img {
+      transform: scale(1.1);
+    }
+
+    /* LIGHTBOX STYLING */
+    #gallery-lightbox {
+      position: fixed;
+      inset: 0;
+      background: rgba(0,0,0,0.95);
+      display: none;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      z-index: 9999;
+    }
+
+    #gallery-lightbox img {
+      max-width: 85%;
+      max-height: 75%;
+      border-radius: 5px;
+      border: 2px solid rgba(255,255,255,0.2);
+    }
+
+    #lightbox-caption {
+      color: white;
+      margin-top: 15px;
+      font-size: 1.2rem;
+      font-family: "Poppins", sans-serif;
+      letter-spacing: 1px;
+    }
+
+    .close-btn {
+      position: absolute;
+      top: 30px;
+      right: 40px;
+      color: white;
+      font-size: 40px;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+    .close-btn:hover { color: #2b6cb0; }
+
+    .nav-btn {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      color: white;
+      font-size: 45px;
+      cursor: pointer;
+      padding: 20px;
+      user-select: none;
+      transition: 0.3s;
+    }
+    .nav-btn:hover { color: #2b6cb0; }
+    .prev-btn { left: 20px; }
+    .next-btn { right: 20px; }
+
+    @media (max-width: 768px) {
+      .nav-btn { font-size: 30px; }
+      .close-btn { top: 20px; right: 20px; }
+    }
+  </style>
+</head>
+
+<body>
+
+<header class="main-header">
+  <h1>Hotel Saket Plaza</h1>
+  <p class="subtitle">Gallery – A Splash of Color and Comfort</p>
+</header>
+
+<nav class="navbar">
+  <a href="index.html">Home</a>
+  <a href="rooms.html">Rooms</a>
+  <a href="gallery.html" class="active">Gallery</a>
+  <a href="facilities.html">Facilities</a>
+  <a href="tariff.html">Tariff</a>
+  <a href="contact.html">Contact</a>
+</nav>
+
+<main>
+  <h2>Our Photo Gallery</h2>
+
+  <div class="gallery">
+    <div class="gallery-item"><img src="Images/Garden.jpg" alt="Lush Green Gardens"></div>
+    <div class="gallery-item"><img src="Images/Landscape.jpg" alt="Scenic Mountain Landscape"></div>
+    <div class="gallery-item"><img src="Images/Wedding.jpg" alt="Royal Wedding Reception Setup"></div>
+    <div class="gallery-item"><img src="Images/movie-theater.jpg" alt="Private Luxury Movie Theater"></div>
+    <div class="gallery-item"><img src="Images/parking.jpg" alt="Spacious Secure Parking Area"></div>
+    <div class="gallery-item"><img src="Images/swimming-pool.jpg" alt="Crystal Clear Swimming Pool"></div>
+    <div class="gallery-item"><img src="Images/waterfall.jpg" alt="Relaxing In-house Waterfall"></div>
+    <div class="gallery-item"><img src="Images/dining-hall.jpg" alt="Multi-Cuisine Dining Hall"></div>
+    <div class="gallery-item"><img src="Images/conference-hall.jpg" alt="Corporate Conference Hall"></div>
+    <div class="gallery-item"><img src="Images/indoor-games.jpg" alt="Entertainment & Indoor Games"></div>
+    <div class="gallery-item"><img src="Images/machan-night.jpg" alt="Machan Sit-out Night View"></div>
+    <div class="gallery-item"><img src="Images/swimming-pool-night.jpg" alt="Illuminated Pool Side at Night"></div>
+  </div>
+</main>
+
+<div id="gallery-lightbox">
+  <span class="close-btn">&times;</span>
+  <span class="nav-btn prev-btn"><i class="fa-solid fa-angle-left"></i></span>
+  
+  <img id="lightbox-img" src="">
+  <div id="lightbox-caption"></div>
+  
+  <span class="nav-btn next-btn"><i class="fa-solid fa-angle-right"></i></span>
+</div>
+
+<footer>
+  <p>© 2026 Hotel Saket Plaza | Old Band Road, Mahabaleshwar</p>
+</footer>
+
+<script>
+  const lightbox = document.getElementById('gallery-lightbox');
+  const lightboxImg = document.getElementById('lightbox-img');
+  const lightboxCaption = document.getElementById('lightbox-caption');
+  const images = Array.from(document.querySelectorAll('.gallery img'));
+  const closeBtn = document.querySelector('.close-btn');
+  const prevBtn = document.querySelector('.prev-btn');
+  const nextBtn = document.querySelector('.next-btn');
+
+  let currentIndex = 0;
+
+  function showImage(index) {
+    if (index < 0) index = images.length - 1;
+    if (index >= images.length) index = 0;
+    currentIndex = index;
+    
+    lightboxImg.src = images[currentIndex].src;
+    lightboxCaption.textContent = images[currentIndex].alt;
+  }
+
+  images.forEach((image, index) => {
+    image.onclick = () => {
+      lightbox.style.display = 'flex';
+      showImage(index);
     };
+  });
 
-    closeBtn.onclick = closeLightbox;
+  closeBtn.onclick = () => {
+    lightbox.style.display = 'none';
+  };
 
-    nextBtn.onclick = (e) => {
-      e.stopPropagation();
-      showImage(currentIndex + 1);
-    };
+  nextBtn.onclick = (e) => {
+    e.stopPropagation();
+    showImage(currentIndex + 1);
+  };
 
-    prevBtn.onclick = (e) => {
-      e.stopPropagation();
-      showImage(currentIndex - 1);
-    };
+  prevBtn.onclick = (e) => {
+    e.stopPropagation();
+    showImage(currentIndex - 1);
+  };
 
-    lightbox.onclick = (e) => {
-      if (e.target === lightbox || e.target.classList.contains('lightbox-content')) {
-        closeLightbox();
-      }
-    };
+  // Close lightbox if clicking outside the image
+  lightbox.onclick = (e) => {
+    if (e.target === lightbox) {
+      lightbox.style.display = 'none';
+    }
+  };
 
-    document.addEventListener('keydown', (e) => {
-      if (lightbox.classList.contains('active')) {
-        if (e.key === 'ArrowRight') showImage(currentIndex + 1);
-        if (e.key === 'ArrowLeft') showImage(currentIndex - 1);
-        if (e.key === 'Escape') closeLightbox();
-      }
-    });
-
-    // Intersection Observer for scroll animations
-    const observer = new IntersectionObserver(entries => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          entry.target.style.opacity = "1";
-          entry.target.style.transform = "translateY(0)";
-        }
-      });
-    }, { threshold: 0.1 });
-
-    document.querySelectorAll('.gallery-item').forEach(item => {
-      item.style.opacity = "0";
-      item.style.transform = "translateY(20px)";
-      item.style.transition = "all 0.6s ease-out";
-      observer.observe(item);
-    });
-  </script>
+  // Keyboard Navigation
+  document.addEventListener('keydown', (e) => {
+    if (lightbox.style.display === 'flex') {
+      if (e.key === 'ArrowRight') showImage(currentIndex + 1);
+      if (e.key === 'ArrowLeft') showImage(currentIndex - 1);
+      if (e.key === 'Escape') lightbox.style.display = 'none';
+    }
+  });
+</script>
 
 </body>
 </html>
