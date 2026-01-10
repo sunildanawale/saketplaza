@@ -3,181 +3,20 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Rooms – Hotel Saket Plaza</title>
+  <title>Luxury Accommodations | Hotel Saket Plaza Mahabaleshwar</title>
 
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&family=Playfair+Display:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
   <link rel="stylesheet" href="style.css">
-
-  <style>
-    main {
-      max-width: 1100px;
-      margin: 40px auto;
-      padding: 20px;
-    }
-
-    .rooms-wrapper h2 {
-      text-align: center;
-      color: #2b6cb0; /* Theme Blue */
-      font-family: "Playfair Display", serif;
-      font-size: 2.5rem;
-      margin-bottom: 35px;
-    }
-
-    .rooms-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-      gap: 30px;
-    }
-
-    .room-card {
-      background: #fff;
-      border-radius: 14px;
-      overflow: hidden;
-      box-shadow: rgba(0, 0, 0, 0.12) 0px 4px 12px;
-      transition: 0.3s ease;
-      padding-bottom: 25px;
-      opacity: 0;
-      transform: translateY(40px);
-      text-align: center;
-    }
-
-    .room-card.visible {
-      opacity: 1;
-      transform: translateY(0);
-      transition: 0.6s ease;
-    }
-
-    .room-card:hover {
-      transform: translateY(-10px);
-      box-shadow: 0px 10px 25px rgba(0, 0, 0, 0.15);
-    }
-
-    .room-card h3 {
-      margin: 20px 0 10px;
-      color: #2b6cb0;
-      font-family: "Playfair Display", serif;
-      font-size: 1.6rem;
-    }
-
-    .room-card p {
-      padding: 0 20px;
-      font-size: 0.95rem;
-      color: #555;
-      line-height: 1.5;
-    }
-
-    /* Slideshow Section */
-    .room-img-wrap {
-      height: 230px;
-      overflow: hidden;
-      position: relative;
-    }
-
-    .main-image {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      cursor: pointer;
-      transition: opacity 0.3s ease;
-    }
-
-    .slide-arrow {
-      position: absolute;
-      top: 50%;
-      transform: translateY(-50%);
-      background: rgba(255, 255, 255, 0.9);
-      color: #2b6cb0;
-      width: 35px;
-      height: 35px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      border-radius: 50%;
-      cursor: pointer;
-      z-index: 10;
-      transition: 0.3s;
-      font-size: 14px;
-      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-    }
-    .slide-arrow:hover { background: #2b6cb0; color: #fff; }
-    .arrow-left { left: 10px; }
-    .arrow-right { right: 10px; }
-
-    .thumb-strip {
-      display: flex;
-      gap: 8px;
-      padding: 12px;
-      justify-content: center;
-    }
-
-    .thumb-strip img {
-      width: 55px;
-      height: 40px;
-      object-fit: cover;
-      border-radius: 4px;
-      cursor: pointer;
-      border: 2px solid transparent;
-      transition: 0.2s;
-    }
-
-    .thumb-strip img.active {
-      border-color: #2b6cb0;
-    }
-
-    /* LIGHTBOX */
-    .lightbox {
-      position: fixed;
-      inset: 0;
-      background: rgba(0, 0, 0, 0.9);
-      display: none;
-      justify-content: center;
-      align-items: center;
-      z-index: 3000;
-    }
-
-    .lightbox.active { display: flex; }
-
-    .lightbox img {
-      max-width: 85%;
-      max-height: 80%;
-      border-radius: 8px;
-      box-shadow: 0 0 20px rgba(0,0,0,0.5);
-    }
-
-    .lightbox-close {
-      position: absolute;
-      top: 20px;
-      right: 30px;
-      color: white;
-      font-size: 45px;
-      cursor: pointer;
-      transition: 0.3s;
-    }
-    .lightbox-close:hover { color: #2b6cb0; }
-
-    .lightbox-arrow {
-      position: absolute;
-      top: 50%;
-      transform: translateY(-50%);
-      font-size: 40px;
-      color: #fff;
-      padding: 20px;
-      cursor: pointer;
-      user-select: none;
-      transition: 0.3s;
-    }
-    .lightbox-arrow:hover { color: #2b6cb0; }
-    .lightbox-left { left: 10px; }
-    .lightbox-right { right: 10px; }
-  </style>
 </head>
 
-<body>
+<body class="rooms-page">
 
   <header class="main-header">
-    <h1>Hotel Saket Plaza</h1>
-    <p class="subtitle">Elegant Comfort in Every Room</p>
+    <div class="logo-box">
+      <h1>Hotel Saket Plaza</h1>
+      <p class="subtitle">Refined Sanctuary in the Sahyadris</p>
+    </div>
   </header>
 
   <nav class="navbar">
@@ -189,101 +28,136 @@
     <a href="contact.html">Contact</a>
   </nav>
 
-  <main>
-    <div class="rooms-wrapper">
-      <h2>Choice of Rooms</h2>
+  <main class="rooms-container">
+    <section class="rooms-intro">
+      <h2 class="section-title">Our Suites & Cottages</h2>
+      <p class="section-subtitle">Discover a harmonious blend of nature-inspired design and modern indulgence.</p>
+    </section>
 
-      <div class="rooms-grid">
+    <div class="rooms-grid">
 
-        <div class="room-card" data-images="luxury-room.jpg,luxury-room1.jpg,luxury-room2.jpg">
-          <div class="room-img-wrap">
-            <span class="slide-arrow arrow-left"><i class="fa-solid fa-chevron-left"></i></span>
-            <img src="Images/luxury-room.jpg" class="main-image">
-            <span class="slide-arrow arrow-right"><i class="fa-solid fa-chevron-right"></i></span>
-          </div>
-          <div class="thumb-strip">
-            <img src="Images/luxury-room.jpg" class="active">
-            <img src="Images/luxury-room1.jpg">
-            <img src="Images/luxury-room2.jpg">
-          </div>
+      <article class="room-card" data-images="luxury-room.jpg,luxury-room1.jpg,luxury-room2.jpg">
+        <div class="room-img-wrap">
+          <span class="slide-arrow arrow-left"><i class="fa-solid fa-chevron-left"></i></span>
+          <img src="Images/luxury-room.jpg" class="main-image" alt="Luxury Room">
+          <span class="slide-arrow arrow-right"><i class="fa-solid fa-chevron-right"></i></span>
+        </div>
+        <div class="thumb-strip">
+          <img src="Images/luxury-room.jpg" class="active" alt="Thumbnail 1">
+          <img src="Images/luxury-room1.jpg" alt="Thumbnail 2">
+          <img src="Images/luxury-room2.jpg" alt="Thumbnail 3">
+        </div>
+        <div class="room-info">
           <h3>Luxury Room</h3>
-          <p>Modern elegance with premium interiors designed for ultimate relaxation and style.</p>
+          <p>Modern elegance with premium interiors designed for ultimate relaxation and curated style.</p>
+          <div class="room-amenities">
+            <span><i class="fa-solid fa-wind"></i> AC</span>
+            <span><i class="fa-solid fa-wifi"></i> WiFi</span>
+            <span><i class="fa-solid fa-tv"></i> LED TV</span>
+          </div>
         </div>
+      </article>
 
-        <div class="room-card" data-images="club-room.jpg,club-room1.jpg,club-room2.jpg">
-          <div class="room-img-wrap">
-            <span class="slide-arrow arrow-left"><i class="fa-solid fa-chevron-left"></i></span>
-            <img class="main-image" src="Images/club-room.jpg">
-            <span class="slide-arrow arrow-right"><i class="fa-solid fa-chevron-right"></i></span>
-          </div>
-          <div class="thumb-strip">
-            <img src="Images/club-room.jpg" class="active">
-            <img src="Images/club-room1.jpg">
-            <img src="Images/club-room2.jpg">
-          </div>
+      <article class="room-card" data-images="club-room.jpg,club-room1.jpg,club-room2.jpg">
+        <div class="room-img-wrap">
+          <span class="slide-arrow arrow-left"><i class="fa-solid fa-chevron-left"></i></span>
+          <img class="main-image" src="Images/club-room.jpg" alt="Club Room">
+          <span class="slide-arrow arrow-right"><i class="fa-solid fa-chevron-right"></i></span>
+        </div>
+        <div class="thumb-strip">
+          <img src="Images/club-room.jpg" class="active" alt="Thumbnail 1">
+          <img src="Images/club-room1.jpg" alt="Thumbnail 2">
+          <img src="Images/club-room2.jpg" alt="Thumbnail 3">
+        </div>
+        <div class="room-info">
           <h3>Club Room</h3>
-          <p>Spacious and cozy — perfect for families who enjoy premium comfort and additional space.</p>
+          <p>Spacious and cozy — perfectly balanced for families who appreciate premium comfort and extra space.</p>
+          <div class="room-amenities">
+            <span><i class="fa-solid fa-users"></i> Family Size</span>
+            <span><i class="fa-solid fa-mug-hot"></i> Coffee Maker</span>
+          </div>
         </div>
+      </article>
 
-        <div class="room-card" data-images="cottage.jpg,cottage1.jpg,cottage2.jpg">
-          <div class="room-img-wrap">
-            <span class="slide-arrow arrow-left"><i class="fa-solid fa-chevron-left"></i></span>
-            <img class="main-image" src="Images/cottage.jpg">
-            <span class="slide-arrow arrow-right"><i class="fa-solid fa-chevron-right"></i></span>
-          </div>
-          <div class="thumb-strip">
-            <img src="Images/cottage.jpg" class="active">
-            <img src="Images/cottage1.jpg">
-            <img src="Images/cottage2.jpg">
-          </div>
-          <h3>Cottage</h3>
-          <p>Enjoy a private Jacuzzi, rain shower, and a serene outdoor sit-out area for total privacy.</p>
+      <article class="room-card" data-images="cottage.jpg,cottage1.jpg,cottage2.jpg">
+        <div class="room-img-wrap">
+          <span class="slide-arrow arrow-left"><i class="fa-solid fa-chevron-left"></i></span>
+          <img class="main-image" src="Images/cottage.jpg" alt="Luxury Cottage">
+          <span class="slide-arrow arrow-right"><i class="fa-solid fa-chevron-right"></i></span>
         </div>
+        <div class="thumb-strip">
+          <img src="Images/cottage.jpg" class="active" alt="Thumbnail 1">
+          <img src="Images/cottage1.jpg" alt="Thumbnail 2">
+          <img src="Images/cottage2.jpg" alt="Thumbnail 3">
+        </div>
+        <div class="room-info">
+          <h3>The Cottage</h3>
+          <p>Features a private Jacuzzi, rain shower, and a serene outdoor sit-out for unparalleled privacy.</p>
+          <div class="room-amenities">
+            <span><i class="fa-solid fa-hot-tub-person"></i> Jacuzzi</span>
+            <span><i class="fa-solid fa-leaf"></i> Private Sit-out</span>
+          </div>
+        </div>
+      </article>
 
-        <div class="room-card" data-images="premium-queen.jpg,premium-queen1.jpg,premium-queen2.jpg">
-          <div class="room-img-wrap">
-            <span class="slide-arrow arrow-left"><i class="fa-solid fa-chevron-left"></i></span>
-            <img class="main-image" src="Images/premium-queen.jpg">
-            <span class="slide-arrow arrow-right"><i class="fa-solid fa-chevron-right"></i></span>
-          </div>
-          <div class="thumb-strip">
-            <img src="Images/premium-queen.jpg" class="active">
-            <img src="Images/premium-queen1.jpg">
-            <img src="Images/premium-queen2.jpg">
-          </div>
+      <article class="room-card" data-images="premium-queen.jpg,premium-queen1.jpg,premium-queen2.jpg">
+        <div class="room-img-wrap">
+          <span class="slide-arrow arrow-left"><i class="fa-solid fa-chevron-left"></i></span>
+          <img class="main-image" src="Images/premium-queen.jpg" alt="Premium Queen Room">
+          <span class="slide-arrow arrow-right"><i class="fa-solid fa-chevron-right"></i></span>
+        </div>
+        <div class="thumb-strip">
+          <img src="Images/premium-queen.jpg" class="active" alt="Thumbnail 1">
+          <img src="Images/premium-queen1.jpg" alt="Thumbnail 2">
+          <img src="Images/premium-queen2.jpg" alt="Thumbnail 3">
+        </div>
+        <div class="room-info">
           <h3>Premium Queen</h3>
-          <p>Elegant interiors with an attached Jacuzzi and balcony overlooking our lush greenery.</p>
+          <p>Elegant interiors featuring an attached Jacuzzi and a balcony overlooking our lush, verdant gardens.</p>
+          <div class="room-amenities">
+            <span><i class="fa-solid fa-mountain-sun"></i> Balcony</span>
+            <span><i class="fa-solid fa-bath"></i> Jacuzzi</span>
+          </div>
         </div>
+      </article>
 
-        <div class="room-card" data-images="premium-king.jpg,premium-king1.jpg,premium-king2.jpg">
-          <div class="room-img-wrap">
-            <span class="slide-arrow arrow-left"><i class="fa-solid fa-chevron-left"></i></span>
-            <img class="main-image" src="Images/premium-king.jpg">
-            <span class="slide-arrow arrow-right"><i class="fa-solid fa-chevron-right"></i></span>
-          </div>
-          <div class="thumb-strip">
-            <img src="Images/premium-king.jpg" class="active">
-            <img src="Images/premium-king1.jpg">
-            <img src="Images/premium-king2.jpg">
-          </div>
+      <article class="room-card" data-images="premium-king.jpg,premium-king1.jpg,premium-king2.jpg">
+        <div class="room-img-wrap">
+          <span class="slide-arrow arrow-left"><i class="fa-solid fa-chevron-left"></i></span>
+          <img class="main-image" src="Images/premium-king.jpg" alt="Premium King Room">
+          <span class="slide-arrow arrow-right"><i class="fa-solid fa-chevron-right"></i></span>
+        </div>
+        <div class="thumb-strip">
+          <img src="Images/premium-king.jpg" class="active" alt="Thumbnail 1">
+          <img src="Images/premium-king1.jpg" alt="Thumbnail 2">
+          <img src="Images/premium-king2.jpg" alt="Thumbnail 3">
+        </div>
+        <div class="room-info">
           <h3>Premium King</h3>
-          <p>A luxurious suite with a Jacuzzi and private patio — the pinnacle of luxury at Saket Plaza.</p>
+          <p>Our most luxurious suite, featuring a private patio and Jacuzzi—the ultimate Saket Plaza experience.</p>
+          <div class="room-amenities">
+            <span><i class="fa-solid fa-crown"></i> VIP Suite</span>
+            <span><i class="fa-solid fa-couch"></i> Private Patio</span>
+          </div>
         </div>
+      </article>
 
-      </div>
     </div>
   </main>
 
-  <footer>
-    <p>© 2026 Hotel Saket Plaza | Old Band Road, Mahabaleshwar</p>
-  </footer>
-
   <div class="lightbox" id="lightbox">
-    <span class="lightbox-close">&times;</span>
+    <span class="lightbox-close" aria-label="Close">&times;</span>
     <span class="lightbox-arrow lightbox-left"><i class="fa-solid fa-angle-left"></i></span>
-    <img src="" id="lightbox-img">
+    <img src="" id="lightbox-img" alt="Enlarged room view">
     <span class="lightbox-arrow lightbox-right"><i class="fa-solid fa-angle-right"></i></span>
   </div>
+
+  <footer>
+    <div class="footer-content">
+      <p>© 2026 Hotel Saket Plaza | Old Band Road, Mahabaleshwar</p>
+      <p style="font-size: 0.8rem; opacity: 0.7; margin-top: 10px;">Managed with excellence for your comfort.</p>
+    </div>
+  </footer>
 
   <script>
     /***********************
@@ -292,26 +166,36 @@
     document.querySelectorAll(".room-card").forEach(card => {
       const mainImg = card.querySelector(".main-image");
       const thumbs = card.querySelectorAll(".thumb-strip img");
-      const images = card.dataset.images.split(",").map(a => "Images/" + a);
+      const images = card.dataset.images.split(",").map(a => "Images/" + a.trim());
 
       let index = 0;
 
       function changeImage(i) {
         index = i;
-        mainImg.src = images[index];
+        mainImg.style.opacity = '0';
+        setTimeout(() => {
+          mainImg.src = images[index];
+          mainImg.style.opacity = '1';
+        }, 200);
+        
         thumbs.forEach(t => t.classList.remove("active"));
         if(thumbs[index]) thumbs[index].classList.add("active");
       }
 
       thumbs.forEach((t, i) => {
-        t.addEventListener("click", () => changeImage(i));
+        t.addEventListener("click", (e) => {
+          e.stopPropagation();
+          changeImage(i);
+        });
       });
 
-      card.querySelector(".arrow-left").onclick = () => {
+      card.querySelector(".arrow-left").onclick = (e) => {
+        e.stopPropagation();
         changeImage((index - 1 + images.length) % images.length);
       };
 
-      card.querySelector(".arrow-right").onclick = () => {
+      card.querySelector(".arrow-right").onclick = (e) => {
+        e.stopPropagation();
         changeImage((index + 1) % images.length);
       };
     });
@@ -328,7 +212,7 @@
     document.querySelectorAll(".main-image").forEach(img => {
       img.addEventListener("click", () => {
         const card = img.closest(".room-card");
-        activeImages = card.dataset.images.split(",").map(a => "Images/" + a);
+        activeImages = card.dataset.images.split(",").map(a => "Images/" + a.trim());
         const clickedSrc = img.getAttribute('src');
         activeIndex = activeImages.indexOf(clickedSrc);
         
@@ -355,17 +239,22 @@
       if (e.target === lightbox) lightbox.classList.remove("active");
     });
 
-    /* Intersection Observer for Fade In Animation */
+    // Fade-in Observer
     const observer = new IntersectionObserver(entries => {
       entries.forEach(entry => {
         if (entry.isIntersecting) {
-          entry.target.classList.add("visible");
+          entry.target.style.opacity = "1";
+          entry.target.style.transform = "translateY(0)";
         }
       });
     }, { threshold: 0.1 });
 
-    document.querySelectorAll(".room-card").forEach(card => observer.observe(card));
+    document.querySelectorAll(".room-card").forEach(card => {
+      card.style.opacity = "0";
+      card.style.transform = "translateY(30px)";
+      card.style.transition = "all 0.8s ease-out";
+      observer.observe(card);
+    });
   </script>
-
 </body>
 </html>
