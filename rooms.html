@@ -10,20 +10,6 @@
   <link rel="stylesheet" href="style.css">
 
   <style>
-    :root {
-      --primary-color: #2b6cb0;
-      --secondary-color: #ff8c00;
-      --accent-color: #ffb347;
-      --text-color: #333;
-      --bg-color: #f7f7f7;
-      --white: #ffffff;
-      --shadow: rgba(0, 0, 0, 0.15);
-      --border-radius: 6px;
-      --transition: 0.3s ease;
-      --font-primary: "Poppins", sans-serif;
-      --font-heading: "Playfair Display", serif;
-    }
-
     main {
       max-width: 1100px;
       margin: 40px auto;
@@ -32,9 +18,9 @@
 
     .rooms-wrapper h2 {
       text-align: center;
-      color: var(--primary-color);
-      font-family: var(--font-heading);
-      font-size: clamp(2rem, 5vw, 2.5rem);
+      color: #2b6cb0; /* Theme Blue */
+      font-family: "Playfair Display", serif;
+      font-size: 2.5rem;
       margin-bottom: 35px;
     }
 
@@ -45,17 +31,15 @@
     }
 
     .room-card {
-      background: var(--white);
+      background: #fff;
       border-radius: 14px;
       overflow: hidden;
       box-shadow: rgba(0, 0, 0, 0.12) 0px 4px 12px;
-      transition: var(--transition);
+      transition: 0.3s ease;
       padding-bottom: 25px;
       opacity: 0;
       transform: translateY(40px);
       text-align: center;
-      will-change: opacity, transform;
-      cursor: default;
     }
 
     .room-card.visible {
@@ -66,19 +50,14 @@
 
     .room-card:hover {
       transform: translateY(-10px);
-      box-shadow: 0px 10px 25px var(--shadow);
-    }
-
-    .room-card:focus-within {
-      outline: 2px solid var(--primary-color);
-      outline-offset: 4px;
+      box-shadow: 0px 10px 25px rgba(0, 0, 0, 0.15);
     }
 
     .room-card h3 {
       margin: 20px 0 10px;
-      color: var(--primary-color);
-      font-family: var(--font-heading);
-      font-size: clamp(1.4rem, 3vw, 1.6rem);
+      color: #2b6cb0;
+      font-family: "Playfair Display", serif;
+      font-size: 1.6rem;
     }
 
     .room-card p {
@@ -108,7 +87,7 @@
       top: 50%;
       transform: translateY(-50%);
       background: rgba(255, 255, 255, 0.9);
-      color: var(--primary-color);
+      color: #2b6cb0;
       width: 35px;
       height: 35px;
       display: flex;
@@ -117,12 +96,11 @@
       border-radius: 50%;
       cursor: pointer;
       z-index: 10;
-      transition: var(--transition);
+      transition: 0.3s;
       font-size: 14px;
       box-shadow: 0 2px 5px rgba(0,0,0,0.1);
     }
-    .slide-arrow:hover { background: var(--primary-color); color: var(--white); }
-    .slide-arrow:focus { outline: 2px solid var(--primary-color); outline-offset: 2px; }
+    .slide-arrow:hover { background: #2b6cb0; color: #fff; }
     .arrow-left { left: 10px; }
     .arrow-right { right: 10px; }
 
@@ -144,12 +122,7 @@
     }
 
     .thumb-strip img.active {
-      border-color: var(--primary-color);
-    }
-
-    .thumb-strip img:focus {
-      outline: 2px solid var(--primary-color);
-      outline-offset: 2px;
+      border-color: #2b6cb0;
     }
 
     /* LIGHTBOX */
@@ -179,52 +152,24 @@
       color: white;
       font-size: 45px;
       cursor: pointer;
-      transition: var(--transition);
+      transition: 0.3s;
     }
-    .lightbox-close:hover { color: var(--primary-color); }
-    .lightbox-close:focus { outline: 2px solid var(--white); outline-offset: 2px; }
+    .lightbox-close:hover { color: #2b6cb0; }
 
     .lightbox-arrow {
       position: absolute;
       top: 50%;
       transform: translateY(-50%);
       font-size: 40px;
-      color: var(--white);
+      color: #fff;
       padding: 20px;
       cursor: pointer;
       user-select: none;
-      transition: var(--transition);
+      transition: 0.3s;
     }
-    .lightbox-arrow:hover { color: var(--primary-color); }
-    .lightbox-arrow:focus { outline: 2px solid var(--primary-color); outline-offset: 2px; }
+    .lightbox-arrow:hover { color: #2b6cb0; }
     .lightbox-left { left: 10px; }
     .lightbox-right { right: 10px; }
-
-    @media (prefers-reduced-motion: reduce) {
-      .room-card.visible {
-        animation: none;
-      }
-      .room-card:hover,
-      .slide-arrow:hover,
-      .lightbox-close:hover,
-      .lightbox-arrow:hover {
-        transform: none;
-      }
-    }
-
-    @media (max-width: 1024px) and (min-width: 769px) {
-      .rooms-grid {
-        grid-template-columns: repeat(2, 1fr);
-        gap: 20px;
-      }
-    }
-
-    @media (max-width: 768px) {
-      .rooms-wrapper h2 { font-size: clamp(1.8rem, 4vw, 2.2rem); }
-      .room-card h3 { font-size: clamp(1.3rem, 3vw, 1.5rem); }
-      .room-img-wrap { height: 200px; }
-      .thumb-strip img { width: 45px; height: 35px; }
-    }
   </style>
 </head>
 
@@ -252,14 +197,14 @@
 
         <div class="room-card" data-images="luxury-room.jpg,luxury-room1.jpg,luxury-room2.jpg">
           <div class="room-img-wrap">
-            <span class="slide-arrow arrow-left" tabindex="0" aria-label="Previous image"><i class="fa-solid fa-chevron-left"></i></span>
-            <img src="Images/luxury-room.jpg" class="main-image" alt="Luxury Room interior view">
-            <span class="slide-arrow arrow-right" tabindex="0" aria-label="Next image"><i class="fa-solid fa-chevron-right"></i></span>
+            <span class="slide-arrow arrow-left"><i class="fa-solid fa-chevron-left"></i></span>
+            <img src="Images/luxury-room.jpg" class="main-image">
+            <span class="slide-arrow arrow-right"><i class="fa-solid fa-chevron-right"></i></span>
           </div>
           <div class="thumb-strip">
-            <img src="Images/luxury-room.jpg" class="active" alt="Luxury Room thumbnail 1" tabindex="0">
-            <img src="Images/luxury-room1.jpg" alt="Luxury Room thumbnail 2" tabindex="0">
-            <img src="Images/luxury-room2.jpg" alt="Luxury Room thumbnail 3" tabindex="0">
+            <img src="Images/luxury-room.jpg" class="active">
+            <img src="Images/luxury-room1.jpg">
+            <img src="Images/luxury-room2.jpg">
           </div>
           <h3>Luxury Room</h3>
           <p>Modern elegance with premium interiors designed for ultimate relaxation and style.</p>
@@ -267,14 +212,14 @@
 
         <div class="room-card" data-images="club-room.jpg,club-room1.jpg,club-room2.jpg">
           <div class="room-img-wrap">
-            <span class="slide-arrow arrow-left" tabindex="0" aria-label="Previous image"><i class="fa-solid fa-chevron-left"></i></span>
-            <img class="main-image" src="Images/club-room.jpg" alt="Club Room interior view">
-            <span class="slide-arrow arrow-right" tabindex="0" aria-label="Next image"><i class="fa-solid fa-chevron-right"></i></span>
+            <span class="slide-arrow arrow-left"><i class="fa-solid fa-chevron-left"></i></span>
+            <img class="main-image" src="Images/club-room.jpg">
+            <span class="slide-arrow arrow-right"><i class="fa-solid fa-chevron-right"></i></span>
           </div>
           <div class="thumb-strip">
-            <img src="Images/club-room.jpg" class="active" alt="Club Room thumbnail 1" tabindex="0">
-            <img src="Images/club-room1.jpg" alt="Club Room thumbnail 2" tabindex="0">
-            <img src="Images/club-room2.jpg" alt="Club Room thumbnail 3" tabindex="0">
+            <img src="Images/club-room.jpg" class="active">
+            <img src="Images/club-room1.jpg">
+            <img src="Images/club-room2.jpg">
           </div>
           <h3>Club Room</h3>
           <p>Spacious and cozy — perfect for families who enjoy premium comfort and additional space.</p>
@@ -282,14 +227,14 @@
 
         <div class="room-card" data-images="cottage.jpg,cottage1.jpg,cottage2.jpg">
           <div class="room-img-wrap">
-            <span class="slide-arrow arrow-left" tabindex="0" aria-label="Previous image"><i class="fa-solid fa-chevron-left"></i></span>
-            <img class="main-image" src="Images/cottage.jpg" alt="Cottage interior view">
-            <span class="slide-arrow arrow-right" tabindex="0" aria-label="Next image"><i class="fa-solid fa-chevron-right"></i></span>
+            <span class="slide-arrow arrow-left"><i class="fa-solid fa-chevron-left"></i></span>
+            <img class="main-image" src="Images/cottage.jpg">
+            <span class="slide-arrow arrow-right"><i class="fa-solid fa-chevron-right"></i></span>
           </div>
           <div class="thumb-strip">
-            <img src="Images/cottage.jpg" class="active" alt="Cottage thumbnail 1" tabindex="0">
-            <img src="Images/cottage1.jpg" alt="Cottage thumbnail 2" tabindex="0">
-            <img src="Images/cottage2.jpg" alt="Cottage thumbnail 3" tabindex="0">
+            <img src="Images/cottage.jpg" class="active">
+            <img src="Images/cottage1.jpg">
+            <img src="Images/cottage2.jpg">
           </div>
           <h3>Cottage</h3>
           <p>Enjoy a private Jacuzzi, rain shower, and a serene outdoor sit-out area for total privacy.</p>
@@ -297,14 +242,14 @@
 
         <div class="room-card" data-images="premium-queen.jpg,premium-queen1.jpg,premium-queen2.jpg">
           <div class="room-img-wrap">
-            <span class="slide-arrow arrow-left" tabindex="0" aria-label="Previous image"><i class="fa-solid fa-chevron-left"></i></span>
-            <img class="main-image" src="Images/premium-queen.jpg" alt="Premium Queen Room interior view">
-            <span class="slide-arrow arrow-right" tabindex="0" aria-label="Next image"><i class="fa-solid fa-chevron-right"></i></span>
+            <span class="slide-arrow arrow-left"><i class="fa-solid fa-chevron-left"></i></span>
+            <img class="main-image" src="Images/premium-queen.jpg">
+            <span class="slide-arrow arrow-right"><i class="fa-solid fa-chevron-right"></i></span>
           </div>
           <div class="thumb-strip">
-            <img src="Images/premium-queen.jpg" class="active" alt="Premium Queen thumbnail 1" tabindex="0">
-            <img src="Images/premium-queen1.jpg" alt="Premium Queen thumbnail 2" tabindex="0">
-            <img src="Images/premium-queen2.jpg" alt="Premium Queen thumbnail 3" tabindex="0">
+            <img src="Images/premium-queen.jpg" class="active">
+            <img src="Images/premium-queen1.jpg">
+            <img src="Images/premium-queen2.jpg">
           </div>
           <h3>Premium Queen</h3>
           <p>Elegant interiors with an attached Jacuzzi and balcony overlooking our lush greenery.</p>
@@ -312,14 +257,14 @@
 
         <div class="room-card" data-images="premium-king.jpg,premium-king1.jpg,premium-king2.jpg">
           <div class="room-img-wrap">
-            <span class="slide-arrow arrow-left" tabindex="0" aria-label="Previous image"><i class="fa-solid fa-chevron-left"></i></span>
-            <img class="main-image" src="Images/premium-king.jpg" alt="Premium King Room interior view">
-            <span class="slide-arrow arrow-right" tabindex="0" aria-label="Next image"><i class="fa-solid fa-chevron-right"></i></span>
+            <span class="slide-arrow arrow-left"><i class="fa-solid fa-chevron-left"></i></span>
+            <img class="main-image" src="Images/premium-king.jpg">
+            <span class="slide-arrow arrow-right"><i class="fa-solid fa-chevron-right"></i></span>
           </div>
           <div class="thumb-strip">
-            <img src="Images/premium-king.jpg" class="active" alt="Premium King thumbnail 1" tabindex="0">
-            <img src="Images/premium-king1.jpg" alt="Premium King thumbnail 2" tabindex="0">
-            <img src="Images/premium-king2.jpg" alt="Premium King thumbnail 3" tabindex="0">
+            <img src="Images/premium-king.jpg" class="active">
+            <img src="Images/premium-king1.jpg">
+            <img src="Images/premium-king2.jpg">
           </div>
           <h3>Premium King</h3>
           <p>A luxurious suite with a Jacuzzi and private patio — the pinnacle of luxury at Saket Plaza.</p>
@@ -333,11 +278,11 @@
     <p>© 2026 Hotel Saket Plaza | Old Band Road, Mahabaleshwar</p>
   </footer>
 
-  <div class="lightbox" id="lightbox" role="dialog" aria-modal="true" aria-labelledby="lightbox-title">
-    <span class="lightbox-close" tabindex="0" aria-label="Close lightbox">&times;</span>
-    <span class="lightbox-arrow lightbox-left" tabindex="0" aria-label="Previous image in lightbox"><i class="fa-solid fa-angle-left"></i></span>
-    <img src="" id="lightbox-img" alt="Enlarged room image">
-    <span class="lightbox-arrow lightbox-right" tabindex="0" aria-label="Next image in lightbox"><i class="fa-solid fa-angle-right"></i></span>
+  <div class="lightbox" id="lightbox">
+    <span class="lightbox-close">&times;</span>
+    <span class="lightbox-arrow lightbox-left"><i class="fa-solid fa-angle-left"></i></span>
+    <img src="" id="lightbox-img">
+    <span class="lightbox-arrow lightbox-right"><i class="fa-solid fa-angle-right"></i></span>
   </div>
 
   <script>
@@ -354,19 +299,12 @@
       function changeImage(i) {
         index = i;
         mainImg.src = images[index];
-        mainImg.alt = `Room image ${index + 1}`;
         thumbs.forEach(t => t.classList.remove("active"));
         if(thumbs[index]) thumbs[index].classList.add("active");
       }
 
       thumbs.forEach((t, i) => {
         t.addEventListener("click", () => changeImage(i));
-        t.addEventListener("keydown", (e) => {
-          if (e.key === "Enter" || e.key === " ") {
-            e.preventDefault();
-            changeImage(i);
-          }
-        });
       });
 
       card.querySelector(".arrow-left").onclick = () => {
@@ -376,21 +314,6 @@
       card.querySelector(".arrow-right").onclick = () => {
         changeImage((index + 1) % images.length);
       };
-
-      // Keyboard support for arrows
-      card.querySelector(".arrow-left").addEventListener("keydown", (e) => {
-        if (e.key === "Enter" || e.key === " ") {
-          e.preventDefault();
-          changeImage((index - 1 + images.length) % images.length);
-        }
-      });
-
-      card.querySelector(".arrow-right").addEventListener("keydown", (e) => {
-        if (e.key === "Enter" || e.key === " ") {
-          e.preventDefault();
-          changeImage((index + 1) % images.length);
-        }
-      });
     });
 
     /*************************
@@ -404,3 +327,45 @@
 
     document.querySelectorAll(".main-image").forEach(img => {
       img.addEventListener("click", () => {
+        const card = img.closest(".room-card");
+        activeImages = card.dataset.images.split(",").map(a => "Images/" + a);
+        const clickedSrc = img.getAttribute('src');
+        activeIndex = activeImages.indexOf(clickedSrc);
+        
+        lightboxImg.src = activeImages[activeIndex];
+        lightbox.classList.add("active");
+      });
+    });
+
+    closeBtn.onclick = () => lightbox.classList.remove("active");
+
+    document.querySelector(".lightbox-left").onclick = (e) => {
+      e.stopPropagation();
+      activeIndex = (activeIndex - 1 + activeImages.length) % activeImages.length;
+      lightboxImg.src = activeImages[activeIndex];
+    };
+
+    document.querySelector(".lightbox-right").onclick = (e) => {
+      e.stopPropagation();
+      activeIndex = (activeIndex + 1) % activeImages.length;
+      lightboxImg.src = activeImages[activeIndex];
+    };
+
+    lightbox.addEventListener("click", e => {
+      if (e.target === lightbox) lightbox.classList.remove("active");
+    });
+
+    /* Intersection Observer for Fade In Animation */
+    const observer = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add("visible");
+        }
+      });
+    }, { threshold: 0.1 });
+
+    document.querySelectorAll(".room-card").forEach(card => observer.observe(card));
+  </script>
+
+</body>
+</html>
